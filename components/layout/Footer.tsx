@@ -1,144 +1,112 @@
 "use client";
 
 import Link from "next/link";
-import { MessageCircle, Mail, Globe, ChevronUp } from "lucide-react";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { ChevronUp } from "lucide-react";
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const exploreLinks = [
+  { name: "Home page", href: "/" },
+  { name: "Quem somos", href: "/quem-somos" },
+  { name: "Serviços", href: "/servicos" },
+  { name: "Parcerias", href: "" },
+  { name: "Insights", href: "" },
+  { name: "Contato", href: "/contato" },
+  ]
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="bg-primary text-primary-foreground pt-16 pb-8 border-t border-primary-foreground/10">
+    <footer className="bg-black text-white pt-16 pb-8 border-t border-white/10">
       <div className="container mx-auto px-4 md:px-8">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16 relative">
-          {/* Brand Info */}
-          <div className="lg:col-span-4 flex flex-col items-start">
-            <div className="bg-foreground text-background font-bold px-5 py-2.5 text-2xl inline-block rounded-md mb-6">
-              LOGO
-            </div>
-            <p className="text-primary-foreground/80 text-sm leading-relaxed max-w-sm mb-6">
-              Transformando resultados com estratégias inteligentes e escaláveis
-              para o seu negócio decole de verdade.
-            </p>
-            {/* Social Icons */}
-            <div className="flex gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+          {/* Logo + Produtos */}
+          <div className="lg:col-span-4">
+            <img
+              src="/logo-meta.svg"
+              alt="Meta Consultoria"
+              className="h-10 mb-6"
+            />
+            <h4 className="font-semibold mb-4">Produtos</h4>
+            <ul className="space-y-2 text-sm">
               {[
-                { icon: FaInstagram, label: "Instagram" },
-                { icon: MessageCircle, label: "WhatsApp" },
-                { icon: Mail, label: "E-mail" },
-                { icon: Globe, label: "Website" },
-              ].map((Social, index) => (
+                "Gestão e Criação de Negócios",
+                "Otimização de Processos",
+                "Planejamento Financeiro",
+                "Construção e Energia",
+                "Desenvolvimento de Máquinas",
+                "Tecnologia",
+              ].map((item) => (
+                <li key={item} className="hover:text-[#2AD8FF] transition-colors">
+                  <Link href="#">{item}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Explore */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold mb-4">Explore</h4>
+              <ul className="space-y-2 text-sm">
+              {exploreLinks.map((link) => (
+                <li key={link.name} className="hover:text-[#2AD8FF] transition-colors">
+                  <Link href={link.href}>{link.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Endereço */}
+          <div className="lg:col-span-3">
+            <h4 className="font-semibold mb-4">Endereço</h4>
+            <p className="text-sm leading-relaxed">
+              R. Passo da Pátria, 156<br />
+              Sala 217, Bloco E<br />
+              São Domingos, Niterói – RJ<br />
+              <span className="block mt-2">CNPJ: 00.498.057/0001-62</span>
+            </p>
+          </div>
+
+          {/* Mídias Sociais + Conteúdo */}
+          <div className="lg:col-span-3">
+            <h4 className="font-semibold mb-4">Mídias Sociais</h4>
+            <div className="flex gap-4 mb-6">
+              {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
                 <Link
-                  key={index}
+                  key={i}
                   href="#"
-                  aria-label={Social.label}
-                  className="p-2.5 bg-background border border-border rounded-full text-muted-foreground hover:text-primary hover:border-primary hover:-translate-y-1 transition-all duration-300 shadow-sm"
+                  className="p-2 bg-white text-black rounded-full hover:bg-[#2AD8FF] hover:text-white transition-all"
                 >
-                  <Social.icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4" />
                 </Link>
               ))}
             </div>
-          </div>
-
-          {/* Links Columns */}
-          <div className="lg:col-span-2 lg:col-start-6">
-            <h4 className="text-foreground font-semibold mb-6">Serviços</h4>
-            <ul className="space-y-4 text-sm text-primary-foreground/80">
-              {["Consultoria", "Assessoria", "Treinamentos", "Diagnóstico"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="hover:text-primary hover:underline underline-offset-4 transition-all"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ),
-              )}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-2">
-            <h4 className="text-foreground font-semibold mb-6">Empresa</h4>
-            <ul className="space-y-4 text-sm text-primary-foreground/80">
-              <li>
-                <Link
-                  href="/quem-somos"
-                  className="hover:text-primary hover:underline underline-offset-4 transition-all"
-                >
-                  Quem somos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/contato"
-                  className="hover:text-primary hover:underline underline-offset-4 transition-all"
-                >
-                  Contato
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-primary hover:underline underline-offset-4 transition-all"
-                >
-                  Carreiras
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="lg:col-span-3">
-            <h4 className="text-foreground font-semibold mb-6">
-              Contato e Local
-            </h4>
-            <ul className="space-y-4 text-sm text-primary-foreground/80">
-              <li className="leading-relaxed">
-                R. Passo da Pátria, 156, Sala 217
-                <br />
-                Bloco E - São Domingos
-                <br />
-                Niterói - RJ
-              </li>
-              <li className="pt-2 border-t border-border/50">
-                <span className="block font-medium text-foreground mb-1">
-                  CNPJ
-                </span>
-                99.999.999/9999-99
-              </li>
-            </ul>
+            <h4 className="font-semibold mb-2">Conteúdo</h4>
+            <p className="text-sm mb-3">
+              Cadastre-se e receba nossos conteúdos
+            </p>
+            <input
+              type="email"
+              placeholder="Digite o seu e-mail"
+              className="w-full rounded-md px-3 py-2 text-black text-sm focus:outline-none"
+            />
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-border text-sm text-muted-foreground gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-6 text-sm text-gray-300">
           <p>
-            &copy; {new Date().getFullYear()} LOGO. Todos os direitos
-            reservados.
+            Copyright {new Date().getFullYear()} Meta Consultoria | Todos os
+            Direitos Reservados
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="#" className="hover:text-foreground transition-colors">
-              Política de Privacidade
-            </Link>
-            <span className="hidden md:inline-block">|</span>
-            <p className="hidden md:block">
-              Site desenvolvido por{" "}
-              <span className="font-semibold text-foreground">
-                Meta Consultoria
-              </span>
-            </p>
-            <button
-              onClick={scrollToTop}
-              className="ml-4 p-2.5 bg-foreground text-background rounded-full hover:bg-primary transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
-              aria-label="Voltar ao topo"
-            >
-              <ChevronUp className="w-5 h-5" />
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="mt-4 md:mt-0 p-2 bg-white text-black rounded-full hover:bg-[#2AD8FF] hover:text-white transition-all"
+            aria-label="Voltar ao topo"
+          >
+            <ChevronUp className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </footer>
