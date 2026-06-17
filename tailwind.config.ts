@@ -20,6 +20,12 @@ const config: Config = {
       },
     },
     extend: {
+      letterSpacing:{
+        wide:'0.02em',
+      },
+      lineHeight:{
+        relaxed:'1.7',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -27,12 +33,12 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "white",
+          foreground: "white",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#2AD8FF",
+          foreground: "white",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -61,8 +67,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        sans: ['Roboto', "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

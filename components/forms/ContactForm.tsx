@@ -40,7 +40,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-12 h-full flex flex-col justify-center transition-all duration-500">
+    <div className="bg-primary/5 border rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] p-8 md:p-12 h-full flex flex-col justify-center transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]">
       {submitStatus === "success" ? (
         <div className="flex flex-col items-center justify-center text-center h-full min-h-[350px] space-y-6 animate-in fade-in zoom-in duration-500">
           <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-2 shadow-inner">
