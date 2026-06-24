@@ -22,7 +22,7 @@ export function Header() {
         {/* Logo */}
 
         {/* Navegação Desktop */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-10 text-12px font-medium">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
