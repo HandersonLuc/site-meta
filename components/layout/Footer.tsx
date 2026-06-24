@@ -17,17 +17,36 @@ export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="bg-black text-white pt-16 pb-8 border-t border-white/10">
+    <footer className="bg-blue-950 text-white pt-16 pb-8 border-t border-white/10">
       <div className="container mx-auto px-4 md:px-8">
         {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
-          {/* Logo + Produtos */}
-          <div className="lg:col-span-4">
+        <div className="flex flex-row items-baseline text-center mb-16 justify-between">
+          <div>
             <img
               src="/logo-meta.svg"
               alt="Meta Consultoria"
               className="h-10 mb-6"
-            />
+            /> 
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Mídias Sociais</h4>
+            <div className="flex gap-4 mb-6">
+            {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+              <Link
+                key={i}
+                href="#"
+                className="p-2 bg-white text-black rounded-full hover:bg-[#2AD8FF] hover:text-white transition-all"
+              >
+                <Icon className="w-4 h-4" />
+              </Link>
+            ))}
+          </div>
+        </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+          {/* Logo + Produtos */}
+          <div className="lg:col-span-4">
+            
             <h4 className="font-semibold mb-4">Produtos</h4>
             <ul className="space-y-2 text-sm">
               {[
@@ -68,20 +87,8 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Mídias Sociais + Conteúdo */}
+          {/* Conteúdo */}
           <div className="lg:col-span-3">
-            <h4 className="font-semibold mb-4">Mídias Sociais</h4>
-            <div className="flex gap-4 mb-6">
-              {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
-                <Link
-                  key={i}
-                  href="#"
-                  className="p-2 bg-white text-black rounded-full hover:bg-[#2AD8FF] hover:text-white transition-all"
-                >
-                  <Icon className="w-4 h-4" />
-                </Link>
-              ))}
-            </div>
             <h4 className="font-semibold mb-2">Conteúdo</h4>
             <p className="text-sm mb-3">
               Cadastre-se e receba nossos conteúdos
