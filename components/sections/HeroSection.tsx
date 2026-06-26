@@ -1,43 +1,44 @@
-import { ArrowDown } from "lucide-react";
-import { BackgroundVideo } from "@/components/common/BackgroundVideo";
+// src/components/sections/HeroSection.tsx
+"use client";
+
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface HeroSectionProps {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   showArrow?: boolean;
-  /** Agora a Hero Section aceita o vídeo e repassa para o fundo! */
-  videoSrc?: string;
 }
 
-export function HeroSection({
-  title,
-  subtitle,
-  showArrow = false,
-  videoSrc,
-}: HeroSectionProps) {
+export function HeroSection({ title, subtitle, showArrow }: HeroSectionProps) {
   return (
-    <section className="relative h-[60vh] min-h-[400px] flex flex-col items-center justify-center overflow-hidden">
-      {/* Nosso novo componente de vídeo! 
-        Se o videoSrc vier vazio, ele mostra o pontilhado amigável.
-        A opacidade foi aumentada um pouco para o vídeo aparecer bem.
-      */}
-      <BackgroundVideo src={videoSrc} opacity="opacity-30" />
-
-      {/* Conteúdo Principal */}
-      <div className="z-10 text-center space-y-4 px-4 relative">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground drop-shadow-sm">
-          {title}
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground font-medium max-w-2xl mx-auto drop-shadow-sm">
-          {subtitle}
-        </p>
+    <section className="relative w-full h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
+      {/* 🔹 Área reservada para o GIF ou vídeo de fundo */}
+      <div className="absolute inset-0 z-0">
+        {/* Substitua esta div pelo seu <video> ou <img> quando tiver o arquivo */}
+        <div className="w-full h-full bg-black/60 flex items-center justify-center">
+          <span className="text-white/70 text-sm">
+            Espaço reservado para GIF ou vídeo de fundo
+          </span>
+        </div>
       </div>
 
-      {showArrow && (
-        <div className="absolute bottom-10 z-10 animate-bounce text-muted-foreground">
-          <ArrowDown className="w-8 h-8" />
-        </div>
-      )}
+      {/* 🔹 Conteúdo principal */}
+      <div className="relative z-10 px-6 max-w-3xl">
+        <h1 className="text-5xl md:text-6xl font-bold mb-6">{title}</h1>
+        {subtitle && (
+          <p className="text-lg md:text-xl font-light mb-8">{subtitle}</p>
+        )}
+        <Link href="/quem-somos">
+          <Button variant="link" className="text-white text-lg">
+            Conheça nossa história →
+          </Button>
+        </Link>
+
+        {showArrow && (
+          <div className="mt-12 animate-bounce text-2xl">↓</div>
+        )}
+      </div>
     </section>
   );
 }
