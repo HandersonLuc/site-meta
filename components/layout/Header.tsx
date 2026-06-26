@@ -92,10 +92,10 @@ export function Header() {
                         <Link href="/servicos/financeiro" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
                           Planejamento Financeiro
                         </Link>
-                        <Link href="/servicos/maquinas" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
+                        <Link href="/servicos/des_maq" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
                           Desenvolvimento de Máquinas
                         </Link>
-                        <Link href="/servicos/energia" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
+                        <Link href="/servicos/constr_energ" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
                           Construção e Energia
                         </Link>
                         <Link href="/servicos/tecnologia" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
