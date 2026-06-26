@@ -3,16 +3,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 import { sendContactEmail } from "@/actions/sendContactEmail";
-import { CheckCircle2 } from "lucide-react";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<
-    "idle" | "success" | "error"
-  >("idle");
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,7 +21,6 @@ export function ContactForm() {
 
     try {
       const result = await sendContactEmail(formData);
-
       if (result.success) {
         setSubmitStatus("success");
         formElement.reset();
@@ -40,117 +36,107 @@ export function ContactForm() {
   }
 
   return (
-    <div className="bg-primary/5 border rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.1)] p-8 md:p-12 h-full flex flex-col justify-center transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]">
-      {submitStatus === "success" ? (
-        <div className="flex flex-col items-center justify-center text-center h-full min-h-[350px] space-y-6 animate-in fade-in zoom-in duration-500">
-          <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-2 shadow-inner">
-            <CheckCircle2 className="w-10 h-10" />
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-3xl font-bold text-foreground">
-              Mensagem enviada!
-            </h3>
-            <p className="text-muted-foreground text-lg max-w-sm mx-auto leading-relaxed">
-              Agradecemos o seu contato. Nossa equipe analisará suas informações
-              e retornará o mais breve possível.
-            </p>
-          </div>
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-full px-8 h-12 mt-4 hover:bg-primary/5"
-            onClick={() => setSubmitStatus("idle")}
+    <div className="bg-white rounded-2xl p-8 shadow-[0_12px_50px_rgba(0,0,0,0.4)] transition-all duration-300">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Nome completo */}
+        <div className="space-y-2">
+          <Label htmlFor="nome" className="font-semibold text-sm text-black">
+            Nome completo <span className="text-red-500">*</span>
+          </Label>
+          <Input
+            id="nome"
+            name="nome"
+            placeholder="Digite seu nome completo"
+            className="h-10 rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
+            required
+            disabled={isSubmitting}
+          />
+        </div>
+
+        {/* Email */}
+        <div className="space-y-2">
+          <Label htmlFor="email" className="font-semibold text-sm text-black">
+            Email <span className="text-red-500">*</span>
+          </Label>
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Digite seu email"
+            className="h-10 rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
+            required
+            disabled={isSubmitting}
+          />
+        </div>
+
+        {/* Telefone */}
+        <div className="space-y-2">
+          <Label htmlFor="telefone" className="font-semibold text-sm text-black">
+            Telefone <span className="text-red-500">*</span>
+          </Label>
+          <Input
+            id="telefone"
+            name="telefone"
+            type="tel"
+            placeholder="+55 11 96123-4567"
+            className="h-10 rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
+            required
+            disabled={isSubmitting}
+          />
+        </div>
+
+        {/* Quanto deseja investir */}
+        <div className="space-y-2">
+          <Label htmlFor="investimento" className="font-semibold text-sm text-black">
+            Quanto deseja investir? <span className="text-red-500">*</span>
+          </Label>
+          <select
+            id="investimento"
+            name="investimento"
+            className="h-10 w-full rounded-md border border-gray-300 bg-white focus-visible:ring-[#2AD8FF]"
+            required
+            disabled={isSubmitting}
           >
-            Enviar nova mensagem
+            <option value="">Selecione uma opção</option>
+            <option value="até 10 mil">Até R$10.000</option>
+            <option value="10-50 mil">Entre R$10.000 e R$50.000</option>
+            <option value="50-100 mil">Entre R$50.000 e R$100.000</option>
+            <option value="acima de 100 mil">Acima de R$100.000</option>
+          </select>
+        </div>
+
+        {/* Mensagem */}
+        <div className="space-y-2">
+          <Label htmlFor="mensagem" className="font-semibold text-sm text-black">
+            Conte mais sobre como podemos te ajudar <span className="text-red-500">*</span>
+          </Label>
+          <Textarea
+            id="mensagem"
+            name="mensagem"
+            placeholder="Digite sua mensagem"
+            className="min-h-[80px] rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
+            required
+            disabled={isSubmitting}
+          />
+        </div>
+
+        {/* Botão */}
+        <div className="pt-4">
+          <Button
+            type="submit"
+            className="bg-[#007BFF] hover:bg-[#0066D1] text-white font-medium rounded-full px-8 py-2 transition-all"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Enviando..." : "Enviar"}
           </Button>
         </div>
-      ) : (
-        <>
-          <h2 className="text-3xl font-bold mb-8 text-foreground">
-            Impulsione o seu negócio
-          </h2>
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6 animate-in fade-in duration-500"
-          >
-            <div className="space-y-2">
-              <Label htmlFor="nome">Nome completo</Label>
-              <Input
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome"
-                className="bg-background h-12 rounded-xl border-border/50 focus-visible:ring-primary/30"
-                required
-                disabled={isSubmitting}
-              />
-            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="email">E-mail profissional</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="seu@email.com"
-                  className="bg-background h-12 rounded-xl border-border/50 focus-visible:ring-primary/30"
-                  required
-                  disabled={isSubmitting}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="telefone">Telefone / WhatsApp</Label>
-                <Input
-                  id="telefone"
-                  name="telefone"
-                  type="tel"
-                  placeholder="(00) 00000-0000"
-                  className="bg-background h-12 rounded-xl border-border/50 focus-visible:ring-primary/30"
-                  disabled={isSubmitting}
-                />
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="empresa">Empresa</Label>
-              <Input
-                id="empresa"
-                name="empresa"
-                placeholder="Nome da sua empresa"
-                className="bg-background h-12 rounded-xl border-border/50 focus-visible:ring-primary/30"
-                disabled={isSubmitting}
-              />
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="mensagem">Como podemos ajudar?</Label>
-              <Textarea
-                id="mensagem"
-                name="mensagem"
-                placeholder="Conte um pouco sobre o seu desafio..."
-                className="bg-background min-h-[150px] rounded-xl resize-none border-border/50 focus-visible:ring-primary/30"
-                required
-                disabled={isSubmitting}
-              />
-            </div>
-
-            {submitStatus === "error" && (
-              <p className="text-destructive text-sm font-medium animate-in slide-in-from-top-1">
-                Ocorreu um erro ao enviar a mensagem. Verifique as configurações
-                de e-mail no servidor.
-              </p>
-            )}
-
-            <Button
-              type="submit"
-              className="w-full h-14 text-lg rounded-xl mt-4 transition-all shadow-md hover:shadow-lg"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
-            </Button>
-          </form>
-        </>
-      )}
+        {submitStatus === "error" && (
+          <p className="text-red-600 text-sm mt-2">
+            Ocorreu um erro ao enviar sua mensagem. Tente novamente.
+          </p>
+        )}
+      </form>
     </div>
   );
 }
