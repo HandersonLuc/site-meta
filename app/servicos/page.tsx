@@ -16,7 +16,7 @@ export default function ListaServicosPage() {
       <HeroSection
         title="Nossos Serviços"
         subtitle="Soluções estratégicas e personalizadas para escalar os resultados do seu negócio."
-        videoSrc="/media/fundo-servicos.mp4"
+        videoSrc=""
       />
 
       {/* 2. LISTA DE SERVIÇOS (LAYOUT Z-PATTERN PREMIUM) */}
