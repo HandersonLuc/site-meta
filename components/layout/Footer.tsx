@@ -17,7 +17,7 @@ export function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <footer className="bg-blue-950 text-white pt-16 pb-8 border-t border-white/10">
+    <footer className="bg-[#090E28] text-white pt-16 pb-8 border-t border-white/10">
       <div className="container mx-auto px-4 md:px-8">
         {/* Top Section */}
         <div className="flex flex-row items-baseline text-center mb-16 justify-between">
