@@ -28,7 +28,7 @@ export function Session({ title, description, href }: SessionProps) {
           </div>
 
           {/* Descrição */}
-          <p className="text-gray-600 leading-relaxed">{description}</p>
+          <p className="leading-relaxed">{description}</p>
         </div>
       </div>
     </section>
