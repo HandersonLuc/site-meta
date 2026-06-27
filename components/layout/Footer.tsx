@@ -50,15 +50,16 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Produtos</h4>
             <ul className="space-y-2 text-sm">
               {[
-                "Gestão e Criação de Negócios",
-                "Otimização de Processos",
-                "Planejamento Financeiro",
-                "Construção e Energia",
-                "Desenvolvimento de Máquinas",
-                "Tecnologia",
+                { name: "Gestão e Criação de Negócios", href: "/servicos/gnc" },
+                { name: "Otimização de Processos", href: "/servicos/ot_pr" },
+                { name: "Planejamento Financeiro", href: "/servicos/plan_fin" },
+                { name: "Construção e Energia", href: "/servicos/constr_energ" },
+                { name: "Desenvolvimento de Máquinas", href: "/servicos/des_maq" },
+                { name: "Tecnologia", href: "/servicos/tecnologia" },
+                { name: "Todos os serviços", href: "/servicos" },
               ].map((item) => (
-                <li key={item} className="hover:text-[#2AD8FF] transition-colors">
-                  <Link href="#">{item}</Link>
+                <li key={item.name} className="hover:text-[#2AD8FF] transition-colors">
+                  <Link href={item.href}>{item.name}</Link>
                 </li>
               ))}
             </ul>

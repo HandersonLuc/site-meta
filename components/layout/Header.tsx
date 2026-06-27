@@ -83,13 +83,13 @@ export function Header() {
 
                     {link.name === "Serviços" && (
                       <>
-                        <Link href="/servicos/gestao" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
+                        <Link href="/servicos/gnc" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
                           Gestão e Criação de Negócios
                         </Link>
-                        <Link href="/servicos/processos" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
+                        <Link href="/servicos/ot_pr" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
                           Otimização de Processos
                         </Link>
-                        <Link href="/servicos/financeiro" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
+                        <Link href="/servicos/plan_fin" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
                           Planejamento Financeiro
                         </Link>
                         <Link href="/servicos/des_maq" className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200">
