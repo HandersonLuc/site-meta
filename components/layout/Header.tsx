@@ -78,7 +78,7 @@ export function Header() {
                         </Link>
 
                         <Link
-                          href="/quem-somos/setta"
+                          href="/quem-somos/SETTA"
                           className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
                         >
                           SETTA
