@@ -1,4 +1,3 @@
-
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 
 
@@ -13,17 +12,17 @@ export default function plan_fin(){
                         <Session
                             title="FP&A"
                             description="Transforme dados financeiros em decisões estratégicas. Estruturamos projeções, análises de desempenho e cenários futuros para orientar o crescimento sustentável da sua empresa com foco em rentabilidade e eficiência."
-                            href=""
+                            href="/servicos/plan_fin/fp-a"
                         />
                         <Session
                             title="Estudo de Viabilidade"
                             description="Descubra se sua ideia é financeiramente viável antes de investir. Analisamos custos, receitas, riscos e retorno esperado para embasar decisões com segurança e maximizar as chances de sucesso do seu projeto."
-                            href=""
+                            href="/servicos/plan_fin/estudo-de-viabilidade"
                         />
                         <Session
                             title="Precificação de Produtos"
                             description="Defina o preço certo para o seu produto e maximize seus resultados. Analisamos custos, mercado, concorrência e percepção de valor para estruturar um preço estratégico que garanta competitividade, rentabilidade e posicionamento adequado."
-                            href=""
+                            href="/servicos/plan_fin/precificacao-de-produtos"
                         />
                         <section>
                             <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>

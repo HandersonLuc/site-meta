@@ -1,4 +1,3 @@
-
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 
 
@@ -15,37 +14,37 @@ export default function ot_pr(){
                 description="
                     Visualize e entenda como sua empresa funciona. Identificamos, organizamos e analisamos cada etapa dos seus processos para eliminar gargalos, padronizar operações e aumentar a eficiência do seu negócio
                     "
-                href=""
+                href="/servicos/ot_pr/mapeamento-de-processos"
             />
             <Session
                 title="Pesquisa de clima"
                 description="
                     Organize sua empresa para crescer com solidez. Reestruturamos funções, fluxos e responsabilidades para aumentar a eficiência operacional, melhorar a comunicação e garantir uma base sólida para a tomada de decisões.                "
-                href=""
+                href="/servicos/ot_pr/pesquisa-de-clima"
             />
             <Session
                 title="Estruturação interna"
                 description="Organize sua empresa para crescer com solidez. Reestruturamos funções, fluxos e responsabilidades para aumentar a eficiência operacional, melhorar a comunicação e garantir uma base sólida para a tomada de decisões."
-                href=""
+                href="/servicos/ot_pr/estruturacao-interna"
             />
             <Session
                 title="Gestão de Estoque"
                 description="
                     Gerencie os recursos necessários para o funcionamento de uma organização. Compreendemos o fluxo de produtos no seu estoque e como minimizar situações que possam deixar de atender às demandas da organização.
                 "
-                href=""
+                href="/servicos/ot_pr/gestao-de-estoque"
             />
             <Session
                 title="Estudo de Tempo"
                 description="
                 Solucione desafios na organização física do espaço de trabalho. Buscamos definir, ou redefinir, o arranjo físico de uma instalação, tendo por objetivo ter um espaço mais eficiente.
                 "                
-                href=""
+                href="/servicos/ot_pr/estudo-de-tempo"
             />
             <Session
                 title="Simulação de Processos"
                 description="Reproduza virtualmente o funcionamento de atividades, fluxos de trabalho ou operações internas de uma empresa."
-                href=""
+                href="/servicos/ot_pr/simulacao-de-processos"
             />
             <section>
                 <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>
