@@ -1,4 +1,3 @@
-
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 
 
@@ -12,20 +11,18 @@ export default function ges_neg(){
             </section>
             <Session
                 title="Análise de Mercado"
-                description="
-                    Entenda seu público e valide ideias com base em dados. Identificamos oportunidades, mapeamos concorrentes e fornecemos insights estratégicos para decisões mais assertivas no seu nicho de atuação."
-                href=""
+                description="Entenda seu público e valide ideias com base em dados. Identificamos oportunidades, mapeamos concorrentes e fornecemos insights estratégicos para decisões mais assertivas no seu nicho de atuação."
+                href="/servicos/gnc/analise-de-mercado"
             />
             <Session
                 title="Posicionamento de Marca"
-                description="
-                Fortaleça sua presença online e conquiste relevância no ambiente digital. Definimos estratégias personalizadas para destacar sua marca, atrair o público certo e gerar autoridade no seu mercado."                
-                href=""
+                description="Fortaleça sua presença online e conquiste relevância no ambiente digital. Definimos estratégias personalizadas para destacar sua marca, atrair o público certo e gerar autoridade no seu mercado."                
+                href="/servicos/gnc/posicionamento-de-marca"
             />
             <Session
                 title="Planejamento Estratégico"
                 description="Defina o rumo do seu negócio com clareza e foco. Analisamos o ambiente interno e externo da sua organização para identificar forças, fraquezas e oportunidades, traçando metas e ações alinhadas à sua visão de futuro."
-                href=""
+                href="/servicos/gnc/planejamento-estrategico"
             />
             <section>
                 <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>
