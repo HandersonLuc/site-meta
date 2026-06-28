@@ -1,4 +1,3 @@
-import React from "react";
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 
 
@@ -16,9 +15,9 @@ export default function CoordTec(){
                 href=""
             />
             <Session
-            title="Desenvolvimento de Aplicativos"
-            description="Criamos aplicativos personalizados para Android e iOS, focados em usabilidade, performance e inovação. Nosso processo envolve análise de requisitos, design intuitivo e programação robusta, garantindo soluções digitais que aumentam a eficiência, melhoram a experiência do usuário e fortalecem a presença da sua marca no mercado."
-            href=""
+                title="Desenvolvimento de Aplicativos"
+                description="Criamos aplicativos personalizados para Android e iOS, focados em usabilidade, performance e inovação. Nosso processo envolve análise de requisitos, design intuitivo e programação robusta, garantindo soluções digitais que aumentam a eficiência, melhoram a experiência do usuário e fortalecem a presença da sua marca no mercado."
+                href=""
             />
             <Session
                 title="Automação de Processos"
@@ -26,9 +25,9 @@ export default function CoordTec(){
                 href=""
             />
             <Session
-            title="Otimização de Sites (SEO)"
-            description="Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados."
-            href=""
+                title="Otimização de Sites (SEO)"
+                description="Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados."
+                href=""
             />
             <section>
                 <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>
