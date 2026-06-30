@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
-// Importamos a constante de serviços
-import { services } from "@/constants/services";
+// Importamos a constante de coordenações
+import { coordinations } from "@/constants/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.sitedocliente.com.br";
@@ -15,14 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
   );
 
-  // 2. Mapeia as rotas dinâmicas de serviços automaticamente
-  const dynamicServiceRoutes = services.map((service) => ({
-    url: `${baseUrl}/servicos/${service.slug}`,
+  // 2. Mapeia as rotas dinâmicas de coordenações automaticamente
+  const dynamicCoordinationRoutes = coordinations.map((coordination) => ({
+    url: `${baseUrl}/servicos/${coordination.slug}`,
     lastModified: new Date().toISOString().split("T")[0],
     changeFrequency: "monthly" as const,
     priority: 0.9,
   }));
 
   // Retorna tudo unificado para o Googlebot
-  return [...staticRoutes, ...dynamicServiceRoutes];
+  return [...staticRoutes, ...dynamicCoordinationRoutes];
 }
