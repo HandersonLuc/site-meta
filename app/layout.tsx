@@ -23,8 +23,8 @@ const SITE_URL = "https://www.sitedocliente.com.br";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    template: "%s | Meta Consultoria",
-    default: "Meta Consultoria | Consultoria Especializada",
+    template: "%s",
+    default: "Meta Consultoria | Torne-se o protagonista do seu futuro",
   },
   description:
     "Frase de impacto principal que descreve o negócio do cliente. Ideal ter entre 150 e 160 caracteres para não ser cortada no Google.",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: SITE_URL,
-    title: "Meta Consultoria | Consultoria Especializada",
+    title: "Meta Consultoria | Consultoria",
     description:
       "Frase de impacto principal que descreve o negócio do cliente.",
     siteName: "Meta Consultoria",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meta Consultoria | Consultoria Especializada",
+    title: "Meta Consultoria | ",
     description:
       "Frase de impacto principal que descreve o negócio do cliente.",
     images: ["/images/og-image.jpg"],
