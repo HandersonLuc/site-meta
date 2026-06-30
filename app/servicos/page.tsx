@@ -1,6 +1,11 @@
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 import Link from "next/link";
 
+export const metadata = {
+  title: "Serviços | Conheça as Soluções da Meta Consultoria",
+  description: "Conheça as Soluções da Meta Consultoria",
+};
+
 export default function todos_serv(){
     return(
         <div className="flex flex-col min-h-screen relative overflow-hidden">
