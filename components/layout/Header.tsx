@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
@@ -33,8 +34,17 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-black border-b border-border/40 backdrop-blur-md">
-      <div className="container mx-auto flex h-20 items-center justify-center px-6">
-        <nav className="hidden md:flex items-center gap-10 text-12px font-medium relative">
+      <div className="container mx-auto flex h-20 items-center justify-between px-6">
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/media/midias site/Logo-Meta-Consultoria.webp"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="object-contain"
+          />
+        </Link>
+        <nav className="hidden md:flex flex-1 justify-center items-center gap-10 text-12px font-medium relative">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             const isDropdown =
