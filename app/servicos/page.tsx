@@ -1,5 +1,6 @@
 import { coordinations } from "@/constants/services";
 import { Session } from "@/components/ui/section";
+import {AreaAction} from "@/components/sections/AreaAction";
 
 export const metadata = {
   title: "Serviços | Conheça as Soluções da Meta Consultoria",
@@ -26,7 +27,7 @@ export default function TodosServ() {
           <h2 className="text-3xl font-bold mb-8 border-b-2 border-[#007BFF] inline-block">
             Áreas de atuação
           </h2>
-
+          <AreaAction currentCoordSlug="" />
           {/* 🔹 Renderiza cada coordenação com seus serviços */}
           {coordinations.map((coord) => (
             <div key={coord.slug} className="mb-16 text-start">

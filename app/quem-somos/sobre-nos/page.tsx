@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AreasSection } from "@/components/sections/coord_sections";
+import { AreasSection } from "@/components/sections/CoordSections";
 
 
 type RevealProps = {

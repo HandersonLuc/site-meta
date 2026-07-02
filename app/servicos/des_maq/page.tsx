@@ -1,5 +1,7 @@
 import React from "react";
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
+import { OtherServices} from "@/components/sections/OtherServices";
+
 
 
 export default function Des_maq(){
@@ -40,6 +42,7 @@ export default function Des_maq(){
                     Aqui fica o espaço para outros serviços
                 </p>
             </section>
+            <OtherServices currentCoordSlug="des_maq" />
         </div>
     )
 }

@@ -1,5 +1,6 @@
+import { OtherServices } from "@/components/sections/OtherServices";
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
-
+import React from "react";
 
 export default function ot_pr(){
     return(
@@ -51,6 +52,7 @@ export default function ot_pr(){
                     Aqui fica o espaço para outros serviços
                 </p>
             </section>
+            <OtherServices currentCoordSlug="ot_pr" />
         </div>
     )
 }

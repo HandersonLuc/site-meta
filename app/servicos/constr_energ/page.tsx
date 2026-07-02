@@ -1,6 +1,6 @@
 import React from "react";
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
-
+import {OtherServices} from "@/components/sections/OtherServices";
 
 export default function Const_ener(){
     return(
@@ -50,6 +50,7 @@ export default function Const_ener(){
                     Aqui fica o espaço para outros serviços
                 </p>
             </section>
+            <OtherServices currentCoordSlug="constr_energ" />
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
-
+import { OtherServices} from "@/components/sections/OtherServices";
 
 export default function CoordTec(){
     return(
@@ -34,6 +34,7 @@ export default function CoordTec(){
                     Aqui fica o espaço para outros serviços
                 </p>
             </section>
+            <OtherServices currentCoordSlug="tecnologia" />
         </div>
     )
 }
