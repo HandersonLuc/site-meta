@@ -23,7 +23,7 @@ export function GoogleMapEmbed({ src }: GoogleMapEmbedProps) {
   }
 
   return (
-    <div className="w-full h-64 rounded-3xl overflow-hidden border border-border bg-muted">
+    <div className="w-full h-[400px] rounded-2xl overflow-hidden shadow-lg">
       <iframe
         src={src}
         className="w-full h-full border-0"
@@ -34,3 +34,4 @@ export function GoogleMapEmbed({ src }: GoogleMapEmbedProps) {
     </div>
   );
 }
+
