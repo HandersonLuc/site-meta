@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import { ChevronUp } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const exploreLinks = [
@@ -22,11 +23,15 @@ export function Footer() {
         {/* Top Section */}
         <div className="flex flex-row items-baseline text-center mb-16 justify-between">
           <div>
-            <img
-              src="/logo-meta.svg"
-              alt="Meta Consultoria"
-              className="h-10 mb-6"
-            /> 
+          <Link href="/" className="flex-shrink-0">
+            <Image
+            src="/media/midias site/Logo-Meta-Consultoria.webp"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="object-contain"
+          />
+        </Link>
           </div>
           <div>
             <h4 className="font-semibold mb-4">Mídias Sociais</h4>
@@ -97,7 +102,7 @@ export function Footer() {
             <input
               type="email"
               placeholder="Digite o seu e-mail"
-              className="w-full rounded-md px-3 py-2 text-black text-sm focus:outline-none"
+              className="w-full rounded-md px-3 py-2 text-sm focus:outline-none bg-black/80"
             />
           </div>
         </div>
