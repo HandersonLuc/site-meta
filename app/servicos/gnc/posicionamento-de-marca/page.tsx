@@ -18,7 +18,10 @@ export default function PosicionamentoDeMarcaPage() {
           "A Meta Consultoria oferece soluções estratégicas e personalizadas...",
         ]}
       />
-
+      <DefinitionSection
+        title="O que é Posicionamento de Marca?"
+        paragraphs={["O Posicionamento Digital é o conjunto de ações e estratégias que definem como sua empresa se apresenta, comunica e é lembrada pelo público na internet. Mais do que estar nas redes sociais, é sobre construir uma presença digital consistente, que reflita seus valores e desperte confiança nos clientes. Um posicionamento sólido aumenta a autoridade da marca, melhora a percepção de valor e gera mais oportunidades de negócio de forma orgânica e sustentável."]}
+      />
       <ServiceSteps
         title="Como funciona nosso serviço?"
         intro="Na Meta Consultoria, o processo é estruturado e baseado em dados..."
