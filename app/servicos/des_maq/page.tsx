@@ -5,7 +5,7 @@ import { Session } from "@/components/ui/section"; // novo componente reutilizá
 export default function Des_maq(){
     return(
         <div className="flex flex-col min-h-screen relative overflow-hidden">
-            <section className="bg-black text-white py-16 text-start">
+            <section className="bg-[#090E28] text-white py-16 text-start">
                 <div className="container mx-auto px-4">
                 <h1 className="text-5xl font-bold">Desenvolvimento de Máquinas</h1>
                 </div>
