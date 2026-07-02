@@ -30,7 +30,6 @@ export default function TodosServ() {
           {/* 🔹 Renderiza cada coordenação com seus serviços */}
           {coordinations.map((coord) => (
             <div key={coord.slug} className="mb-16 text-start">
-              <h3 className="text-2xl font-bold mb-6">{coord.name}</h3>
               <div className="space-y-6">
                 {coord.services.map((service) => (
                   <Session
