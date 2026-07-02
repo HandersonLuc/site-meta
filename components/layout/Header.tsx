@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef } from "react";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { ChevronDown } from "lucide-react";
 
 export const navLinks = [
   { name: "Home page", href: "/" },
@@ -59,18 +60,29 @@ export function Header() {
               >
                 <Link
                   href={link.href}
-                  className={`relative py-1 transition-colors duration-300 ${
+                  className={`relative py-1 flex items-center gap-1 transition-colors duration-300 ${
                     isActive
                       ? "text-[#2AD8FF]"
                       : "text-white hover:text-[#2AD8FF]"
                   }`}
                 >
-                  {link.name}
+                  {/* 🔹 Texto do link */}
+                  <span>{link.name}</span>
 
+                  {/* 🔹 Setinha ao lado do texto */}
+                  {isDropdown && (
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        openMenu === link.name ? "rotate-180 text-[#2AD8FF]" : "text-white"
+                      }`}
+                    />
+                  )}
+
+                  {/* 🔹 Linha azul sob o link ativo */}
                   {isActive && (
                     <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#2AD8FF] rounded-full" />
                   )}
-                </Link>
+                  </Link>
 
                 {isDropdown && openMenu === link.name && (
                   <div
