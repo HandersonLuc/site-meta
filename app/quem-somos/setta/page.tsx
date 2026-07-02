@@ -45,7 +45,6 @@ export default function ProcessoSeletivoSettaPage() {
   return (
     <div className="min-h-screen bg-[#F4F7FF] text-[#131936]">
       <section className="relative overflow-hidden bg-[#131936] text-white">
-        <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#2AD8FF] to-[#0067FF]" />
         <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-[#22C0FF]/20 blur-3xl" />
         <div className="absolute -right-24 bottom-0 h-96 w-96 rounded-full bg-[#0067FF]/20 blur-3xl" />
 

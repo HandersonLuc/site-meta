@@ -3,6 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { AreasSection } from "@/components/sections/coord_sections";
+
 
 type RevealProps = {
   children: React.ReactNode;
@@ -126,6 +128,10 @@ const areas = [
     title: "Tecnologia",
     image: "/quem-somos/tecnologia.jpg",
   },
+  {
+    title: "Planejamento Financeiro",
+    image: "/quem-somos/planejamento-financeiro.jpg",
+  },
 ];
 
 const stats = [
@@ -177,7 +183,6 @@ export default function SobreNos() {
   return (
     <div className="min-h-screen bg-[#F4F7FF] text-[#131936]">
       <section className="relative overflow-hidden bg-[#131936] text-white">
-        <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#2AD8FF] to-[#0067FF]" />
         <div className="absolute -right-24 top-10 h-64 w-64 rounded-full bg-[#22C0FF]/10 blur-3xl" />
         <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-[#0067FF]/10 blur-3xl" />
 
@@ -263,26 +268,7 @@ export default function SobreNos() {
               </h2>
             </Reveal>
 
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-              {areas.map((area, index) => (
-                <Reveal key={area.title} direction="right" delay={index * 100}>
-                  <div className="group relative h-[220px] overflow-hidden rounded-[1.75rem]">
-                    <Image
-                      src={area.image}
-                      alt={area.title}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-[#131936]/60 transition group-hover:bg-[#131936]/50" />
-                    <div className="absolute inset-x-0 bottom-0 p-5">
-                      <h3 className="text-xl font-bold leading-tight text-white">
-                        {area.title}
-                      </h3>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
+            <AreasSection />
           </div>
         </section>
 
