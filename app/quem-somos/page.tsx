@@ -128,6 +128,10 @@ const areas = [
     image: "/quem-somos/criacao-produtos.jpg",
   },
   {
+    title: "Planejamento Financeiro",
+    image: "/quem-somos/planejamento-financeiro.jpg"
+  },
+  {
     title: "Tecnologia",
     image: "/quem-somos/tecnologia.jpg",
   },
