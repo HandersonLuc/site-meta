@@ -1,16 +1,72 @@
+import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
+import { ServiceHeader } from "@/components/sections/services/HeroSection";
+import { ServiceIntro } from "@/components/sections/services/IntroSection";
+import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
+import { RelatedServices } from "@/components/sections/services/RelatedServices";
+
 export default function ProjetoArquitetonicoPage() {
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden">
-      <section className="bg-black text-white py-16 text-start">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold">Projeto Arquitetônico</h1>
-        </div>
-      </section>
-      <section className="container mx-auto px-4 py-16">
-        <p className="text-gray-600 leading-relaxed">
-          Estrutura base da subpágina. O conteúdo textual e midiático será inserido posteriormente.
-        </p>
-      </section>
-    </div>
+    <>
+      <ServiceHeader
+        title="Projeto Arquitetônico"
+        description="Representação técnica e criativa do seu projeto."
+      />
+      <ServiceIntro
+        title="Projeto Arquitetônico: planejamento inteligente, economia e estética alinhados"
+        paragraphs={[
+            "Construir sem planejamento é um risco alto.",
+            "A Meta Consultoria, empresa júnior de Engenharia e Gestão de Negócios da UFF, desenvolve Projetos Arquitetônicos estratégicos que unem funcionalidade, estética e eficiência para garantir execução segura, econômica e bem planejada.",
+            "Cada projeto é pensado para otimizar espaços, reduzir custos e eliminar retrabalhos, apresentando um modelo 3D realista que permite visualizar o resultado final antes mesmo de iniciar a obra."
+          ]}
+      />
+      <DefinitionSection
+        title="O que é um Projeto Arquitetônico?"
+        paragraphs={[
+            "O Projeto Arquitetônico é o documento técnico que define o planejamento completo de uma edificação, desde a distribuição de ambientes até a organização estética e funcional dos espaços.",
+            "Ele serve como base para a execução da obra, o cálculo estrutural, as instalações elétricas e hidrossanitárias, além de ser essencial para aprovação em órgãos públicos.",
+            "Na Meta Consultoria, criamos projetos personalizados e detalhados, com o equilíbrio ideal entre beleza, conforto, eficiência e viabilidade construtiva."
+          ]}
+      />
+      <ServiceSteps
+        title="Como a Meta Consultoria atua"
+        intro="Nosso processo é técnico, detalhado e colaborativo, garantindo segurança, clareza e excelência em cada etapa:"
+        steps={[
+            {
+              "number": 1,
+              "description": "Entendimento das preferências, usos e restrições do cliente."
+            },
+            {
+              "number": 2,
+              "description": "Definição de fluxos, dimensões e aproveitamento inteligente dos espaços."
+            },
+            {
+              "number": 3,
+              "description": "Criação das plantas, cortes e elevações, além de maquete eletrônica realista."
+            },
+            {
+              "number": 4,
+              "description": "Integração do projeto arquitetônico com elétrica, hidráulica e estrutural."
+            },
+            {
+              "number": 5,
+              "description": "Envio completo dos arquivos e acompanhamento em eventuais ajustes para aprovação."
+            }
+          ]}
+      />
+      <RelatedServices
+        services={[
+          {
+            title: "Instalações Hidrossanitárias",
+            description: "Desenvolvemos soluções completas para água, esgoto e drenagem, priorizando dimensionamento correto, eficiência, sustentabilidade, segurança e durabilidade.",
+            href: "/servicos/constr_energ/instalacoes-hidrossanitarias",
+          },
+          {
+            title: "Instalações Elétricas",
+            description: "Desenvolvemos projetos elétricos completos, garantindo segurança, conformidade com normas técnicas, eficiência energética, confiabilidade e economia.",
+            href: "/servicos/constr_energ/instalacoes-eletricas",
+          },
+        ]}
+      />
+    </>
   );
 }
