@@ -3,18 +3,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
 import { useState, useRef } from "react";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { ChevronDown } from "lucide-react";
 
 export const navLinks = [
   { name: "Home page", href: "/" },
-  { name: "Quem somos", href: "/quem-somos" },
+  { name: "Quem somos", href: "/quem-somos/sobre-nos" },
   { name: "Serviços", href: "/servicos" },
   { name: "Parcerias", href: "" },
   { name: "Insights", href: "" },
   { name: "Contato", href: "/contato" },
 ];
+
+function HeaderNavItem({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  if (!href) {
+    return <span className={className}>{children}</span>;
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 export function Header() {
   const pathname = usePathname();
@@ -58,7 +79,7 @@ export function Header() {
                 onMouseEnter={() => handleMouseEnter(link.name)}
                 onMouseLeave={handleMouseLeave}
               >
-                <Link
+                <HeaderNavItem
                   href={link.href}
                   className={`relative py-1 flex items-center gap-1 transition-colors duration-300 ${
                     isActive
@@ -82,7 +103,7 @@ export function Header() {
                   {isActive && (
                     <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#2AD8FF] rounded-full" />
                   )}
-                  </Link>
+                  </HeaderNavItem>
 
                 {isDropdown && openMenu === link.name && (
                   <div

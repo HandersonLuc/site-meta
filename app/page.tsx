@@ -39,7 +39,7 @@ export default function Home() {
         {/* Botão "Quem somos" */}
         <div className="mb-8">
           <a
-            href="/quem-somos"
+            href="/quem-somos/sobre-nos"
             className="inline-block bg-[#2AD8FF] text-white text-sm font-medium px-6 py-2 rounded-full hover:bg-[#1CBFE0] transition-colors"
           >
             Quem somos
@@ -96,27 +96,27 @@ export default function Home() {
         <Session
           title="Gestão de negócios"
           description="Soluções estratégicas para impulsionar o crescimento e a eficiência da sua empresa."
-          href="/servicos/gestao"
+          href="/servicos/gnc"
         />
         <Session
           title="Otimização de processos"
           description="Melhore a performance operacional com metodologias de eficiência comprovadas."
-          href="/servicos/processos"
+          href="/servicos/ot_pr"
         />
         <Session
           title="Planejamento financeiro"
           description="Planeje o futuro da sua empresa com segurança e inteligência financeira."
-          href="/servicos/financeiro"
+          href="/servicos/plan_fin"
         />
         <Session
           title="Construção e energia"
           description="Projetos sustentáveis e eficientes para o setor de construção e energia."
-          href="/servicos/energia"
+          href="/servicos/constr_energ"
         />
         <Session
           title="Desenvolvimento de máquinas"
           description="Inovação e tecnologia aplicadas ao desenvolvimento industrial."
-          href="/servicos/maquinas"
+          href="/servicos/des_maq"
         />
         <Session
           title="Tecnologia"
@@ -134,9 +134,11 @@ export default function Home() {
             <img src="/mercedes.png" alt="Mercedes" className="h-24 w-auto" />
             <img src="/cocacola.png" alt="Coca-Cola" className="h-24 w-auto" />
           </div>
-          <Button variant="link" className="text-[#2AD8FF] hover:underline">
-            Conheça nossos serviços →
-          </Button>
+          <Link href="/servicos">
+            <Button variant="link" className="text-[#2AD8FF] hover:underline">
+              Conheça nossos serviços →
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -162,12 +164,12 @@ export default function Home() {
             dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da
             marca e a geração constante de leads qualificados.
           </p>
-          <a
-            href="/servicos/seo"
+          <Link
+            href="/servicos/tecnologia/direcionamento_estrategico"
             className="inline-block bg-gradient-to-r from-[#2AD8FF] to-[#007BFF] text-white font-medium px-6 py-2 rounded-full hover:opacity-90 transition-all"
           >
             Saiba mais
-          </a>
+          </Link>
         </div>
       </div>
     </div>

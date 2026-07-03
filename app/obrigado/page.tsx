@@ -39,7 +39,7 @@ export default function ObrigadoPage() {
           </Link>
 
           {/* Coloque o link real das redes sociais do cliente no href abaixo */}
-          <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+          <Link href="https://instagram.com/metaconsultoria" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
             <Button variant="outline" size="lg" className="rounded-full h-14 px-8 text-lg w-full sm:w-auto group/social border-border hover:bg-muted transition-colors">
               <FaInstagram className="w-5 h-5 mr-2 text-muted-foreground group-hover/social:text-primary transition-colors" />
               Acompanhe nosso trabalho

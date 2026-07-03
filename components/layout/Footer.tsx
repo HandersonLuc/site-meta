@@ -8,7 +8,7 @@ import Image from "next/image";
 export function Footer() {
   const exploreLinks = [
   { name: "Home page", href: "/" },
-  { name: "Quem somos", href: "/quem-somos" },
+  { name: "Quem somos", href: "/quem-somos/sobre-nos" },
   { name: "Serviços", href: "/servicos" },
   { name: "Parcerias", href: "" },
   { name: "Insights", href: "" },
@@ -36,10 +36,17 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Mídias Sociais</h4>
             <div className="flex gap-4 mb-6">
-            {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
+            {[
+              { label: "Facebook", href: "https://www.facebook.com/metaconsultoria", icon: FaFacebookF },
+              { label: "Instagram", href: "https://www.instagram.com/metaconsultoria", icon: FaInstagram },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/metaconsultoria", icon: FaLinkedinIn },
+            ].map(({ label, href, icon: Icon }) => (
               <Link
-                key={i}
-                href="#"
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
                 className="p-2 bg-white text-black rounded-full hover:bg-[#2AD8FF] hover:text-white transition-all"
               >
                 <Icon className="w-4 h-4" />
@@ -76,7 +83,11 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
               {exploreLinks.map((link) => (
                 <li key={link.name} className="hover:text-[#2AD8FF] transition-colors">
-                  <Link href={link.href}>{link.name}</Link>
+                  {link.href ? (
+                    <Link href={link.href}>{link.name}</Link>
+                  ) : (
+                    <span>{link.name}</span>
+                  )}
                 </li>
               ))}
             </ul>

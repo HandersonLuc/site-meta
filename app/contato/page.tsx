@@ -35,7 +35,7 @@ export default function ContatoPage() {
                 Conheça nossa <span className="font-semibold">história</span>
               </p>
               <Link
-                href="/quem-somos"
+                href="/quem-somos/sobre-nos"
                 className="inline-block bg-[#2AD8FF] text-white font-medium px-6 py-2 rounded-full hover:opacity-90 transition-all"
               >
                 Quem somos →
