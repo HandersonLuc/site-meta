@@ -309,7 +309,7 @@ export default function PoliticaPrivacidadePage() {
 
               <div className="pt-4">
                 <Link
-                  href="/quem-somos"
+                  href="/quem-somos/sobre-nos"
                   className="inline-flex text-sm font-semibold text-[#0067FF] transition hover:opacity-80"
                 >
                   ← Voltar para Quem Somos

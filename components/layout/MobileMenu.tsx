@@ -69,8 +69,8 @@ export function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
               </button>
               
               <SheetClose asChild>
-                <Button size="lg" className="w-full rounded-xl text-lg h-14 shadow-md">
-                  Diagnóstico Gratuito
+                <Button asChild size="lg" className="w-full rounded-xl text-lg h-14 shadow-md">
+                  <Link href="/contato">Diagnóstico Gratuito</Link>
                 </Button>
               </SheetClose>
             </div>

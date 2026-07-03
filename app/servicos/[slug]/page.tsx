@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { CheckCircle2, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { coordinations } from "@/constants/services";
@@ -67,8 +68,8 @@ export default function ServicoDetalhePage({ params }: ServicePageProps) {
               {service.introDescription}
             </p>
             <div className="pt-4">
-              <Button size="lg" className="rounded-full px-8 h-14 text-lg">
-                Diagnóstico Gratuito
+              <Button asChild size="lg" className="rounded-full px-8 h-14 text-lg">
+                <Link href="/contato">Diagnóstico Gratuito</Link>
               </Button>
             </div>
           </div>

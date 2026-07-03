@@ -29,7 +29,7 @@ export function HeroSection({ title, subtitle, showArrow }: HeroSectionProps) {
         {subtitle && (
           <p className="text-lg md:text-xl font-light mb-8">{subtitle}</p>
         )}
-        <Link href="/quem-somos">
+        <Link href="/quem-somos/sobre-nos">
           <Button variant="link" className="text-white text-lg">
             Conheça nossa história →
           </Button>

@@ -114,26 +114,32 @@ const areas = [
   {
     title: "Gestão de Negócios",
     image: "/quem-somos/gestao-negocios.jpg",
+    href: "/servicos/gnc",
   },
   {
     title: "Otimização de Processos",
     image: "/quem-somos/otimizacao-processos.jpg",
+    href: "/servicos/ot_pr",
   },
   {
     title: "Construção e Energia",
     image: "/quem-somos/construcao-energia.jpg",
+    href: "/servicos/constr_energ",
   },
   {
     title: "Criação de Produtos",
     image: "/quem-somos/criacao-produtos.jpg",
+    href: "/servicos/des_maq",
   },
   {
     title: "Planejamento Financeiro",
-    image: "/quem-somos/planejamento-financeiro.jpg"
+    image: "/quem-somos/planejamento-financeiro.jpg",
+    href: "/servicos/plan_fin",
   },
   {
     title: "Tecnologia",
     image: "/quem-somos/tecnologia.jpg",
+    href: "/servicos/tecnologia",
   },
 ];
 
@@ -263,7 +269,7 @@ export default function QuemSomosPage() {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {areas.map((area, index) => (
               <Reveal key={area.title} direction="right" delay={index * 100}>
-                <div className="group relative h-[230px] overflow-hidden rounded-3xl border border-border shadow-sm">
+                <Link href={area.href} className="group relative block h-[230px] overflow-hidden rounded-3xl border border-border shadow-sm">
                   <Image
                     src={area.image}
                     alt={area.title}
@@ -278,7 +284,7 @@ export default function QuemSomosPage() {
                       {area.title}
                     </h3>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -467,7 +473,7 @@ export default function QuemSomosPage() {
       </section>
 
       {/* 7. EMPRESAS PARCEIRAS */}
-      <section className="bg-muted/40 py-24">
+      <section id="parcerias" className="bg-muted/40 py-24">
         <div className="container mx-auto max-w-6xl px-4 md:px-8">
           <Reveal>
             <div className="text-center">

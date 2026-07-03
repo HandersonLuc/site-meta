@@ -27,7 +27,7 @@ export default function CoordTec(){
             <Session
                 title="Otimização de Sites (SEO)"
                 description="Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados."
-                href="/servicos/tecnologia/otimizacao-de-sites-seo"
+                href="/servicos/tecnologia/direcionamento_estrategico"
             />
             <section>
                 <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>
