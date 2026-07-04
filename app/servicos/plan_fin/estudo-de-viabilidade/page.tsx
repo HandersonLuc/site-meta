@@ -1,16 +1,93 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
+import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
+import { ServiceHeader } from "@/components/sections/services/HeroSection";
+import { ServiceIntro } from "@/components/sections/services/IntroSection";
+import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
+import { RelatedServices } from "@/components/sections/services/RelatedServices";
+
 export default function EstudoDeViabilidadePage() {
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden">
-      <section className="bg-black text-white py-16 text-start">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold">Estudo de Viabilidade</h1>
+    <>
+      <ServiceHeader
+        title="Plano de Viabilidade Econômica"
+        description="Avalie se o negócio tem potencial para gerar retorno financeiro suficiente para sua execução."
+      />
+      <ServiceIntro
+        title="Plano de Viabilidade Econômica: transforme sua ideia em um investimento seguro"
+        paragraphs={[
+            "Você tem uma boa ideia, mas ainda não sabe se ela é realmente lucrativa?",
+            "A Meta Consultoria, empresa júnior de Engenharia e Gestão de Negócios da UFF, desenvolve o Plano de Viabilidade Econômica para validar o potencial financeiro de projetos e negócios, ajudando empreendedores e empresas a tomar decisões seguras e estratégicas.",
+            "Nosso objetivo é traduzir ideias em números reais, analisando custos, receitas, riscos e rentabilidade, para garantir que cada investimento tenha sustentabilidade e retorno comprovado."
+          ]}
+      />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="plan_fin"
+            servicoInicial="Estudo de Viabilidade"
+          />
         </div>
       </section>
-      <section className="container mx-auto px-4 py-16">
-        <p className="text-gray-600 leading-relaxed">
-          Estrutura base da subpágina. O conteúdo textual e midiático será inserido posteriormente.
-        </p>
+      <DefinitionSection
+        title="O que é um Plano de Viabilidade Econômica?"
+        paragraphs={[
+            "O Plano de Viabilidade Econômica é uma análise detalhada que avalia se uma ideia de negócio, projeto ou investimento é financeiramente viável.",
+            "Ele considera todas as variáveis econômicas, desde o investimento inicial até as despesas operacionais e projeções de receita, para determinar se o retorno compensa o risco.",
+            "Mais do que um estudo financeiro, o PVE é uma ferramenta estratégica para empreendedores, gestores e investidores que buscam clareza, previsibilidade e segurança antes de executar um projeto."
+          ]}
+      />
+      <ServiceSteps
+        title="Como a Meta Consultoria atua ?"
+        intro="A Meta estrutura o Plano de Viabilidade Econômica em etapas estratégicas que combinam análise técnica, engenharia de custos e gestão financeira:"
+        steps={[
+            {
+              "number": 1,
+              "description": "Levantamento de dados sobre o projeto, mercado e objetivos do cliente."
+            },
+            {
+              "number": 2,
+              "description": "Cálculo detalhado do investimento inicial, custos fixos e variáveis."
+            },
+            {
+              "number": 3,
+              "description": "Projeções pessimista, realista e otimista para decisões mais seguras."
+            },
+            {
+              "number": 4,
+              "description": "Cálculo de métricas como VPL, TIR, Índice de Lucratividade e Payback."
+            },
+            {
+              "number": 5,
+              "description": "Avaliação dos impactos de mudanças em custos e receitas."
+            },
+            {
+              "number": 6,
+              "description": "Entrega de insights e direcionamentos para tomada de decisão."
+            }
+          ]}
+      />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="plan_fin"
+            servicoInicial="Estudo de Viabilidade"
+          />
+        </div>
       </section>
-    </div>
+      <RelatedServices
+        services={[
+            {
+              "title": "Precificação de Produtos",
+              "description": "Defina o preço certo para o seu produto e maximize seus resultados. Analisamos custos, mercado, concorrência e percepção de valor para estruturar um preço estratégico que garanta competitividade, rentabilidade e posicionamento adequado.",
+              "href": "/servicos/plan_fin/precificacao-de-produtos"
+            },
+            {
+              "title": "FP&A",
+              "description": "Transforme dados financeiros em decisões estratégicas. Estruturamos projeções, análises de desempenho e cenários futuros para orientar o crescimento sustentável da sua empresa com foco em rentabilidade e eficiência.",
+              "href": "/servicos/plan_fin/fp-a"
+            }
+          ]}
+      />
+    </>
   );
 }
