@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function EstruturacaoInternaPage() {
             "Com metodologia baseada em gestão organizacional e análise de processos, a Meta constrói uma estrutura sólida, eficiente e preparada para o crescimento."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="ot_pr"
+            servicoInicial="Estruturação Interna"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é Estruturação Interna?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function EstruturacaoInternaPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="ot_pr"
+            servicoInicial="Estruturação Interna"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

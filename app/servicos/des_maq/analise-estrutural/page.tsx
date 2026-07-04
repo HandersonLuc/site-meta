@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function AnaliseEstruturalPage() {
             "Nosso objetivo é identificar pontos críticos, reduzir riscos e garantir projetos mais seguros, eficientes e econômicos."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="des_maq"
+            servicoInicial="Análise Estrutural"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é a Análise Estrutural?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function AnaliseEstruturalPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="des_maq"
+            servicoInicial="Análise Estrutural"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

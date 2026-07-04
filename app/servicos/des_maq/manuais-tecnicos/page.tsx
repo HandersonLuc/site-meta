@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function ManuaisTecnicosPage() {
             "Nosso objetivo é eliminar a falta de padronização, reduzir chamados de assistência e profissionalizar a entrega final de um produto, garantindo conformidade técnica e total autonomia para o usuário."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="des_maq"
+            servicoInicial="Manuais Técnicos"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é um Manual Técnico?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function ManuaisTecnicosPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="des_maq"
+            servicoInicial="Manuais Técnicos"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

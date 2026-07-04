@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function FpAPage() {
             "Mais do que controlar números, o FP&A da Meta é sobre transformar dados em estratégia e estratégia em resultado."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="plan_fin"
+            servicoInicial="FP&A"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é FP&A (Planejamento e Análise Financeira)?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function FpAPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="plan_fin"
+            servicoInicial="FP&A"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
             {

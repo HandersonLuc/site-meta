@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function PesquisaDeClimaPage() {
             "Com uma abordagem estruturada e confidencial, a Meta coleta dados reais sobre a percepção da equipe e transforma resultados em planos de ação estratégicos para melhorar o engajamento, reduzir a rotatividade e aumentar a produtividade."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="ot_pr"
+            servicoInicial="Pesquisa de Clima"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é a Pesquisa de Clima Organizacional?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function PesquisaDeClimaPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="ot_pr"
+            servicoInicial="Pesquisa de Clima"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

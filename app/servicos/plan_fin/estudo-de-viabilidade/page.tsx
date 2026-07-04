@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function EstudoDeViabilidadePage() {
             "Nosso objetivo é traduzir ideias em números reais, analisando custos, receitas, riscos e rentabilidade, para garantir que cada investimento tenha sustentabilidade e retorno comprovado."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="plan_fin"
+            servicoInicial="Estudo de Viabilidade"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é um Plano de Viabilidade Econômica?"
         paragraphs={[
@@ -57,6 +66,14 @@ export default function EstudoDeViabilidadePage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="plan_fin"
+            servicoInicial="Estudo de Viabilidade"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
             {

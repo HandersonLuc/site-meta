@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function MapeamentoDeProcessosPage() {
             "Com base em ferramentas de engenharia e gestão de processos, a Meta cria modelos visuais e relatórios padronizados que facilitam a execução, o treinamento e o crescimento sustentável da sua empresa."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="ot_pr"
+            servicoInicial="Mapeamento de Processos"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é o Mapeamento e Otimização de Processos?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function MapeamentoDeProcessosPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="ot_pr"
+            servicoInicial="Mapeamento de Processos"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

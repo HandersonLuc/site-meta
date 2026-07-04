@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function InstalacoesHidrossanitariasPage() {
             "Com planejamento técnico e softwares de engenharia, a Meta cria sistemas otimizados de água, esgoto e drenagem, reduzindo custos e evitando retrabalhos futuros."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="constr_energ"
+            servicoInicial="Instalações Hidrossanitárias"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que são Instalações Hidrossanitárias?"
         paragraphs={[
@@ -57,6 +66,14 @@ export default function InstalacoesHidrossanitariasPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="constr_energ"
+            servicoInicial="Instalações Hidrossanitárias"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

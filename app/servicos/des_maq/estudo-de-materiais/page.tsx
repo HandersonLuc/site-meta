@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function EstudoDeMateriaisPage() {
             "Nosso objetivo é ajudar empresas e empreendedores a tomar decisões seguras e econômicas, considerando aspectos técnicos, ambientais e produtivos."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="des_maq"
+            servicoInicial="Estudo de Materiais"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que é o Estudo de Materiais?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function EstudoDeMateriaisPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="des_maq"
+            servicoInicial="Estudo de Materiais"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

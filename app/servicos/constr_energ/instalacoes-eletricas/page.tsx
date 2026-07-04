@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -19,6 +20,14 @@ export default function InstalacoesEletricasPage() {
             "Com projetos detalhados e baseados nas normas da ABNT e regulamentos da concessionária, garantimos sistemas elétricos otimizados, duradouros e seguros, tanto em edificações residenciais quanto comerciais e industriais."
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="constr_energ"
+            servicoInicial="Instalações Elétricas"
+          />
+        </div>
+      </section>
       <DefinitionSection
         title="O que são Instalações Elétricas?"
         paragraphs={[
@@ -53,6 +62,14 @@ export default function InstalacoesEletricasPage() {
             }
           ]}
       />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="constr_energ"
+            servicoInicial="Instalações Elétricas"
+          />
+        </div>
+      </section>
       <RelatedServices
         services={[
           {

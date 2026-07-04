@@ -33,7 +33,7 @@ const investimentoOptions = [
 const servicosPorCoordenacao: Record<CoordenacaoKey, string[]> = {
   gnc: [
     "Análise de Mercado",
-    "Posicionamento de Marca",
+    "Posicionamento Digital",
     "Planejamento Estratégico",
   ],
   ot_pr: [
@@ -61,12 +61,7 @@ const servicosPorCoordenacao: Record<CoordenacaoKey, string[]> = {
     "Estudo de Luminotécnica",
     "Instalações Elétricas",
   ],
-  tecnologia: [
-    "Desenvolvimento de Site",
-    "Desenvolvimento de Aplicativos",
-    "Automação de Processos",
-    "Otimização de Sites (SEO)",
-  ],
+  tecnologia: ["Site", "Aplicativo", "Automação", "SEO"],
 };
 
 const coordenacaoAliases: Record<string, CoordenacaoKey> = {
@@ -87,14 +82,16 @@ const coordenacaoAliases: Record<string, CoordenacaoKey> = {
   tecnologia: "tecnologia",
 };
 
+function getCoordenacaoKey(coordenacao?: string) {
+  return coordenacao ? coordenacaoAliases[coordenacao.toLowerCase()] : undefined;
+}
+
 function getServicos(coordenacao?: string, servicos?: string[]) {
   if (servicos?.length) {
     return servicos;
   }
 
-  const coordenacaoKey = coordenacao
-    ? coordenacaoAliases[coordenacao.toLowerCase()]
-    : undefined;
+  const coordenacaoKey = getCoordenacaoKey(coordenacao);
 
   if (coordenacaoKey) {
     return servicosPorCoordenacao[coordenacaoKey];
@@ -112,7 +109,15 @@ export function FormularioServico({
   servicoInicial = "",
 }: FormularioServicoProps) {
   const formId = useId();
+  const coordenacaoKey = getCoordenacaoKey(coordenacao);
   const serviceOptions = getServicos(coordenacao, servicos);
+  const serviceLabel =
+    coordenacaoKey === "tecnologia"
+      ? "Qual tipo de solução você busca?"
+      : coordenacaoKey === "gnc"
+        ? "Que tipo de solução você busca?"
+        : "Que tipo de serviço você busca?";
+  const showTecnologiaQuestion = coordenacaoKey === "tecnologia";
 
   return (
     <div
@@ -170,7 +175,7 @@ export function FormularioServico({
 
         <div className="space-y-2">
           <Label htmlFor={`${formId}-tipo-servico`} className="font-semibold text-sm text-black">
-            Que tipo de serviço você busca? <span className="text-red-500">*</span>
+            {serviceLabel} <span className="text-red-500">*</span>
           </Label>
           <select
             id={`${formId}-tipo-servico`}
@@ -187,6 +192,25 @@ export function FormularioServico({
             ))}
           </select>
         </div>
+
+        {showTecnologiaQuestion && (
+          <div className="space-y-2">
+            <Label htmlFor={`${formId}-usa-automacao`} className="font-semibold text-sm text-black">
+              Você já utiliza alguma ferramenta de automação hoje? <span className="text-red-500">*</span>
+            </Label>
+            <select
+              id={`${formId}-usa-automacao`}
+              name="usaAutomacao"
+              className="h-10 w-full rounded-md border border-gray-300 bg-white px-2.5 text-sm text-black focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#2AD8FF]/50 disabled:cursor-not-allowed disabled:opacity-50"
+              required
+            >
+              <option value="">Selecione uma opção</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Pretendo">Pretendo</option>
+            </select>
+          </div>
+        )}
 
         <div className="space-y-2">
           <Label htmlFor={`${formId}-investimento`} className="font-semibold text-sm text-black">
