@@ -1,10 +1,47 @@
 import { coordinations } from "@/constants/services";
 import { Session } from "@/components/ui/section";
 import {AreaAction} from "@/components/sections/AreaAction";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Serviços | Conheça as Soluções da Meta Consultoria",
-  description: "Conheça as Soluções da Meta Consultoria",
+export const metadata: Metadata = {
+  title: "Serviços | Meta Consultoria",
+  description:
+    "Conheça todas as soluções da Meta Consultoria em gestão de negócios, otimização de processos, planejamento financeiro, construção e energia, tecnologia e desenvolvimento de produtos.",
+  keywords: [
+    "Meta Consultoria",
+    "Serviços",
+    "Consultoria Empresarial",
+    "Gestão de Negócios",
+    "Otimização de Processos",
+    "Planejamento Financeiro",
+    "Construção e Energia",
+    "Tecnologia",
+    "Desenvolvimento de Máquinas",
+  ],
+  openGraph: {
+    title: "Serviços | Meta Consultoria",
+    description:
+      "Explore as áreas de atuação da Meta Consultoria e descubra como podemos impulsionar o seu negócio.",
+    url: "https://metaconsultoria.com/servicos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/meta/meta-logo.webp", // 🔹 imagem institucional ou banner de serviços
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Serviços",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Serviços | Meta Consultoria",
+    description:
+      "Conheça todas as soluções da Meta Consultoria em gestão, processos, tecnologia e muito mais.",
+    images: ["/media/meta/meta-logo.webp"],
+  },
 };
 
 export default function TodosServ() {

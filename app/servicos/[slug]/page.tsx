@@ -7,6 +7,8 @@ import { coordinations } from "@/constants/services";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Newsletter } from "@/components/sections/Newsletter";
+import type { Metadata } from "next";
+
 
 interface ServicePageProps {
   params: { slug: string };
@@ -16,19 +18,46 @@ interface ServicePageProps {
 function findService(slug: string) {
   for (const coord of coordinations) {
     const service = coord.services.find((s) => s.slug === slug);
-    if (service) return service;
+    if (service) return service; // 🔹 retorna só o serviço
   }
   return null;
 }
 
 // 🔹 Metadados dinâmicos para SEO
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const service = findService(params.slug);
-  if (!service) notFound();
+  if (!service) {
+    return {
+      title: "Serviço não encontrado | Meta Consultoria",
+      description: "O serviço solicitado não foi encontrado.",
+    };
+  }
 
   return {
     title: `${service.title} | Meta Consultoria`,
     description: service.description.slice(0, 150),
+    openGraph: {
+      title: `${service.title} | Meta Consultoria`,
+      description: service.description,
+      url: `https://metaconsultoria.com/servicos/${service.slug}`,
+      siteName: "Meta Consultoria",
+      images: [
+        {
+          url: service.imageSrc ?? "/images/placeholder.jpg",
+          width: 1200,
+          height: 630,
+          alt: service.title,
+        },
+      ],
+      locale: "pt_BR",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${service.title} | Meta Consultoria`,
+      description: service.description,
+      images: [service.imageSrc ?? "/images/placeholder.jpg"],
+    },
   };
 }
 

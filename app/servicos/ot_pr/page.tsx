@@ -1,6 +1,49 @@
 import { OtherServices } from "@/components/sections/OtherServices";
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Otimização de Processos | Meta Consultoria",
+  description:
+    "Descubra as soluções da Meta Consultoria em Otimização de Processos: mapeamento de processos, pesquisa de clima, estruturação interna, gestão de estoque, estudo de tempo e simulação de processos.",
+  keywords: [
+    "Meta Consultoria",
+    "Otimização de Processos",
+    "Mapeamento de Processos",
+    "Pesquisa de Clima",
+    "Estruturação Interna",
+    "Gestão de Estoque",
+    "Estudo de Tempo",
+    "Simulação de Processos",
+    "Consultoria Empresarial",
+    "UFF",
+  ],
+  openGraph: {
+    title: "Otimização de Processos | Meta Consultoria",
+    description:
+      "Conheça os serviços de Otimização de Processos da Meta Consultoria e aumente a eficiência da sua empresa.",
+    url: "https://metaconsultoria.com/servicos/ot_pr",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/ot_pr/otimizacao-processos.webp", // 🔹 imagem representativa da coordenação
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Otimização de Processos",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Otimização de Processos | Meta Consultoria",
+    description:
+      "Explore os serviços de Otimização de Processos da Meta Consultoria: mapeamento, pesquisa de clima, estruturação interna e mais.",
+    images: ["/media/servicos/ot_pr/otimizacao-processos.webp"],
+  },
+};
 
 export default function ot_pr(){
     return(
@@ -47,11 +90,6 @@ export default function ot_pr(){
                 description="Reproduza virtualmente o funcionamento de atividades, fluxos de trabalho ou operações internas de uma empresa."
                 href="/servicos/ot_pr/simulacao-de-processos"
             />
-            <section>
-                <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>
-                    Aqui fica o espaço para outros serviços
-                </p>
-            </section>
             <OtherServices currentCoordSlug="ot_pr" />
         </div>
     )

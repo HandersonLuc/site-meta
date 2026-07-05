@@ -1,4 +1,47 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Processo Seletivo SETTA | Meta Consultoria",
+  description:
+    "Participe do processo seletivo SETTA da Meta Consultoria e viva uma experiência prática em consultoria empresarial ainda durante a graduação na UFF.",
+  keywords: [
+    "Meta Consultoria",
+    "Processo Seletivo",
+    "SETTA",
+    "UFF",
+    "Consultoria Empresarial",
+    "Estágio",
+    "Trainee",
+    "Engenharia",
+    "Arquitetura",
+    "Ciência da Computação",
+  ],
+  openGraph: {
+    title: "Processo Seletivo SETTA | Meta Consultoria",
+    description:
+      "Junte-se à Meta Consultoria e transforme seu futuro profissional ainda durante a graduação. Conheça as etapas do SETTA e inscreva-se.",
+    url: "https://metaconsultoria.com/processo-seletivo-setta",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/meta/meta-logo.webp", // 🔹 imagem institucional ou banner do processo seletivo
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Processo Seletivo SETTA",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Processo Seletivo SETTA | Meta Consultoria",
+    description:
+      "Descubra como participar do SETTA, o processo seletivo da Meta Consultoria, e desenvolva habilidades práticas em consultoria empresarial.",
+    images: ["/media/meta/meta-logo.webp"],
+  },
+};
 
 const etapas = [
   {

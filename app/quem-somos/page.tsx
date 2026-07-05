@@ -8,6 +8,38 @@ import React, { useEffect, useRef, useState } from "react";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { SectionBadge } from "@/components/common/SectionBadge";
 import { Newsletter } from "@/components/sections/Newsletter";
+import type { Metadata } from "next";
+import Head from "next/head";
+
+export const metadata: Metadata = {
+  title: "Meta Consultoria | Quem Somos",
+  description: "Conheça a história, valores e propósito da Meta Consultoria, empresa júnior da UFF que conecta conhecimento acadêmico e soluções reais.",
+  keywords: ["Meta Consultoria", "Empresa Júnior", "UFF", "Gestão de Negócios", "Consultoria"],
+  openGraph: {
+    title: "Meta Consultoria | Quem Somos",
+    description: "Conheça a história e os valores da Meta Consultoria.",
+    url: "https://metaconsultoria.com/quem-somos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/gnc/gestaodenegocios-1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Equipe Meta Consultoria",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meta Consultoria | Quem Somos",
+    description: "Conheça a história e os valores da Meta Consultoria.",
+    images: ["/media/servicos/gnc/gestaodenegocios-1.webp"],
+  },
+};
+
+
 
 type RevealProps = {
   children: React.ReactNode;
@@ -198,6 +230,16 @@ const partners = [
 
 export default function QuemSomosPage() {
   return (
+    <>
+    <Head>
+        <title>Meta Consultoria | Quem Somos</title>
+        <meta name="description" content="Conheça a história e os valores da Meta Consultoria." />
+        <meta property="og:title" content="Meta Consultoria | Quem Somos" />
+        <meta property="og:description" content="Conheça a história e os valores da Meta Consultoria." />
+        <meta property="og:image" content="/media/servicos/gnc/gestaodenegocios-1.webp" />
+        <meta property="og:type" content="website" />
+      </Head>
+
     <div className="flex min-h-screen flex-col bg-background">
       {/* 1. HERO SECTION */}
       <HeroSection
@@ -563,5 +605,5 @@ export default function QuemSomosPage() {
         }
       `}</style>
     </div>
-  );
+  </>);
 }

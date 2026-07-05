@@ -1,6 +1,49 @@
 import React from "react";
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 import { OtherServices} from "@/components/sections/OtherServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Desenvolvimento de Máquinas | Meta Consultoria",
+  description:
+    "Conheça as soluções da Meta Consultoria em Desenvolvimento de Máquinas: desenho mecânico, estudo de materiais, prototipagem 3D, análise estrutural e manuais técnicos para projetos eficientes e seguros.",
+  keywords: [
+    "Meta Consultoria",
+    "Desenvolvimento de Máquinas",
+    "Desenho Mecânico",
+    "Estudo de Materiais",
+    "Prototipagem 3D",
+    "Análise Estrutural",
+    "Manuais Técnicos",
+    "Consultoria Empresarial",
+    "UFF",
+    "Engenharia Mecânica",
+  ],
+  openGraph: {
+    title: "Desenvolvimento de Máquinas | Meta Consultoria",
+    description:
+      "Explore os serviços de Desenvolvimento de Máquinas da Meta Consultoria e leve seus projetos a um novo nível de eficiência e inovação.",
+    url: "https://metaconsultoria.com/servicos/des_maq",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/des_maq/desenvolvimento-maquinas.webp", // 🔹 imagem representativa da coordenação
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Desenvolvimento de Máquinas",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Desenvolvimento de Máquinas | Meta Consultoria",
+    description:
+      "Descubra como a Meta Consultoria pode apoiar seus projetos com desenho mecânico, estudo de materiais, prototipagem 3D e mais.",
+    images: ["/media/servicos/des_maq/desenvolvimento-maquinas.webp"],
+  },
+};
 
 
 
@@ -37,11 +80,6 @@ export default function Des_maq(){
             description="Profissionalize a documentação do seu equipamento com manuais de operação, manutenção e catálogos de peças. Desenvolvemos documentos técnicos em conformidade com as normas vigentes para garantir a segurança do usuário, a eficiência operacional e a longevidade da sua solução."
             href="/servicos/des_maq/manuais-tecnicos"
             />
-            <section>
-                <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>
-                    Aqui fica o espaço para outros serviços
-                </p>
-            </section>
             <OtherServices currentCoordSlug="des_maq" />
         </div>
     )
