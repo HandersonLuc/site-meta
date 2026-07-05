@@ -27,8 +27,8 @@ export function Footer() {
             <Image
             src="/media/midias site/Logo-Meta-Consultoria.webp"
             alt="Logo"
-            width={100}
-            height={100}
+            width={220}
+            height={200}
             className="object-contain"
           />
         </Link>
