@@ -3,6 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeroSectionProps {
   title: string;
@@ -16,11 +17,7 @@ export function HeroSection({ title, subtitle, showArrow }: HeroSectionProps) {
       {/* 🔹 Área reservada para o GIF ou vídeo de fundo */}
       <div className="absolute inset-0 z-0">
         {/* Substitua esta div pelo seu <video> ou <img> quando tiver o arquivo */}
-        <div className="w-full h-full bg-black/60 flex items-center justify-center">
-          <span className="text-white/70 text-sm">
-            Espaço reservado para GIF ou vídeo de fundo
-          </span>
-        </div>
+        <Image src="/media/meta/banner-hero.webp" alt="Background" fill style={{ objectFit: "cover" }} />
       </div>
 
       {/* 🔹 Conteúdo principal */}

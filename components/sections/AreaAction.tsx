@@ -1,5 +1,6 @@
 import { coordinations } from "@/constants/services";
 import Link from "next/link";
+import Image from "next/image";
 
 export function AreaAction({ currentCoordSlug }: { currentCoordSlug: string }) {
   const otherCoords = coordinations.filter((coord) => coord.slug !== currentCoordSlug);
@@ -17,11 +18,13 @@ export function AreaAction({ currentCoordSlug }: { currentCoordSlug: string }) {
                 href={`/servicos/${coord.slug}`}
                 className="group w-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-[#2AD8FF]/20"
               >
-                <div className="relative">
-                  <img
-                    src={coord.services[0].imageSrc ?? "/images/placeholder.jpg"}
+                <div className="relative w-56 h-36">
+                  <Image
+                    src={coord.image}
                     alt={coord.name}
-                    className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 224px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 flex items-end justify-center">
                     <p className="text-white text-sm font-semibold p-3">{coord.name}</p>
@@ -39,11 +42,13 @@ export function AreaAction({ currentCoordSlug }: { currentCoordSlug: string }) {
                 href={`/servicos/${coord.slug}`}
                 className="group w-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-[#2AD8FF]/20"
               >
-                <div className="relative">
-                  <img
-                    src={coord.services[0].imageSrc ?? "/images/placeholder.jpg"}
+                <div className="relative w-56 h-36">
+                  <Image
+                    src={coord.image}
                     alt={coord.name}
-                    className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 224px"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors duration-300 flex items-end justify-center">
                     <p className="text-white text-sm font-semibold p-3">{coord.name}</p>
