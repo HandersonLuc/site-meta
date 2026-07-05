@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AreasSection } from "@/components/sections/CoordSections";
+import  {AreasSection}  from "@/components/sections/CoordSections";
 
 
 type RevealProps = {
@@ -107,32 +107,6 @@ function CountUp({
   );
 }
 
-const areas = [
-  {
-    title: "Gestão de Negócios",
-    image: "/quem-somos/gestao-negocios.jpg",
-  },
-  {
-    title: "Otimização de Processos",
-    image: "/quem-somos/otimizacao-processos.jpg",
-  },
-  {
-    title: "Construção e Energia",
-    image: "/quem-somos/construcao-energia.jpg",
-  },
-  {
-    title: "Criação de Produtos",
-    image: "/quem-somos/criacao-produtos.jpg",
-  },
-  {
-    title: "Tecnologia",
-    image: "/quem-somos/tecnologia.jpg",
-  },
-  {
-    title: "Planejamento Financeiro",
-    image: "/quem-somos/planejamento-financeiro.jpg",
-  },
-];
 
 const stats = [
   {
@@ -160,23 +134,24 @@ const stats = [
 const events = [
   {
     name: "Interação",
-    image: "/eventos/interacao.png",
+    image: "/media/eventos/logo-interacao-1.webp",
     description:
       "Com 24 anos de história, o Interação é um dos maiores eventos acadêmicos da UFF. Reúne, em uma semana, palestras, minicursos e workshops com profissionais que inspiram e transformam.",
   },
   {
     name: "SE LIGA!",
-    image: "/eventos/se-liga.png",
+    image: "/media/eventos/se-liga-meta.webp",
     description:
       "O SE LIGA! é um evento que promove diversidade, equidade e inclusão, reunindo coletivos, ativistas e empresas em debates transformadores. De 2022 a 2024, a Meta foi reconhecida por seu compromisso com essa causa.",
   },
 ];
 
 const partners = [
-  { name: "Visagio", image: "/parceiros/visagio.png" },
-  { name: "Live Mode", image: "/parceiros/live-mode.png" },
-  { name: "Parceiro 3", image: "/parceiros/parceiro-3.png" },
-  { name: "Parceiro 4", image: "/parceiros/parceiro-4.png" },
+  { name: "Visagio", image: "/media/parceiros/Visagio.webp" },
+  { name: "Live Mode", image: "/media/parceiros/Live-Mode.webp" },
+  { name: "Ambev", image: "/media/parceiros/Ambev.webp" },
+  { name: "Sebrae", image: "/media/parceiros/Sebrae.webp" },
+  {name: "Elogroup", image: "/media/parceiros/Elogroup.webp"},
 ];
 
 export default function SobreNos() {
@@ -267,7 +242,6 @@ export default function SobreNos() {
                 Trazemos soluções inteligentes em:
               </h2>
             </Reveal>
-
             <AreasSection />
           </div>
         </section>

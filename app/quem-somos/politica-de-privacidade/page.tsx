@@ -1,4 +1,44 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Política de Privacidade | Meta Consultoria",
+  description:
+    "Conheça a Política de Privacidade da Meta Consultoria. Entenda como coletamos, utilizamos e protegemos seus dados pessoais em conformidade com a LGPD.",
+  keywords: [
+    "Meta Consultoria",
+    "Política de Privacidade",
+    "LGPD",
+    "Proteção de Dados",
+    "Privacidade",
+    "Consultoria",
+  ],
+  openGraph: {
+    title: "Política de Privacidade | Meta Consultoria",
+    description:
+      "Na Meta Consultoria, tratamos dados pessoais com seriedade, transparência e responsabilidade, respeitando a LGPD.",
+    url: "https://metaconsultoria.com/politica-de-privacidade",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/meta/meta-logo.webp", // 🔹 imagem institucional
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Política de Privacidade",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Política de Privacidade | Meta Consultoria",
+    description:
+      "Saiba como a Meta Consultoria coleta, utiliza e protege seus dados pessoais em conformidade com a LGPD.",
+    images: ["/media/meta/meta-logo.webp"],
+  },
+};
+
 
 const dadosColetados = [
   {

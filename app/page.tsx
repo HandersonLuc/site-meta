@@ -1,27 +1,50 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Film } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { SectionBadge } from "@/components/common/SectionBadge";
-import { SuccessCase } from "@/components/sections/SuccessCase";
 import { Newsletter } from "@/components/sections/Newsletter";
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 import { Metadata } from "next";
+import { PartnersCarousel } from "@/components/sections/PartnersCarousel";
 
 export const metadata: Metadata = {
+  title: "Serviços | Meta Consultoria",
   description:
-    "A Meta Consultoria oferece soluções em consultoria empresarial com foco em Engenharia e Gestão de Negócios, impulsionando o crescimento e a eficiência de empresas com estratégia, inteligência e propósito.",
-  alternates: {
-    canonical: "/",
+    "Conheça todas as soluções da Meta Consultoria em gestão, processos, tecnologia, finanças, construção e desenvolvimento de produtos.",
+  keywords: [
+    "Meta Consultoria",
+    "Serviços",
+    "Gestão de Negócios",
+    "Otimização de Processos",
+    "Planejamento Financeiro",
+    "Construção e Energia",
+    "Tecnologia",
+    "Desenvolvimento de Máquinas",
+  ],
+  openGraph: {
+    title: "Serviços | Meta Consultoria",
+    description:
+      "Explore as áreas de atuação da Meta Consultoria e descubra como podemos impulsionar o seu negócio.",
+    url: "https://metaconsultoria.com/servicos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/gnc/gestaodenegocios-1.webp", // pode ser qualquer imagem representativa
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Serviços",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Serviços | Meta Consultoria",
+    description:
+      "Conheça todas as soluções da Meta Consultoria em gestão, processos, tecnologia e muito mais.",
+    images: ["/media/servicos/gnc/gestaodenegocios-1.webp"],
   },
 };
+
 
 export default function Home() {
   return (
@@ -95,51 +118,47 @@ export default function Home() {
       <section className="py-24 container mx-auto px-4 max-w-5xl">
         <Session
           title="Gestão de negócios"
-          description="Soluções estratégicas para impulsionar o crescimento e a eficiência da sua empresa."
+          description="Se você está começando a empreender ou busca enxergar com mais clareza a sua ideia de negócio, essas soluções foram pensadas para ajudar você a dar os primeiros passos com foco, estratégia e segurança."
           href="/servicos/gnc"
         />
         <Session
           title="Otimização de processos"
-          description="Melhore a performance operacional com metodologias de eficiência comprovadas."
+          description="Os serviços de Otimização de Processos da Meta Consultoria atendem desde pequenas até grandes empresas que desejam organizar suas operações e maximizar o uso dos recursos disponíveis. Em cada projeto, nossos consultores atuam de forma personalizada para identificar oportunidades e implementar soluções que aumentem a eficiência do seu negócio."
           href="/servicos/ot_pr"
         />
         <Session
           title="Planejamento financeiro"
-          description="Planeje o futuro da sua empresa com segurança e inteligência financeira."
+          description="Se você pensa em investir em um novo negócio ou explorar um novo mercado, mas ainda tem dúvidas sobre o retorno do investimento, o planejamento e a análise financeira são etapas fundamentais para tomar decisões mais seguras e estratégicas."
           href="/servicos/plan_fin"
         />
         <Session
           title="Construção e energia"
-          description="Projetos sustentáveis e eficientes para o setor de construção e energia."
+          description="Os serviços da área de Construção e Energia são ideais para quem precisa reformar, construir do zero ou regularizar um imóvel de acordo com as exigências da prefeitura."
           href="/servicos/constr_energ"
         />
         <Session
           title="Desenvolvimento de máquinas"
-          description="Inovação e tecnologia aplicadas ao desenvolvimento industrial."
+          description="Desenvolvimento de Máquinas é focado em apoiar o desenvolvimento de novos produtos, peças ou máquinas. Por meio de um projeto mecânico, é possível definir todos os insumos necessários para a fabricação, incluindo a escolha adequada de materiais."
           href="/servicos/des_maq"
         />
         <Session
           title="Tecnologia"
-          description="Transforme digitalmente sua empresa com soluções tecnológicas sob medida."
+          description="Os serviços da área de Tecnologia são voltados para marcas que desejam crescer, fortalecer sua imagem e se destacar no ambiente online."
           href="/servicos/tecnologia"
         />
       </section>
 
       {/* 4. NOSSOS CLIENTES */}
-      <section className="py-20 bg-black text-white text-center">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <h2 className="text-3xl font-bold mb-8">Nossos clientes</h2>
-          <div className="flex justify-center gap-12 items-center mb-8">
-            <img src="/shell.png" alt="Shell" className="h-24 w-auto" />
-            <img src="/mercedes.png" alt="Mercedes" className="h-24 w-auto" />
-            <img src="/cocacola.png" alt="Coca-Cola" className="h-24 w-auto" />
-          </div>
-          <Link href="/servicos">
-            <Button variant="link" className="text-[#2AD8FF] hover:underline">
-              Conheça nossos serviços →
-            </Button>
-          </Link>
-        </div>
+      <section className="text-white text-center">
+        <PartnersCarousel partners={[
+          { name: "Shell", image: "/media/parceiros/shell-logo-1.webp" },
+          { name: "Mercedes", image: "/media/parceiros/mercedes-logo-2-2.webp" },
+          { name: "Coca-Cola", image: "/media/parceiros/coca_cola-logo.webp" },
+          { name: "Radix", image: "/media/parceiros/radix_logo.webp" },
+          { name: "Grupo SBF", image: "/media/parceiros/GRUPO-SBF-Logo.webp" },
+          { name: "Trigo", image: "/media/parceiros/logo_trigo.webp" }
+        ]}
+        />
       </section>
 
       {/* 5. NOVO SERVIÇO */}

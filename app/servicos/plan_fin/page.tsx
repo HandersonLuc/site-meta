@@ -1,6 +1,48 @@
 import { Session } from "@/components/ui/section"; // novo componente reutilizável
 import { OtherServices} from "@/components/sections/OtherServices";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Planejamento Financeiro | Meta Consultoria",
+  description:
+    "Conheça as soluções da Meta Consultoria em Planejamento Financeiro: FP&A, estudo de viabilidade e precificação de produtos para decisões estratégicas e crescimento sustentável.",
+  keywords: [
+    "Meta Consultoria",
+    "Planejamento Financeiro",
+    "FP&A",
+    "Estudo de Viabilidade",
+    "Precificação de Produtos",
+    "Consultoria Empresarial",
+    "UFF",
+    "Gestão Financeira",
+  ],
+  openGraph: {
+    title: "Planejamento Financeiro | Meta Consultoria",
+    description:
+      "Descubra como a Meta Consultoria pode apoiar sua empresa com FP&A, estudo de viabilidade e precificação estratégica de produtos.",
+    url: "https://metaconsultoria.com/servicos/plan_fin",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/plan_fin/planejamento-financeiro.webp", // 🔹 imagem representativa da coordenação
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Planejamento Financeiro",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Planejamento Financeiro | Meta Consultoria",
+    description:
+      "Explore os serviços de Planejamento Financeiro da Meta Consultoria: FP&A, estudo de viabilidade e precificação de produtos.",
+    images: ["/media/servicos/plan_fin/planejamento-financeiro.webp"],
+  },
+};
+
 
 export default function plan_fin(){
     return(
@@ -25,11 +67,6 @@ export default function plan_fin(){
                 description="Defina o preço certo para o seu produto e maximize seus resultados. Analisamos custos, mercado, concorrência e percepção de valor para estruturar um preço estratégico que garanta competitividade, rentabilidade e posicionamento adequado."
                 href="/servicos/plan_fin/precificacao-de-produtos"
             />
-            <section>
-                <p  className='justify-center text-center text-gray-600 leading-relaxed py-12'>
-                    Aqui fica o espaço para outros serviços
-                </p>
-            </section>
             <OtherServices currentCoordSlug="plan_fin" />
         </div>
     )

@@ -4,32 +4,32 @@ import Link from "next/link";
 const areas = [
   {
     title: "Gestão de Negócios",
-    image: "/images/gestao.jpg",
+    image: "/media/serviços/gnc/gestaodenegocios-1.webp",
     href: "/servicos/gnc",
   },
   {
     title: "Otimização de Processos",
-    image: "/images/otimizacao.jpg",
+    image: "/media/serviços/ot_pr/op11-1.webp",
     href: "/servicos/ot_pr",
   },
   {
     title: "Construção e Energia",
-    image: "/images/construcao.jpg",
+    image: "/media/serviços/constr_energ/homepagg.webp",
     href: "/servicos/constr_energ",
   },
   {
     title: "Criação de Produtos",
-    image: "/images/produtos.jpg",
+    image: "/media/serviços/des_maq/desenho-mec-1(1).webp",
     href: "/servicos/des_maq",
   },
   {
     title: "Tecnologia",
-    image: "/images/tecnologia.jpg",
+    image: "/media/serviços/tecnologia/app2-1(1).webp",
     href: "/servicos/tecnologia",
   },
   {
     title: "Planejamento Financeiro",
-    image: "/images/financeiro.jpg",
+    image: "/media/serviços/plan_fin/fundo-plan-financ.webp",
     href: "/servicos/plan_fin",
   },
 ];

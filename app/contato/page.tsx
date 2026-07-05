@@ -3,6 +3,50 @@ import { FaInstagram, FaLinkedin, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { GoogleMapEmbed } from "@/components/common/GoogleMapEmbed";
+import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contato | Meta Consultoria",
+  description:
+    "Entre em contato com a Meta Consultoria. Fale com nossa equipe, conheça nossa sede em Niterói e siga nossas redes sociais.",
+  keywords: [
+    "Meta Consultoria",
+    "Contato",
+    "Consultoria Empresarial",
+    "Niterói",
+    "UFF",
+    "Telefone",
+    "Email",
+    "WhatsApp",
+    "Endereço",
+  ],
+  openGraph: {
+    title: "Contato | Meta Consultoria",
+    description:
+      "Fale com a Meta Consultoria e descubra como podemos ajudar seu negócio. Conheça nossa sede em Niterói e siga nossas redes sociais.",
+    url: "https://metaconsultoria.com/contato",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/meta/meta-logo.webp", // 🔹 imagem institucional
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Contato",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contato | Meta Consultoria",
+    description:
+      "Entre em contato com a Meta Consultoria. Fale com nossa equipe, conheça nossa sede e siga nossas redes sociais.",
+    images: ["/media/meta/meta-logo.webp"],
+  },
+};
+
 
 export default function ContatoPage() {
   return (
@@ -59,43 +103,49 @@ export default function ContatoPage() {
             </div>
 
             {/* Bloco 3 */}
-            <div className="bg-white rounded-2xl p-6 shadow-[0_12px_50px_rgba(0,0,0,0.4)] transition-all duration-300">
-              <p className="text-gray-700 font-medium max-w-[60%]">
-                Torne-se o protagonista do seu futuro
+            <div className="bg-white rounded-2xl p-6 shadow-[0_12px_50px_rgba(0,0,0,0.15)] flex flex-col sm:flex-row items-center justify-between transition-all duration-300 hover:scale-[1.02]">
+              <p className="text-[#131936] font-semibold text-lg leading-snug sm:max-w-[50%] text-center sm:text-left">
+                Torne-se o protagonista<br />do seu futuro
               </p>
-              <img src="/logo-meta.png" alt="Meta Consultoria" className="h-16 w-auto" />
+              <Image
+                src="/media/meta/Meta-Logo.webp"
+                alt="Meta Consultoria"
+                width={100}
+                height={100}
+                className="h-20 w-auto mt-4 sm:mt-0 sm:ml-6"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* SEÇÃO FINAL: SEDE */}
-      <section className="py-20 bg-[#0B0E2C] text-white">
+      <section className="py-20 bg-[#090E28] text-white">
         <div className="container mx-auto px-4 max-w-6xl grid md:grid-cols-2 gap-12 items-start">
           {/* Coluna esquerda */}
           <div>
             <h2 className="text-3xl font-bold mb-6">
               Conheça Nossa <span className="text-[#2AD8FF]">Sede</span>
             </h2>
-            <h3 className="text-xl font-semibold mb-2">Meta Consultoria</h3>
-            <p className="text-gray-300 mb-4">
+            <h3 className="text-2xl font-semibold mb-2">Meta Consultoria</h3>
+            <p className="text-gray-300 mb-4 text-lg">
               R. Passo da Pátria, 156 <br />
               Sala 217, Bloco E <br />
               São Domingos, Niterói - RJ, 24210-240
             </p>
 
-            <h4 className="font-semibold mb-2">Horário de funcionamento</h4>
-            <p className="text-gray-300 mb-4">
+            <h4 className="font-semibold mb-2 text-xl">Horário de funcionamento</h4>
+            <p className="text-gray-300 mb-4 text-lg">
               Segunda – Sexta: 09:00h – 18:00h <br />
               Sábados e Domingos: Fechado <br />
               Feriados: Fechado
             </p>
 
             <div className="space-y-3">
-              <p className="flex items-center gap-3">
+              <p className="flex items-center gap-3 text-lg">
                 <FaWhatsapp className="text-[#2AD8FF]" /> +55 21 99976-5705
               </p>
-              <p className="flex items-center gap-3">
+              <p className="flex items-center gap-3 text-lg">
                 <Mail className="text-[#2AD8FF]" /> contato@metaconsultoria.com
               </p>
             </div>
