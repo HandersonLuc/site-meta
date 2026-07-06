@@ -3,6 +3,49 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import {RelatedServices} from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Planejamento Estratégico | Meta Consultoria",
+  description:
+    "Serviço de Planejamento Estratégico da Meta Consultoria: definição de metas, análise de ambiente e desenvolvimento de estratégias práticas para crescimento sustentável.",
+  keywords: [
+    "Meta Consultoria",
+    "Planejamento Estratégico",
+    "Gestão de Negócios",
+    "Consultoria Empresarial",
+    "UFF",
+    "Definição de Metas",
+    "Estratégia Empresarial",
+    "KPIs",
+    "Crescimento Sustentável",
+  ],
+  openGraph: {
+    title: "Planejamento Estratégico | Meta Consultoria",
+    description:
+      "Conheça o serviço de Planejamento Estratégico da Meta Consultoria: transforme objetivos em resultados reais com metodologias práticas e orientadas a dados.",
+    url: "https://metaconsultoria.com/servicos/gnc/planejamento-estrategico",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/gnc/planejamento-estrategico.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Planejamento Estratégico",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Planejamento Estratégico | Meta Consultoria",
+    description:
+      "Defina o rumo do seu negócio com clareza e foco através do Planejamento Estratégico da Meta Consultoria.",
+    images: ["/media/servicos/gnc/planejamento-estrategico.webp"],
+  },
+};
+
 
 export default function PlanejamentoEstrategico() {
   return (

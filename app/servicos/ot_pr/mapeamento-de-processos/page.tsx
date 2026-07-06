@@ -4,6 +4,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Mapeamento e Otimização de Processos | Meta Consultoria",
+  description:
+    "Serviço de Mapeamento e Otimização de Processos da Meta Consultoria: visualize, documente e aperfeiçoe fluxos operacionais para eliminar falhas, reduzir custos e aumentar a eficiência.",
+  keywords: [
+    "Meta Consultoria",
+    "Mapeamento de Processos",
+    "Otimização de Processos",
+    "Gestão Organizacional",
+    "Consultoria Empresarial",
+    "UFF",
+    "Eficiência Operacional",
+    "Padronização",
+    "Fluxogramas",
+    "BPMN",
+  ],
+  openGraph: {
+    title: "Mapeamento e Otimização de Processos | Meta Consultoria",
+    description:
+      "Conheça o serviço de Mapeamento e Otimização de Processos da Meta Consultoria: clareza, eficiência e padronização para sua empresa.",
+    url: "https://metaconsultoria.com/servicos/ot_pr/mapeamento-de-processos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/ot_pr/mapeamento-processos.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Mapeamento de Processos",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mapeamento e Otimização de Processos | Meta Consultoria",
+    description:
+      "Visualize e otimize os processos da sua empresa com o serviço da Meta Consultoria: eficiência, clareza e crescimento sustentável.",
+    images: ["/media/servicos/ot_pr/mapeamento-processos.webp"],
+  },
+};
+
 
 export default function MapeamentoDeProcessosPage() {
   return (

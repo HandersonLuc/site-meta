@@ -4,6 +4,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Automação de Processos | Meta Consultoria",
+  description:
+    "Serviço de Automação de Processos da Meta Consultoria: soluções digitais e sistemas embarcados para eliminar tarefas repetitivas, reduzir custos e aumentar a produtividade.",
+  keywords: [
+    "Meta Consultoria",
+    "Automação de Processos",
+    "Tecnologia",
+    "Arduino",
+    "Sistemas Embarcados",
+    "Eficiência Operacional",
+    "Consultoria Empresarial",
+    "UFF",
+    "Produtividade",
+    "Inovação Digital",
+  ],
+  openGraph: {
+    title: "Automação de Processos | Meta Consultoria",
+    description:
+      "Conheça o serviço de Automação de Processos da Meta Consultoria: eficiência, precisão e inovação para transformar sua operação.",
+    url: "https://metaconsultoria.com/servicos/tecnologia/automacao-de-processos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/tecnologia/automacao-de-processos.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Automação de Processos",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Automação de Processos | Meta Consultoria",
+    description:
+      "Digitalize sua operação e aumente a produtividade com o serviço de Automação de Processos da Meta Consultoria.",
+    images: ["/media/servicos/tecnologia/automacao-de-processos.webp"],
+  },
+};
+
 
 export default function AutomacaoDeProcessosPage() {
   return (

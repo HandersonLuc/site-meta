@@ -4,6 +4,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Otimização de Sites (SEO) | Meta Consultoria",
+  description:
+    "Serviço de SEO da Meta Consultoria: aumente tráfego orgânico, posições no Google e conversões com otimização técnica, conteúdo estratégico e performance digital.",
+  keywords: [
+    "Meta Consultoria",
+    "SEO",
+    "Otimização de Sites",
+    "Tecnologia",
+    "Tráfego Orgânico",
+    "Google",
+    "Conversão Digital",
+    "Consultoria Empresarial",
+    "UFF",
+    "Marketing Digital",
+  ],
+  openGraph: {
+    title: "Otimização de Sites (SEO) | Meta Consultoria",
+    description:
+      "Conheça o serviço de SEO da Meta Consultoria: estratégias técnicas e de conteúdo para colocar seu site no topo do Google e gerar mais leads.",
+    url: "https://metaconsultoria.com/servicos/tecnologia/direcionamento_estrategico",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/tecnologia/seo.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - SEO",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Otimização de Sites (SEO) | Meta Consultoria",
+    description:
+      "Transforme seu site em uma máquina de tráfego orgânico e conversão com o serviço de SEO da Meta Consultoria.",
+    images: ["/media/servicos/tecnologia/seo.webp"],
+  },
+};
+
 
 export default function OtimizacaoDeSitesSeoPage() {
   return (

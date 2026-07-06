@@ -4,6 +4,49 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Análise Estrutural | Meta Consultoria",
+  description:
+    "Serviço de Análise Estrutural da Meta Consultoria: cálculos e simulações para avaliar resistência, estabilidade e durabilidade de estruturas e componentes mecânicos.",
+  keywords: [
+    "Meta Consultoria",
+    "Análise Estrutural",
+    "Desenvolvimento de Máquinas",
+    "Engenharia Mecânica",
+    "Simulação Computacional",
+    "Elementos Finitos",
+    "Resistência de Materiais",
+    "Consultoria Empresarial",
+    "UFF",
+  ],
+  openGraph: {
+    title: "Análise Estrutural | Meta Consultoria",
+    description:
+      "Conheça o serviço de Análise Estrutural da Meta Consultoria: segurança, eficiência e confiabilidade para seus projetos.",
+    url: "https://metaconsultoria.com/servicos/des_maq/analise-estrutural",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/des_maq/analise-estrutural.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Análise Estrutural",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Análise Estrutural | Meta Consultoria",
+    description:
+      "Projetos mais seguros e eficientes com o serviço de Análise Estrutural da Meta Consultoria.",
+    images: ["/media/servicos/des_maq/analise-estrutural.webp"],
+  },
+};
+
 
 export default function AnaliseEstruturalPage() {
   return (

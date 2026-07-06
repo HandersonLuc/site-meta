@@ -4,6 +4,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Instalações Hidrossanitárias | Meta Consultoria",
+  description:
+    "Serviço de Instalações Hidrossanitárias da Meta Consultoria: projetos completos de água, esgoto e drenagem, com foco em eficiência, segurança e conformidade técnica.",
+  keywords: [
+    "Meta Consultoria",
+    "Instalações Hidrossanitárias",
+    "Construção e Energia",
+    "Projetos Hidráulicos",
+    "Água e Esgoto",
+    "Drenagem",
+    "Eficiência Hídrica",
+    "Consultoria Empresarial",
+    "UFF",
+    "ABNT",
+  ],
+  openGraph: {
+    title: "Instalações Hidrossanitárias | Meta Consultoria",
+    description:
+      "Conheça o serviço de Instalações Hidrossanitárias da Meta Consultoria: eficiência, segurança e durabilidade para sua obra.",
+    url: "https://metaconsultoria.com/servicos/constr_energ/instalacoes-hidrossanitarias",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/constr_energ/instalacoes-hidrossanitarias.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Instalações Hidrossanitárias",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Instalações Hidrossanitárias | Meta Consultoria",
+    description:
+      "Projetos hidrossanitários completos e personalizados, garantindo eficiência, segurança e conformidade técnica.",
+    images: ["/media/servicos/constr_energ/instalacoes-hidrossanitarias.webp"],
+  },
+};
+
 
 export default function InstalacoesHidrossanitariasPage() {
   return (

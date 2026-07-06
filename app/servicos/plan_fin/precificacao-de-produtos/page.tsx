@@ -4,6 +4,49 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Precificação de Produtos | Meta Consultoria",
+  description:
+    "Serviço de Precificação de Produtos da Meta Consultoria: análise de custos, mercado e percepção de valor para definir preços competitivos e rentáveis.",
+  keywords: [
+    "Meta Consultoria",
+    "Precificação de Produtos",
+    "Planejamento Financeiro",
+    "Consultoria Empresarial",
+    "UFF",
+    "Preço Estratégico",
+    "Competitividade",
+    "Rentabilidade",
+    "Posicionamento de Mercado",
+  ],
+  openGraph: {
+    title: "Precificação de Produtos | Meta Consultoria",
+    description:
+      "Conheça o serviço de Precificação de Produtos da Meta Consultoria: preços assertivos que equilibram custo, valor percebido e lucratividade.",
+    url: "https://metaconsultoria.com/servicos/plan_fin/precificacao-de-produtos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/plan_fin/precificacao-de-produtos.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Precificação de Produtos",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Precificação de Produtos | Meta Consultoria",
+    description:
+      "Maximize seus lucros com preços estratégicos e competitivos através do serviço de Precificação de Produtos da Meta Consultoria.",
+    images: ["/media/servicos/plan_fin/precificacao-de-produtos.webp"],
+  },
+};
+
 
 export default function PrecificacaoDeProdutosPage() {
   return (

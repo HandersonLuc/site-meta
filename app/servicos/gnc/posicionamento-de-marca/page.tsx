@@ -3,6 +3,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import {RelatedServices} from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Posicionamento de Marca | Meta Consultoria",
+  description:
+    "Serviço de Posicionamento de Marca da Meta Consultoria: estratégias digitais para fortalecer identidade, aumentar autoridade e destacar sua empresa no mercado.",
+  keywords: [
+    "Meta Consultoria",
+    "Posicionamento de Marca",
+    "Gestão de Negócios",
+    "Branding",
+    "Marketing Digital",
+    "Consultoria Empresarial",
+    "UFF",
+    "Identidade Visual",
+    "Autoridade Digital",
+    "Presença Online",
+  ],
+  openGraph: {
+    title: "Posicionamento de Marca | Meta Consultoria",
+    description:
+      "Conheça o serviço de Posicionamento de Marca da Meta Consultoria: fortaleça sua identidade digital e conquiste relevância no mercado.",
+    url: "https://metaconsultoria.com/servicos/gnc/posicionamento-de-marca",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/gnc/posicionamento-de-marca.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Posicionamento de Marca",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Posicionamento de Marca | Meta Consultoria",
+    description:
+      "Fortaleça sua presença digital com o serviço de Posicionamento de Marca da Meta Consultoria.",
+    images: ["/media/servicos/gnc/posicionamento-de-marca.webp"],
+  },
+};
+
 
 export default function PosicionamentoDeMarcaPage() {
   return (

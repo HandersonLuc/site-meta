@@ -4,6 +4,49 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pesquisa de Clima Organizacional | Meta Consultoria",
+  description:
+    "Serviço de Pesquisa de Clima Organizacional da Meta Consultoria: identifique pontos fortes e áreas de melhoria para fortalecer a cultura corporativa, aumentar engajamento e produtividade.",
+  keywords: [
+    "Meta Consultoria",
+    "Pesquisa de Clima Organizacional",
+    "Otimização de Processos",
+    "Gestão de Pessoas",
+    "Engajamento",
+    "Cultura Corporativa",
+    "Satisfação dos Colaboradores",
+    "Consultoria Empresarial",
+    "UFF",
+  ],
+  openGraph: {
+    title: "Pesquisa de Clima Organizacional | Meta Consultoria",
+    description:
+      "Conheça o serviço de Pesquisa de Clima Organizacional da Meta Consultoria: dados estratégicos para melhorar engajamento, reduzir rotatividade e fortalecer a cultura da empresa.",
+    url: "https://metaconsultoria.com/servicos/ot_pr/pesquisa-de-clima",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/ot_pr/pesquisa-de-clima.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Pesquisa de Clima Organizacional",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pesquisa de Clima Organizacional | Meta Consultoria",
+    description:
+      "Entenda sua equipe e fortaleça sua cultura com a Pesquisa de Clima Organizacional da Meta Consultoria.",
+    images: ["/media/servicos/ot_pr/pesquisa-de-clima.webp"],
+  },
+};
+
 
 export default function PesquisaDeClimaPage() {
   return (

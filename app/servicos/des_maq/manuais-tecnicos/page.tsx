@@ -4,6 +4,49 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Manuais Técnicos | Meta Consultoria",
+  description:
+    "Serviço de Manuais Técnicos da Meta Consultoria: elaboração de documentos técnicos para operação, montagem e manutenção de equipamentos, garantindo segurança, eficiência e conformidade.",
+  keywords: [
+    "Meta Consultoria",
+    "Manuais Técnicos",
+    "Documentação Técnica",
+    "Desenvolvimento de Máquinas",
+    "Engenharia Mecânica",
+    "Normas Técnicas",
+    "Segurança Operacional",
+    "Consultoria Empresarial",
+    "UFF",
+  ],
+  openGraph: {
+    title: "Manuais Técnicos | Meta Consultoria",
+    description:
+      "Conheça o serviço de Manuais Técnicos da Meta Consultoria: documentação profissional para operação, montagem e manutenção de equipamentos.",
+    url: "https://metaconsultoria.com/servicos/des_maq/manuais-tecnicos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/des_maq/manuais-tecnicos.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Manuais Técnicos",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Manuais Técnicos | Meta Consultoria",
+    description:
+      "Documentação técnica completa para garantir segurança, eficiência e conformidade em seus equipamentos.",
+    images: ["/media/servicos/des_maq/manuais-tecnicos.webp"],
+  },
+};
+
 
 export default function ManuaisTecnicosPage() {
   return (

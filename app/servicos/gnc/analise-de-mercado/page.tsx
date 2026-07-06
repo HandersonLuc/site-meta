@@ -4,6 +4,49 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pesquisa e Análise de Mercado | Meta Consultoria",
+  description:
+    "Serviço de Pesquisa e Análise de Mercado da Meta Consultoria: identifique oportunidades, mapeie concorrentes e compreenda seu público para decisões estratégicas mais seguras.",
+  keywords: [
+    "Meta Consultoria",
+    "Análise de Mercado",
+    "Pesquisa de Mercado",
+    "Gestão de Negócios",
+    "Mapeamento de Concorrentes",
+    "Estudo de Viabilidade",
+    "Consultoria Empresarial",
+    "UFF",
+    "Estratégia Comercial",
+  ],
+  openGraph: {
+    title: "Pesquisa e Análise de Mercado | Meta Consultoria",
+    description:
+      "Conheça o serviço de Análise de Mercado da Meta Consultoria: dados estratégicos para apoiar decisões de marketing, expansão e posicionamento.",
+    url: "https://metaconsultoria.com/servicos/gnc/analise-de-mercado",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/gnc/analise-de-mercado.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Análise de Mercado",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pesquisa e Análise de Mercado | Meta Consultoria",
+    description:
+      "Reduza incertezas e tome decisões estratégicas com o serviço de Análise de Mercado da Meta Consultoria.",
+    images: ["/media/servicos/gnc/analise-de-mercado.webp"],
+  },
+};
+
 
 export default function AnaliseDeMercadoPage() {
   return (

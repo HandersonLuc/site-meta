@@ -4,6 +4,51 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Instalações Elétricas | Meta Consultoria",
+  description:
+    "Serviço de Instalações Elétricas da Meta Consultoria: projetos seguros, eficientes e em conformidade com normas técnicas, para edificações residenciais, comerciais e industriais.",
+  keywords: [
+    "Meta Consultoria",
+    "Instalações Elétricas",
+    "Construção e Energia",
+    "Projetos Elétricos",
+    "Eficiência Energética",
+    "Segurança Elétrica",
+    "Consultoria Empresarial",
+    "UFF",
+    "ABNT",
+  ],
+  openGraph: {
+    title: "Instalações Elétricas | Meta Consultoria",
+    description:
+      "Conheça o serviço de Instalações Elétricas da Meta Consultoria: segurança, eficiência e confiabilidade para seu projeto.",
+    url: "https://metaconsultoria.com/servicos/constr_energ/instalacoes-eletricas",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/constr_energ/instalacoes-eletricas.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Instalações Elétricas",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Instalações Elétricas | Meta Consultoria",
+    description:
+      "Projetos elétricos completos e seguros, com foco em eficiência energética e conformidade técnica.",
+    images: ["/media/servicos/constr_energ/instalacoes-eletricas.webp"],
+  },
+};
+
+
+
 
 export default function InstalacoesEletricasPage() {
   return (

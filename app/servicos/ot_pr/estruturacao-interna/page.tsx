@@ -4,6 +4,49 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Estruturação Interna | Meta Consultoria",
+  description:
+    "Serviço de Estruturação Interna da Meta Consultoria: organização de equipes, definição de responsabilidades e alinhamento estratégico para crescimento sustentável.",
+  keywords: [
+    "Meta Consultoria",
+    "Estruturação Interna",
+    "Otimização de Processos",
+    "Gestão Organizacional",
+    "Consultoria Empresarial",
+    "UFF",
+    "Organização de Equipes",
+    "Eficiência Operacional",
+    "Estrutura Hierárquica",
+  ],
+  openGraph: {
+    title: "Estruturação Interna | Meta Consultoria",
+    description:
+      "Conheça o serviço de Estruturação Interna da Meta Consultoria: clareza, eficiência e crescimento sustentável para sua empresa.",
+    url: "https://metaconsultoria.com/servicos/ot_pr/estruturacao-interna",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/ot_pr/estruturacao-interna.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Estruturação Interna",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Estruturação Interna | Meta Consultoria",
+    description:
+      "Organize sua empresa com o serviço de Estruturação Interna da Meta Consultoria: funções claras, responsabilidades definidas e alinhamento estratégico.",
+    images: ["/media/servicos/ot_pr/estruturacao-interna.webp"],
+  },
+};
+
 
 export default function EstruturacaoInternaPage() {
   return (

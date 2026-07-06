@@ -4,6 +4,51 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Plano de Viabilidade Econômica | Meta Consultoria",
+  description:
+    "Serviço de Plano de Viabilidade Econômica da Meta Consultoria: análise de custos, receitas, riscos e rentabilidade para validar projetos e investimentos com segurança.",
+  keywords: [
+    "Meta Consultoria",
+    "Plano de Viabilidade Econômica",
+    "Estudo de Viabilidade",
+    "Planejamento Financeiro",
+    "Consultoria Empresarial",
+    "UFF",
+    "Análise Financeira",
+    "Retorno sobre Investimento",
+    "VPL",
+    "TIR",
+    "Payback",
+  ],
+  openGraph: {
+    title: "Plano de Viabilidade Econômica | Meta Consultoria",
+    description:
+      "Conheça o serviço de Plano de Viabilidade Econômica da Meta Consultoria: transforme ideias em investimentos seguros e sustentáveis.",
+    url: "https://metaconsultoria.com/servicos/plan_fin/estudo-de-viabilidade",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/plan_fin/estudo-de-viabilidade.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Plano de Viabilidade Econômica",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plano de Viabilidade Econômica | Meta Consultoria",
+    description:
+      "Valide o potencial financeiro do seu projeto com o Plano de Viabilidade Econômica da Meta Consultoria.",
+    images: ["/media/servicos/plan_fin/estudo-de-viabilidade.webp"],
+  },
+};
+
 
 export default function EstudoDeViabilidadePage() {
   return (

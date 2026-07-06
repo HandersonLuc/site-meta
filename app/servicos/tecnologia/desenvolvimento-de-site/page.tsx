@@ -4,6 +4,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Desenvolvimento de Site | Meta Consultoria",
+  description:
+    "Serviço de Desenvolvimento de Sites da Meta Consultoria: design moderno, performance técnica e SEO para aumentar visibilidade, tráfego orgânico e conversões.",
+  keywords: [
+    "Meta Consultoria",
+    "Desenvolvimento de Site",
+    "Tecnologia",
+    "SEO",
+    "Presença Digital",
+    "Consultoria Empresarial",
+    "UFF",
+    "Performance Web",
+    "Sites Responsivos",
+    "Marketing Digital",
+  ],
+  openGraph: {
+    title: "Desenvolvimento de Site | Meta Consultoria",
+    description:
+      "Conheça o serviço de Desenvolvimento de Sites da Meta Consultoria: sites rápidos, responsivos e otimizados para SEO, prontos para gerar resultados.",
+    url: "https://metaconsultoria.com/servicos/tecnologia/desenvolvimento-de-site",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/tecnologia/desenvolvimento-de-site.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Desenvolvimento de Site",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Desenvolvimento de Site | Meta Consultoria",
+    description:
+      "Impulsione sua presença digital com sites otimizados para SEO e performance da Meta Consultoria.",
+    images: ["/media/servicos/tecnologia/desenvolvimento-de-site.webp"],
+  },
+};
+
 
 export default function DesenvolvimentoDeSitePage() {
   return (

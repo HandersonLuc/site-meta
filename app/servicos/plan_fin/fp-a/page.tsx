@@ -4,6 +4,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Planejamento e Análise Financeira (FP&A) | Meta Consultoria",
+  description:
+    "Serviço de FP&A da Meta Consultoria: planejamento financeiro, análise de desempenho e projeções estratégicas para decisões seguras e crescimento sustentável.",
+  keywords: [
+    "Meta Consultoria",
+    "FP&A",
+    "Planejamento Financeiro",
+    "Análise Financeira",
+    "Gestão de Negócios",
+    "Consultoria Empresarial",
+    "UFF",
+    "Fluxo de Caixa",
+    "Projeções Financeiras",
+    "Rentabilidade",
+  ],
+  openGraph: {
+    title: "Planejamento e Análise Financeira (FP&A) | Meta Consultoria",
+    description:
+      "Conheça o serviço de FP&A da Meta Consultoria: transforme dados financeiros em decisões estratégicas e otimize recursos para o futuro da sua empresa.",
+    url: "https://metaconsultoria.com/servicos/plan_fin/fp-a",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/plan_fin/fp-a.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - FP&A",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Planejamento e Análise Financeira (FP&A) | Meta Consultoria",
+    description:
+      "Domine as finanças da sua empresa com o serviço de FP&A da Meta Consultoria.",
+    images: ["/media/servicos/plan_fin/fp-a.webp"],
+  },
+};
+
 
 export default function FpAPage() {
   return (

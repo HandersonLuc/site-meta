@@ -4,6 +4,50 @@ import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
 import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
 import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Estudo de Materiais | Meta Consultoria",
+  description:
+    "Serviço de Estudo de Materiais da Meta Consultoria: análise técnica e econômica para selecionar materiais ideais em projetos, garantindo eficiência, durabilidade e sustentabilidade.",
+  keywords: [
+    "Meta Consultoria",
+    "Estudo de Materiais",
+    "Desenvolvimento de Máquinas",
+    "Engenharia de Materiais",
+    "Seleção de Materiais",
+    "Eficiência Produtiva",
+    "Durabilidade",
+    "Sustentabilidade",
+    "Consultoria Empresarial",
+    "UFF",
+  ],
+  openGraph: {
+    title: "Estudo de Materiais | Meta Consultoria",
+    description:
+      "Conheça o serviço de Estudo de Materiais da Meta Consultoria: qualidade, eficiência e sustentabilidade para seus projetos.",
+    url: "https://metaconsultoria.com/servicos/des_maq/estudo-de-materiais",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/des_maq/estudo-de-materiais.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Estudo de Materiais",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Estudo de Materiais | Meta Consultoria",
+    description:
+      "Selecione os materiais ideais para seus projetos com o serviço de Estudo de Materiais da Meta Consultoria.",
+    images: ["/media/servicos/des_maq/estudo-de-materiais.webp"],
+  },
+};
+
 
 export default function EstudoDeMateriaisPage() {
   return (
