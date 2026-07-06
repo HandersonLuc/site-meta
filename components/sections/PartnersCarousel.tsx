@@ -34,6 +34,7 @@ export function PartnersCarousel({ partners }: PartnersCarouselProps) {
                     src={partner.image}
                     alt={partner.name}
                     fill
+                    sizes="(max-width: 768px) 100vw, 180px"
                     className="object-contain"
                   />
                 </div>
