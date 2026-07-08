@@ -103,7 +103,6 @@ function getServicos(coordenacao?: string, servicos?: string[]) {
 export function FormularioServico({
   className,
   titulo = "Solicite seu projeto",
-  subtitulo = "Entre em contato com nossos consultores comerciais.",
   coordenacao,
   servicos,
   servicoInicial = "",

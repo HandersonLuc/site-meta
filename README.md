@@ -1,157 +1,229 @@
-# Template Institucional - Meta Consultoria
+# Meta Consultoria
 
-Este é um projeto [Next.js](https://nextjs.org) criado com [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), modificado para servir como base escalável para sites institucionais utilizando Tailwind CSS v4 e TypeScript.
+Site institucional da Meta Consultoria, construído com Next.js App Router, TypeScript e Tailwind CSS v4. O projeto foi organizado para suportar páginas institucionais, páginas de serviços, SEO centralizado e captação de leads via formulário de contato.
 
-## 1. Primeiros Passos
+## Visão Geral
 
-Para iniciar o servidor de desenvolvimento:
+O site é estruturado em torno de três blocos principais:
+
+1. apresentação institucional, com home, quem somos e páginas de confiança;
+2. catálogo de serviços, com páginas por área e por serviço específico;
+3. conversão, com formulário de contato, CTA em várias seções e newsletter.
+
+O layout global injeta cabeçalho, rodapé, metadata, JSON-LD, Google Tag Manager e estados de carregamento/erro em toda a aplicação.
+
+## Tecnologias Usadas
+
+- Next.js 16 com App Router e Server Actions
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- shadcn/ui e Radix UI
+- Lucide React e React Icons
+- Embla Carousel
+- Nodemailer para envio de e-mails
+- `@next/third-parties` para Google Tag Manager
+- `react-simple-icons` e utilitários de classe como `clsx` e `tailwind-merge`
+
+## Como Rodar
 
 ```bash
+npm install
 npm run dev
-# ou
-yarn dev
-# ou
-pnpm dev
-# ou
-bun dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
+A aplicação sobe em `http://localhost:3000`.
 
-### Configuração de Ambiente
+### Scripts disponíveis
 
-Antes de rodar o projeto em produção, certifique-se de configurar o arquivo `.env.local`:
+- `npm run dev`: ambiente de desenvolvimento
+- `npm run build`: build de produção
+- `npm run start`: executa o build gerado
+- `npm run lint`: validação com ESLint
 
-1. Copie o exemplo: `cp .env.example .env.local`
-2. Preencha as chaves de e-mail e analytics conforme as instruções abaixo.
+## Arquitetura E Fluxo
 
-## 2. Identidade Visual e Estilização
+O projeto segue uma estrutura de composição por páginas e seções reutilizáveis. A home e as páginas internas montam blocos prontos, enquanto os dados dos serviços ficam centralizados em `constants/services.ts`.
 
-A estilização do boilerplate é 100% centralizada no arquivo `src/app/globals.css`. Utilizando a abordagem CSS-first do Tailwind v4, nós eliminamos a necessidade de arquivos de configuração complexos de tema, tornando a inserção do manual da marca do cliente muito mais direta e à prova de falhas.
-
-### 2.1. O Sistema de Cores (Padrão HSL)
-
-Para garantir compatibilidade com a biblioteca de componentes e permitir variações de opacidade nativas do Tailwind (ex: utilizar `bg-primary/10` para fundos sutis), o projeto exige o uso do formato de cor **HSL (Hue, Saturation, Lightness)**.
-
-Note que os valores devem ser inseridos **sem** a função encapsuladora `hsl()` e **sem** vírgulas.
-
-Abra o arquivo `src/app/globals.css` e localize o bloco `:root`:
-
-```css
-:root {
-  /* Exemplo: Cor primária baseada no Verde da Meta Consultoria */
-  --primary: 164 29% 31%;
-
-  /* Cor do texto quando estiver em cima do background primário (geralmente branco ou preto) */
-  --primary-foreground: 0 0% 100%;
-}
+```mermaid
+flowchart TD
+  U[Usuário] --> H[Header / Navegação]
+  H --> P[App Router]
+  P --> HOME[app/page.tsx]
+  P --> S[app/servicos/page.tsx]
+  P --> D[app/servicos/[slug]/page.tsx]
+  P --> C[app/contato/page.tsx]
+  HOME --> HS[HeroSection]
+  HOME --> ST[Seção de destaques]
+  HOME --> SE[Session cards de serviços]
+  HOME --> PC[PartnersCarousel]
+  HOME --> NS[Newsletter]
+  S --> CO[constants/services.ts]
+  D --> CO
+  C --> F[ContactForm]
+  F --> A[Server Action sendContactEmail]
+  A --> M[Nodemailer / Gmail]
+  P --> L[Layout global]
+  L --> GTM[Google Tag Manager]
+  L --> SEO[Metadata + JSON-LD + robots/sitemap]
+  L --> FT[Footer]
 ```
 
-**Instrução para os Consultores:**
+### Lógica principal
 
-1. Pegue a cor primária do cliente em HEX (ex: Azul `#2563eb`).
-2. Utilize um conversor online de HEX para HSL (o resultado será algo como `HSL: 221, 83%, 53%`).
-3. Remova as vírgulas, os símbolos de grau e insira os três valores espaçados na variável:
-   `--primary: 221 83% 53%;`
+- A home monta a experiência de entrada com `HeroSection`, blocos de destaque, cards de serviços, carrossel de parceiros, uma seção de novo serviço, depoimentos e newsletter.
+- A listagem de serviços usa `coordinations` como fonte única de verdade para áreas e itens.
+- A página dinâmica `/servicos/[slug]` procura o serviço correspondente nos dados centralizados, gera metadata por rota e pré-renderiza as páginas com `generateStaticParams`.
+- O formulário de contato envia os dados via Server Action para `sendContactEmail`, que usa Nodemailer com Gmail e variáveis de ambiente.
+- O `layout.tsx` concentra cabeçalho, rodapé, metadata global, JSON-LD organizacional e o carregamento opcional do GTM.
 
-Ao alterar apenas a variável `--primary`, o site inteiro adaptará botões, links ativos, badges e ícones de destaque para a nova paleta da empresa.
+## Rotas
 
-### 2.2. Raio de Borda Global (Border Radius)
+### Páginas principais
 
-A identidade da marca dita a forma dos elementos. Marcas tradicionais (como escritórios de advocacia) costumam usar bordas mais rígidas, enquanto startups utilizam bordas mais suaves. O controle total disso está em uma única variável no `globals.css`:
+- `/` - home
+- `/servicos` - visão geral das áreas de atuação
+- `/servicos/[slug]` - página dinâmica de serviço
+- `/contato` - contato e captação de leads
+- `/obrigado` - página de confirmação pós-envio
+- `/quem-somos` - página institucional
+- `/quem-somos/sobre-nos` - sobre a empresa
+- `/quem-somos/SETTA` - página institucional SETTA
+- `/quem-somos/politica-de-privacidade` - política de privacidade
 
-```css
-:root {
-  --radius: 0.5rem; /* Padrão (8px) */
-}
+### Áreas de serviço
+
+- `/servicos/gnc`
+- `/servicos/ot_pr`
+- `/servicos/plan_fin`
+- `/servicos/constr_energ`
+- `/servicos/des_maq`
+- `/servicos/tecnologia`
+
+### Serviços individuais cadastrados em `constants/services.ts`
+
+- Gestão de Negócios: `/servicos/gnc/analise-de-mercado`, `/servicos/gnc/posicionamento-de-marca`, `/servicos/gnc/planejamento-estrategico`
+- Otimização de Processos: `/servicos/ot_pr/mapeamento-de-processos`, `/servicos/ot_pr/pesquisa-de-clima`, `/servicos/ot_pr/estruturacao-interna`, `/servicos/ot_pr/gestao-de-estoque`, `/servicos/ot_pr/estudo-de-tempo`, `/servicos/ot_pr/simulacao-de-processos`
+- Planejamento Financeiro: `/servicos/plan_fin/fp-a`, `/servicos/plan_fin/estudo-de-viabilidade`, `/servicos/plan_fin/precificacao-de-produtos`
+- Construção e Energia: `/servicos/constr_energ/projeto-arquitetonico`, `/servicos/constr_energ/instalacoes-hidrossanitarias`, `/servicos/constr_energ/regularizacao-de-imoveis`, `/servicos/constr_energ/orcamento-de-obras`, `/servicos/constr_energ/vistoria-hidrossanitaria-predial`, `/servicos/constr_energ/estudo-de-luminotecnica`, `/servicos/constr_energ/instalacoes-eletricas`
+- Desenvolvimento de Máquinas: `/servicos/des_maq/desenho-mecanico`, `/servicos/des_maq/estudo-de-materiais`, `/servicos/des_maq/prototipagem-3d`, `/servicos/des_maq/analise-estrutural`, `/servicos/des_maq/manuais-tecnicos`
+- Tecnologia: `/servicos/tecnologia/desenvolvimento-de-site`, `/servicos/tecnologia/desenvolvimento-de-aplicativos`, `/servicos/tecnologia/automacao-de-processos`, `/servicos/tecnologia/direcionamento_estrategico`
+
+## Fluxo De Componentes
+
+### Estrutura global
+
+- `app/layout.tsx` injeta `Header`, `main` e `Footer`.
+- O layout também adiciona metadata global, sitemap, robots e o schema `Organization` em JSON-LD.
+- O componente `Header` usa navegação fixa com dropdown para “Quem somos” e “Serviços” e versão mobile via `MobileMenu`.
+- O `Footer` fecha a navegação com links institucionais, redes sociais, endereço e CTA de conteúdo.
+
+### Home
+
+- `app/page.tsx` monta a home em blocos sequenciais.
+- `HeroSection` abre a página com imagem de fundo, título e CTA.
+- `Session` é usado para os cards de áreas de serviço com link para cada rota.
+- `PartnersCarousel` exibe logos de parceiros/clients.
+- `Newsletter` encerra a jornada com captura de e-mail.
+
+### Página de serviço
+
+- `app/servicos/[slug]/page.tsx` resolve o slug no catálogo.
+- Se o serviço não existir, a página chama `notFound()`.
+- Cada página de serviço exibe hero, imagem, introdução, metodologia, formulário de contato e diferenciais.
+- As páginas são pré-renderizadas com base no catálogo em tempo de build.
+
+## Formulário De Contato
+
+O envio de mensagens acontece sem API externa dedicada.
+
+- o formulário coleta nome, e-mail, telefone, investimento e mensagem;
+- o submit chama a Server Action `sendContactEmail`;
+- a action valida campos obrigatórios;
+- o e-mail é disparado com Nodemailer usando `EMAIL_USER` e `EMAIL_PASS`.
+
+### Variáveis de ambiente
+
+Defina no `.env.local`:
+
+```bash
+EMAIL_USER=seu-email@gmail.com
+EMAIL_PASS=sua-senha-de-aplicativo
+NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
 
-- Para um design sério/flat: altere para `0rem`.
-- Para um design amigável/moderno: altere para `1rem`.
+## Estrutura Do Projeto
 
-Todos os componentes filhos (cards, inputs, caixas de diálogo) calculam seu arredondamento com base nessa variável central, garantindo coesão visual em 100% das páginas.
-
-### 2.3. Tipografia (Integração com Google Fonts)
-
-O template utiliza nativamente a família de fontes `Geist`. Se o manual da marca do cliente exigir uma fonte clássica como _Montserrat_, _Inter_ ou _Roboto_, a substituição é feita diretamente via Next.js Font Optimization. Isso garante que as fontes sejam carregadas no servidor e não gerem saltos visuais na tela (CLS).
-
-**Como trocar a fonte global do projeto:**
-
-1. Abra o arquivo `src/app/layout.tsx`.
-2. Substitua o import da fonte desejada vinda do pacote oficial do Google:
-
-```tsx
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-geist-sans", // Manter este nome de variável poupa a necessidade de reescrever o CSS base
-});
+```text
+app/
+  layout.tsx
+  page.tsx
+  contato/
+  obrigado/
+  quem-somos/
+  servicos/
+actions/
+  sendContactEmail.tsx
+components/
+  layout/
+  sections/
+  forms/
+  ui/
+constants/
+  services.ts
+lib/
+  utils.ts
+public/
+  media/
+  ...
+doc/
+  conteudo_textual/
 ```
 
-3. Instancie a nova variável na tag `<body>`:
+### Responsabilidade por pasta
 
-```tsx
-<body className={`${montserrat.variable} antialiased flex min-h-screen flex-col font-sans overflow-x-hidden`}>
-```
+- `app/`: rotas, páginas e metadados
+- `actions/`: ações do servidor, principalmente envio de e-mail
+- `components/layout/`: header, footer e menu mobile
+- `components/sections/`: blocos reutilizáveis da experiência de navegação e conversão
+- `components/forms/`: formulários reutilizáveis
+- `components/ui/`: primitives e componentes visuais baseados em shadcn/radix
+- `constants/`: dados centralizados dos serviços
+- `public/media/`: imagens e assets estáticos
+- `doc/`: material de referência e conteúdo textual
 
-Desta forma, todo o sistema tipográfico do Tailwind (classes como `text-xl`, `font-bold`) adotará a nova fonte automaticamente e sem impacto negativo no carregamento da página.
+## SEO E Infraestrutura De Página
 
-## 3. Guia de Substituição de Conteúdo
+- metadata global no layout e metadata específica por rota
+- Open Graph e Twitter Cards por página
+- canonical configurado no layout global
+- sitemap e robots em rotas dedicadas
+- página customizada de erro e loading
+- JSON-LD da organização no `<head>`
 
-O template utiliza placeholders para agilizar o desenvolvimento. Siga este guia para trocá-los por conteúdo real.
+## Próximas Atualizações
 
-### Logotipos (Header e Footer)
+- criar as rotas que ainda aparecem como placeholder no menu, como Parcerias e Insights
+- integrar o fluxo da newsletter com armazenamento real de leads
+- adicionar validação mais forte no formulário de contato
+- revisar consistência entre as URLs de navegação e as páginas finais
+- centralizar textos institucionais em uma fonte de conteúdo única, se o site crescer
+- padronizar melhor imagens e metadados dos serviços ainda incompletos
 
-Localize as tags `<div>LOGO</div>` nos componentes de layout e substitua-as pelo componente `<Image />` do Next.js para garantir otimização de carregamento.
+## Contribuição
 
-### Vídeo de Fundo (Hero Section)
+1. Crie uma branch curta e descritiva.
+2. Rode `npm run lint` antes de abrir PR.
+3. Mantenha dados de serviços centralizados em `constants/services.ts`.
+4. Evite duplicar lógica entre páginas de listagem e páginas de detalhe.
+5. Para alterar conteúdo institucional, prefira ajustar a página e os metadados associados à rota.
 
-O componente `<HeroSection />` aceita a propriedade `videoSrc`. Passe o caminho do arquivo `.mp4` (ex: `/videos/institucional.mp4`) para ativar o vídeo em loop no fundo da dobra principal.
+## Observações Importantes
 
-### Imagens e Thumbs
-
-Onde houver `divs` cinzas com texto centralizado, utilize o componente `<Image />`. Mantenha as classes de `aspect-ratio` (como `aspect-video` ou `aspect-[4/3]`) para garantir que o layout permaneça consistente em dispositivos móveis.
-
-### Textos de Fundo (BackgroundText)
-
-As letras gigantes transparentes (ex: "CONTATO", "DESTAQUES") são componentes `<BackgroundText />`. Eles são puramente estéticos e podem ser alterados ou removidos sem afetar a estrutura da página.
-
-## 4. Configuração do Formulário de Contato
-
-Este boilerplate utiliza **Server Actions** nativas do Next.js e a biblioteca **Nodemailer** para envio de e-mails, eliminando a necessidade de serviços externos pagos.
-
-### Como ativar:
-
-1. No Gmail do cliente, gere uma **Senha de Aplicativo**.
-2. Configure as seguintes variáveis no seu `.env.local`:
-   - `EMAIL_USER`: E-mail que enviará e receberá as mensagens.
-   - `EMAIL_PASS`: Senha de 16 dígitos gerada pelo Google.
-
-## 5. SEO e Rastreamento
-
-### Metadata API
-
-As configurações de SEO estão centralizadas no `layout.tsx` (Global) e nos arquivos `page.tsx` (Específico).
-
-- **Canonical:** Configure a URL canônica para evitar conteúdo duplicado.
-- **OpenGraph:** Substitua o arquivo `public/images/og-image.jpg` pela capa do site para compartilhamento em redes sociais.
-
-### Google Tag Manager
-
-Insira o ID do GTM na variável `NEXT_PUBLIC_GTM_ID` do arquivo `.env.local` para habilitar automaticamente o rastreamento do Google Analytics e pixels de conversão.
-
-## 6. Padronização Técnica
-
-- **Página 404:** Customizada em `src/app/not-found.tsx`.
-- **Loading State:** Tela de carregamento global configurada em `src/app/loading.tsx`.
-- **Sitemap & Robots:** Gerados dinamicamente em `src/app/sitemap.ts` e `src/app/robots.ts`.
-- **Menu Mobile:** Componente isolado e otimizado para performance em `src/components/layout/MobileMenu.tsx`.
+- O menu contém itens ainda sem rota final para `Parcerias` e `Insights`.
+- O arquivo de imagem do hero e os logos usados no layout devem permanecer em `public/media` para aproveitamento pelo Next.js Image.
+- A listagem principal de serviços é derivada do catálogo em `constants/services.ts`; ao adicionar um novo serviço, atualize também a página específica e os links de navegação quando necessário.
 
 ---
 
-Desenvolvido por Meta Consultoria.
-
-```
-
-```
+Desenvolvido para a Meta Consultoria.
