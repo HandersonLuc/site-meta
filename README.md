@@ -51,7 +51,7 @@ flowchart TD
   H --> P[App Router]
   P --> HOME[app/page.tsx]
   P --> S[app/servicos/page.tsx]
-  P --> D[app/servicos/[slug]/page.tsx]
+  P --> D[app/servicos/slug/page.tsx]
   P --> C[app/contato/page.tsx]
   HOME --> HS[HeroSection]
   HOME --> ST[Seção de destaques]
