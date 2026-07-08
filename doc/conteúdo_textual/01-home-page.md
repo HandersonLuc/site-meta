@@ -1,12 +1,16 @@
 # Legenda
 
 Todo o conteúdo textual simples estará sem #
+
 # -> Qual Página é e Observações
+
 ## -> Conteúdo daquela sessão. ex(Quem Somos, Indicadores)
+
 ### -> Botões(conteúdo textual do botão junto da hashtag e o nome do botão entre parênteses)
+
 #### -> Utilizado para definir texto que virá
 
---------------------------------------
+---
 
 # Home Page
 
@@ -16,7 +20,7 @@ URL atual: https://metaconsultoria.com/
 
 Header e footer se repetem em todas as páginas. Salvo no Documento de Header e Footer
 
---------------------------------------
+---
 
 ## Título_Video_Institucional
 
@@ -26,7 +30,7 @@ Torne-se o protagonista do seu futuro
 
 ### Botão (Conheça nossa história)
 
---------------------------------------
+---
 
 ## Quem somos
 
@@ -34,9 +38,9 @@ Torne-se o protagonista do seu futuro
 
 #### Texto
 
-A Meta Consultoria oferece soluções em consultoria empresarial  com foco em Engenharia e Gestão de Negócios, impulsionando o crescimento e a eficiência de empresas com estratégia,  inteligência e propósito para quem quer liderar o próprio futuro.
+A Meta Consultoria oferece soluções em consultoria empresarial com foco em Engenharia e Gestão de Negócios, impulsionando o crescimento e a eficiência de empresas com estratégia, inteligência e propósito para quem quer liderar o próprio futuro.
 
---------------------------------------
+---
 
 ## Indicadores
 
@@ -56,7 +60,7 @@ Anos de experiência
 
 Satisfação
 
---------------------------------------
+---
 
 ## Serviços
 
@@ -96,7 +100,7 @@ Desenvolvimento de Máquinas é focado em apoiar o desenvolvimento de novos prod
 
 Os serviços da área de Tecnologia são voltados para marcas que desejam crescer, fortalecer sua imagem e se destacar no ambiente online.
 
---------------------------------------
+---
 
 ## Nossos clientes
 
@@ -116,7 +120,7 @@ Nossos clientes
 
 ### Botão (CONHEÇA NOSSOS SERVIÇOS)
 
---------------------------------------
+---
 
 ## Novo serviço
 
@@ -126,13 +130,13 @@ Novo serviço
 
 #### Título
 
-Otimização de Sites (SEO)
+Direcionamento de Sites (SEO)
 
 ### Botão (Saiba mais)
 
 Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados.
 
---------------------------------------
+---
 
 ## Depoimentos
 
@@ -154,7 +158,7 @@ O que nossos clientes dizem
 
 -Luciano Gallucci, Diretor Executivo
 
---------------------------------------
+---
 
 # Observação - Formulários
 

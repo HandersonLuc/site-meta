@@ -20,22 +20,25 @@ export default function ProjetoArquitetonicoPage() {
             "Cada projeto é pensado para otimizar espaços, reduzir custos e eliminar retrabalhos, apresentando um modelo 3D realista que permite visualizar o resultado final antes mesmo de iniciar a obra."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+        <div className="flex-1">
+          <DefinitionSection
+            title="O que é um Projeto Arquitetônico?"
+            paragraphs={[
+                "O Projeto Arquitetônico é o documento técnico que define o planejamento completo de uma edificação, desde a distribuição de ambientes até a organização estética e funcional dos espaços.",
+                "Ele serve como base para a execução da obra, o cálculo estrutural, as instalações elétricas e hidrossanitárias, além de ser essencial para aprovação em órgãos públicos.",
+                "Na Meta Consultoria, criamos projetos personalizados e detalhados, com o equilíbrio ideal entre beleza, conforto, eficiência e viabilidade construtiva."
+              ]}
+          />
+        </div>        
+        <div className="flex-1">
           <FormularioServico
             coordenacao="constr_energ"
             servicoInicial="Projeto Arquitetônico"
           />
         </div>
       </section>
-      <DefinitionSection
-        title="O que é um Projeto Arquitetônico?"
-        paragraphs={[
-            "O Projeto Arquitetônico é o documento técnico que define o planejamento completo de uma edificação, desde a distribuição de ambientes até a organização estética e funcional dos espaços.",
-            "Ele serve como base para a execução da obra, o cálculo estrutural, as instalações elétricas e hidrossanitárias, além de ser essencial para aprovação em órgãos públicos.",
-            "Na Meta Consultoria, criamos projetos personalizados e detalhados, com o equilíbrio ideal entre beleza, conforto, eficiência e viabilidade construtiva."
-          ]}
-      />
+
       <ServiceSteps
         title="Como a Meta Consultoria atua"
         intro="Nosso processo é técnico, detalhado e colaborativo, garantindo segurança, clareza e excelência em cada etapa:"

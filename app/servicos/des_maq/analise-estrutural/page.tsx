@@ -63,22 +63,25 @@ export default function AnaliseEstruturalPage() {
             "Nosso objetivo é identificar pontos críticos, reduzir riscos e garantir projetos mais seguros, eficientes e econômicos."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+        <div className="flex-1">
+          <DefinitionSection
+            title="O que é a Análise Estrutural?"
+            paragraphs={[
+                "A Análise Estrutural é o estudo que verifica como uma estrutura ou componente se comporta quando submetido a forças, cargas e deformações.",
+                "Ela permite prever tensões, deslocamentos, vibrações e falhas potenciais, garantindo resistência, estabilidade e durabilidade.",
+                "Na Meta Consultoria, aplicamos métodos analíticos e ferramentas de simulação por elementos finitos para validar o projeto antes da fabricação, evitando quebras, desperdícios e custos adicionais."
+              ]}
+          />
+        </div>
+        <div className="flex-1">
           <FormularioServico
             coordenacao="des_maq"
             servicoInicial="Análise Estrutural"
           />
         </div>
       </section>
-      <DefinitionSection
-        title="O que é a Análise Estrutural?"
-        paragraphs={[
-            "A Análise Estrutural é o estudo que verifica como uma estrutura ou componente se comporta quando submetido a forças, cargas e deformações.",
-            "Ela permite prever tensões, deslocamentos, vibrações e falhas potenciais, garantindo resistência, estabilidade e durabilidade.",
-            "Na Meta Consultoria, aplicamos métodos analíticos e ferramentas de simulação por elementos finitos para validar o projeto antes da fabricação, evitando quebras, desperdícios e custos adicionais."
-          ]}
-      />
+
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo combina engenharia mecânica avançada, softwares de análise e validação técnica:"

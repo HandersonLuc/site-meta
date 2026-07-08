@@ -171,7 +171,7 @@ export default function Home() {
             Novo serviço
           </h2>
           <h3 className="text-2xl font-extrabold mt-4 mb-6">
-            Otimização de Sites (SEO)
+            Direcionamento de Sites (SEO)
           </h3>
         </div>
 
