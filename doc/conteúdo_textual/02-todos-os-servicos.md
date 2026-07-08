@@ -1,12 +1,16 @@
 # Legenda
 
 Todo o conteúdo textual simples estará sem #
+
 # -> Qual Página é e Observações
+
 ## -> Conteúdo daquela sessão. ex(Quem Somos, Indicadores)
+
 ### -> Botões(conteúdo textual do botão junto da hashtag e o nome do botão entre parênteses)
+
 #### -> Utilizado para definir texto que virá
 
---------------------------------------
+---
 
 # Todos os Serviços
 
@@ -16,7 +20,7 @@ URL atual: https://metaconsultoria.com/servicos-meta-consultoria/
 
 Header e footer se repetem em todas as páginas. Salvo no Documento de Header e Footer
 
---------------------------------------
+---
 
 ## Título inicial
 
@@ -24,7 +28,7 @@ Soluções para você e para o seu negócio
 
 Serviços
 
---------------------------------------
+---
 
 ## Áreas de atuação
 
@@ -40,7 +44,7 @@ Serviços
 
 ### Botão (Tecnologia)
 
---------------------------------------
+---
 
 ## Gestão de Negócios
 
@@ -62,7 +66,7 @@ Fortaleça sua presença online e conquiste relevância no ambiente digital. Def
 
 Defina o rumo do seu negócio com clareza e foco. Analisamos o ambiente interno e externo da sua organização para identificar forças, fraquezas e oportunidades, traçando metas e ações alinhadas à sua visão de futuro.
 
---------------------------------------
+---
 
 ## Otimização de Processos
 
@@ -102,7 +106,7 @@ Aumente sua produtividade com precisão. Realizamos estudos de tempo para identi
 
 Antecipe resultados e tome decisões com segurança. Utilizamos simulação de processos para mapear cenários, testar melhorias e identificar oportunidades de otimização, reduzindo riscos e aumentando a eficiência antes mesmo da implementação.
 
---------------------------------------
+---
 
 ## Planejamento Financeiro
 
@@ -124,7 +128,7 @@ Defina preços com estratégia e confiança. Desenvolvemos análises de precific
 
 Transforme dados financeiros em decisões estratégicas. Estruturamos projeções, análises de desempenho e cenários futuros para orientar o crescimento sustentável da sua empresa com foco em rentabilidade e eficiência.
 
---------------------------------------
+---
 
 ## Construção e Energia
 
@@ -170,7 +174,7 @@ Ilumine seu ambiente com eficiência e conforto. Realizamos estudos luminotécni
 
 Planeje e execute instalações elétricas seguras e eficientes. Desenvolvemos projetos que garantem conformidade com as normas, funcionalidade e proteção, assegurando o funcionamento confiável de sistemas elétricos para sua obra ou empresa.
 
---------------------------------------
+---
 
 ## Desenvolvimento de Máquinas
 
@@ -204,7 +208,7 @@ Garanta a resistência e qualidade dos seus produtos. Realizamos análises estru
 
 Profissionalize a documentação do seu equipamento com manuais de operação, manutenção e catálogos de peças. Desenvolvemos documentos técnicos em conformidade com as normas vigentes para garantir a segurança do usuário, a eficiência operacional e a longevidade da sua solução.
 
---------------------------------------
+---
 
 ## Tecnologia
 
@@ -226,13 +230,13 @@ Transforme sua ideia em um aplicativo funcional e inovador. Desenvolvemos soluç
 
 Automatize tarefas com inovação e praticidade. Desenvolvemos soluções com Arduino que simplificam processos manuais, aumentam a eficiência operacional e reduzem custos, trazendo tecnologia acessível e personalizada para o crescimento do seu negócio.
 
-#### Otimização de Sites (SEO)
+#### Direcionamento de Sites (SEO)
 
 ### Botão (Saiba mais)
 
 Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados.
 
---------------------------------------
+---
 
 # Observação - Formulários
 

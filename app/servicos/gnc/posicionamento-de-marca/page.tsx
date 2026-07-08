@@ -1,3 +1,4 @@
+import { FormularioServico } from "@/components/forms/serviceForm";
 import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
 import { ServiceHeader } from "@/components/sections/services/HeroSection";
 import { ServiceIntro } from "@/components/sections/services/IntroSection";
@@ -62,13 +63,24 @@ export default function PosicionamentoDeMarcaPage() {
           "A Meta Consultoria, Empresa Júnior de Engenharia e Gestão de Negócios da UFF, oferece soluções estratégicas e personalizadas que unem análise de mercado, branding e marketing digital para fortalecer a identidade da sua marca e ampliar sua presença online com resultados concretos.",
         ]}
       />
-      <DefinitionSection
-        title="O que é Posicionamento de Marca?"
-        paragraphs={[
-          "O Posicionamento Digital é o conjunto de ações e estratégias que definem como sua empresa se apresenta, comunica e é lembrada pelo público na internet.", 
-          "Mais do que estar nas redes sociais, é sobre construir uma presença digital consistente, que reflita seus valores e desperte confiança nos clientes.", 
-          "Um posicionamento sólido aumenta a autoridade da marca, melhora a percepção de valor e gera mais oportunidades de negócio de forma orgânica e sustentável."]}
-      />
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+        <div className="flex-1">
+          <DefinitionSection
+            title="O que é Posicionamento de Marca?"
+            paragraphs={[
+              "O Posicionamento Digital é o conjunto de ações e estratégias que definem como sua empresa se apresenta, comunica e é lembrada pelo público na internet.",
+              "Mais do que estar nas redes sociais, é sobre construir uma presença digital consistente, que reflita seus valores e desperte confiança nos clientes.",
+              "Um posicionamento sólido aumenta a autoridade da marca, melhora a percepção de valor e gera mais oportunidades de negócio de forma orgânica e sustentável."]}
+          />
+        </div>
+        <div className="flex-1">
+          <FormularioServico
+            coordenacao="gnc"
+            servicoInicial="Posicionamento de Marca"
+          />
+        </div>        
+      </section>
+
       <ServiceSteps
         title="Como funciona nosso serviço?"
         intro="Na Meta Consultoria, o processo é estruturado e baseado em dados, garantindo que cada decisão tenha impacto direto nos resultados da sua empresa:"

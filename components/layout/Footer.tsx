@@ -25,11 +25,11 @@ export function Footer() {
           <div>
           <Link href="/" className="flex-shrink-0">
             <Image
-            src="/media/midias site/Logo-Meta-Consultoria.webp"
-            alt="Logo"
-            width={220}
-            height={200}
-            className="object-contain"
+              src="/media/midias site/Logo-Meta-Consultoria.webp"
+              alt="Logo"
+              width={125}
+              height={125}
+              className="object-contain"
           />
         </Link>
           </div>

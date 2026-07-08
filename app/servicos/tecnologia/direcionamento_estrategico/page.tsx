@@ -7,13 +7,13 @@ import { RelatedServices } from "@/components/sections/services/RelatedServices"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Otimização de Sites (SEO) | Meta Consultoria",
+  title: "Direcionamento Estratégico (SEO) | Meta Consultoria",
   description:
     "Serviço de SEO da Meta Consultoria: aumente tráfego orgânico, posições no Google e conversões com otimização técnica, conteúdo estratégico e performance digital.",
   keywords: [
     "Meta Consultoria",
     "SEO",
-    "Otimização de Sites",
+    "Direcionamento de Sites",
     "Tecnologia",
     "Tráfego Orgânico",
     "Google",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Marketing Digital",
   ],
   openGraph: {
-    title: "Otimização de Sites (SEO) | Meta Consultoria",
+    title: "Direcionamento Estratégico (SEO) | Meta Consultoria",
     description:
       "Conheça o serviço de SEO da Meta Consultoria: estratégias técnicas e de conteúdo para colocar seu site no topo do Google e gerar mais leads.",
     url: "https://metaconsultoria.com/servicos/tecnologia/direcionamento_estrategico",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Otimização de Sites (SEO) | Meta Consultoria",
+    title: "Direcionamento Estratégico (SEO) | Meta Consultoria",
     description:
       "Transforme seu site em uma máquina de tráfego orgânico e conversão com o serviço de SEO da Meta Consultoria.",
     images: ["/media/servicos/tecnologia/seo.webp"],
@@ -53,7 +53,7 @@ export default function OtimizacaoDeSitesSeoPage() {
   return (
     <>
       <ServiceHeader
-        title="Otimização de Sites (SEO)"
+        title="Direcionamento Estratégico (SEO)"
         description="Aumente tráfego orgânico, posições no Google e conversões com SEO técnico, on-page e conteúdo."
       />
       <ServiceIntro
@@ -63,15 +63,26 @@ export default function OtimizacaoDeSitesSeoPage() {
           "O SEO para Websites integra técnica, conteúdo, intenção de busca e conversão para transformar sua presença digital em um canal de crescimento orgânico."
         ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="tecnologia"
-            servicoInicial="SEO"
-            titulo="Aumente seu tráfego orgânico e gere mais leads com SEO para Websites!"
-            subtitulo="Auditoria, otimização técnica, conteúdo e conversão para crescer no orgânico. Garanta um diagnóstico SEO gratuito do seu site."
-          />
-        </div>
+      <section>
+          <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+            <div className="flex-1">
+              <DefinitionSection
+                title="O que é SEO?"
+                paragraphs={[
+                  "SEO (Search Engine Optimization) é o processo de otimização de um site para melhorar sua visibilidade nos resultados orgânicos do Google.",
+                  "Um bom posicionamento no Google aumenta a autoridade da marca, gera mais leads e impulsiona o crescimento do negócio."
+                ]}
+              />
+            </div>
+            <div className="flex-1">
+              <FormularioServico
+                coordenacao="tecnologia"
+                servicoInicial="SEO"
+                titulo="Aumente seu tráfego orgânico e gere mais leads com SEO para Websites!"
+                subtitulo="Auditoria, otimização técnica, conteúdo e conversão para crescer no orgânico. Garanta um diagnóstico SEO gratuito do seu site."
+              />
+            </div>
+          </div>
       </section>
       <DefinitionSection
         title="Se você enfrenta problemas como:"
@@ -108,7 +119,7 @@ export default function OtimizacaoDeSitesSeoPage() {
           }
         ]}
       />
-      <section className="bg-[#090E28] py-16">
+      <section className="">
         <div className="container mx-auto px-4 max-w-3xl">
           <FormularioServico
             coordenacao="tecnologia"
