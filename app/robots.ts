@@ -6,7 +6,6 @@ export default function robots(): MetadataRoute.Robots {
 
   return {
     rules: {
-      userAgent: "*",
       allow: "/",
       // Adicione aqui rotas que o Google NÃO deve indexar
       disallow: ["/api/", "/admin/"],
