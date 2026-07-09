@@ -103,7 +103,6 @@ function getServicos(coordenacao?: string, servicos?: string[]) {
 export function FormularioServico({
   className,
   titulo = "Solicite seu projeto",
-  subtitulo = "Entre em contato com nossos consultores comerciais.",
   coordenacao,
   servicos,
   servicoInicial = "",
@@ -122,6 +121,7 @@ export function FormularioServico({
   return (
     <div
       className={cn(
+< pagina-servico
         "w-full max-w-full bg-white rounded-2xl p-6 sm:p-8 shadow-[0_12px_50px_rgba(0,0,0,0.4)] transition-all duration-300",
         className
       )}
@@ -129,9 +129,17 @@ export function FormularioServico({
       <div className="mb-6 space-y-2">
         <h2 className="text-xl sm:text-2xl leading-tight font-bold text-black break-words">{titulo}</h2>
         <p className="text-sm text-gray-600 break-words">{subtitulo}</p>
+=======
+        "bg-white rounded-2xl p-8 transition-all duration-300",
+        className
+      )}
+    >
+      <div className="mb-4 space-y-2">
+        <h2 className="text-2xl font-bold text-black">{titulo}</h2>
+> main
       </div>
 
-      <form className="space-y-6">
+      <form className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor={`${formId}-nome`} className="font-semibold text-sm text-black">
             Nome <span className="text-red-500">*</span>
@@ -239,15 +247,19 @@ export function FormularioServico({
             id={`${formId}-mensagem`}
             name="mensagem"
             placeholder="Digite sua mensagem"
-            className="min-h-[90px] rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
+            className="min-h-[80px] rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
             required
           />
         </div>
 
-        <div className="pt-4">
+        <div className="pt-2">
           <Button
             type="button"
+< pagina-servico
             className="w-full sm:w-auto bg-[#007BFF] hover:bg-[#0066D1] text-white font-medium rounded-full px-8 py-2 transition-all"
+=======
+            className="bg-[#007BFF] hover:bg-[#0066D1] text-white font-medium rounded-full px-8 py-1 transition-all"
+> main
           >
             Enviar
           </Button>

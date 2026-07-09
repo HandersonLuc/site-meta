@@ -63,22 +63,26 @@ export default function EstruturacaoInternaPage() {
             "Com metodologia baseada em gestão organizacional e análise de processos, a Meta constrói uma estrutura sólida, eficiente e preparada para o crescimento."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+        <div className="flex-1">
+          <DefinitionSection
+            title="O que é Estruturação Interna?"
+            paragraphs={[
+                "A estruturação interna é o processo de organizar a base operacional e hierárquica da empresa, definindo com clareza funções, cargos, responsabilidades e fluxos de comunicação.",
+                "Ela garante que todos saibam quem faz o quê, como e por quê, eliminando conflitos, sobreposições e desperdícios.",
+                "Na Meta, o serviço de Estruturação Interna combina análise organizacional, mapeamento de funções e modelagem de cargos, sempre alinhado à estratégia e à cultura da empresa."
+              ]}
+          />
+        </div>        
+        
+        <div className="flex-1">
           <FormularioServico
             coordenacao="ot_pr"
             servicoInicial="Estruturação Interna"
           />
         </div>
       </section>
-      <DefinitionSection
-        title="O que é Estruturação Interna?"
-        paragraphs={[
-            "A estruturação interna é o processo de organizar a base operacional e hierárquica da empresa, definindo com clareza funções, cargos, responsabilidades e fluxos de comunicação.",
-            "Ela garante que todos saibam quem faz o quê, como e por quê, eliminando conflitos, sobreposições e desperdícios.",
-            "Na Meta, o serviço de Estruturação Interna combina análise organizacional, mapeamento de funções e modelagem de cargos, sempre alinhado à estratégia e à cultura da empresa."
-          ]}
-      />
+
       <ServiceSteps
         title="Como a Meta Consultoria atua"
         intro="Nosso processo é colaborativo, estratégico e feito sob medida para cada negócio:"

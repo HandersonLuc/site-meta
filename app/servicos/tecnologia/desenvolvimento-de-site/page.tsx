@@ -64,24 +64,29 @@ export default function DesenvolvimentoDeSitePage() {
           "O resultado é um site rápido, estratégico e adaptado ao seu público, pronto para atrair visitantes e gerar conversões reais."
         ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="tecnologia"
-            servicoInicial="Site"
-            titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
-            subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
-          />
+      <section>
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              title="O que é um Site com SEO?"
+              paragraphs={[
+                "Um site com SEO é aquele estruturado para ser encontrado e bem ranqueado nos buscadores, especialmente no Google.",
+                "Além de bonito, o site é planejado tecnicamente, desde o código até os textos, para aumentar o tráfego orgânico e atrair clientes de forma contínua.",
+                "O serviço da Meta vai além do design: aplicamos estratégias de SEO on-page e técnico, garantindo velocidade, responsividade e conteúdo otimizado."
+              ]}
+            />
+          </div>
+          <div className="flex-1">
+            <FormularioServico
+              coordenacao="tecnologia"
+              servicoInicial="Site"
+              titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
+              subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
+            />
+          </div>
         </div>
       </section>
-      <DefinitionSection
-        title="O que é um Site com SEO?"
-        paragraphs={[
-          "Um site com SEO é aquele estruturado para ser encontrado e bem ranqueado nos buscadores, especialmente no Google.",
-          "Além de bonito, o site é planejado tecnicamente, desde o código até os textos, para aumentar o tráfego orgânico e atrair clientes de forma contínua.",
-          "O serviço da Meta vai além do design: aplicamos estratégias de SEO on-page e técnico, garantindo velocidade, responsividade e conteúdo otimizado."
-        ]}
-      />
+      
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo de Desenvolvimento de Sites com foco em SEO é completo, estratégico e personalizado:"
@@ -130,7 +135,7 @@ export default function DesenvolvimentoDeSitePage() {
             href: "/servicos/tecnologia/automacao-de-processos",
           },
           {
-            title: "Otimização de Sites (SEO)",
+            title: "Direcionamento de Sites (SEO)",
             description: "Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados.",
             href: "/servicos/tecnologia/direcionamento_estrategico",
           }
