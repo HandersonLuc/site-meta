@@ -28,7 +28,7 @@ export interface Coordination {
 const gestaoNegocios: Coordination = {
   name: "Gestão de Negócios",
   slug: "gnc",
-  image: "/media/servicos/gnc/gestaodenegocios-1.webp",
+  image: "/media/icones coordenacoes/gestao_de_negocios.webp",
   services: [
     {
       slug: "gnc/analise-de-mercado",
@@ -52,7 +52,7 @@ const gestaoNegocios: Coordination = {
 const otimizacaoProcessos: Coordination = {
   name: "Otimização de Processos",
   slug: "ot_pr",
-  image: "/media/servicos/ot_pr/op11-1.webp",
+  image: "/media/icones coordenacoes/otimizaca_de_processos.webp",
   services: [
     { slug: "ot_pr/mapeamento-de-processos", title: "Mapeamento de Processos", description: "Visualize e entenda como sua empresa funciona. Identificamos, organizamos e analisamos cada etapa dos seus processos para eliminar gargalos, padronizar operações e aumentar a eficiência do seu negócio" },
     { slug: "ot_pr/pesquisa-de-clima", title: "Pesquisa de Clima", description: "Organize sua empresa para crescer com solidez. Reestruturamos funções, fluxos e responsabilidades para aumentar a eficiência operacional, melhorar a comunicação e garantir uma base sólida para a tomada de decisões." },
@@ -67,7 +67,7 @@ const otimizacaoProcessos: Coordination = {
 const planejamentoFinanceiro: Coordination = {
   name: "Planejamento Financeiro",
   slug: "plan_fin",
-  image: "/media/servicos/plan_fin/fundo-plan-financ.webp",
+  image: "/media/icones coordenacoes/planejamento_financeiro.webp",
   services: [
     { slug: "plan_fin/fp-a", title: "FP&A", description: "Transforme dados financeiros em decisões estratégicas. Estruturamos projeções, análises de desempenho e cenários futuros para orientar o crescimento sustentável da sua empresa com foco em rentabilidade e eficiência." },
     { slug: "plan_fin/estudo-de-viabilidade", title: "Estudo de Viabilidade", description: "Descubra se sua ideia é financeiramente viável antes de investir. Analisamos custos, receitas, riscos e retorno esperado para embasar decisões com segurança e maximizar as chances de sucesso do seu projeto."},
@@ -79,7 +79,7 @@ const planejamentoFinanceiro: Coordination = {
 const construcaoEnergia: Coordination = {
   name: "Construção e Energia",
   slug: "constr_energ",
-  image: "/media/servicos/constr_energ/homepagg.webp",
+  image: "/media/icones coordenacoes/contrucao_e_energia.webp",
   services: [
     { slug: "constr_energ/projeto-arquitetonico", title: "Projeto Arquitetônico", description: "Transforme ideias em espaços funcionais e esteticamente marcantes. Desenvolvemos projetos personalizados que equilibram técnica, criatividade e viabilidade, atendendo às necessidades do cliente e às normas urbanísticas."},
     { slug: "constr_energ/instalacoes-hidrossanitarias", title: "Instalações Hidrossanitárias", description:"Desenvolvemos soluções completas em instalações hidrossanitárias, garantindo o correto dimensionamento de água fria, água quente, esgoto e drenagem. Nossos projetos seguem normas técnicas e priorizam eficiência, sustentabilidade e economia, assegurando conforto, segurança e durabilidade para sua obra."},
@@ -95,7 +95,7 @@ const construcaoEnergia: Coordination = {
 const desenvolvimentoMaquinas: Coordination = {
   name: "Desenvolvimento de Máquinas",
   slug: "des_maq",
-  image: "/media/servicos/des_maq/desenho-mec-1(1).webp",
+  image: "/media/icones coordenacoes/desenvolvimento_de_maquina.webp",
   services: [
     { slug: "des_maq/desenho-mecanico", title: "Desenho Mecânico", description: "Realizamos desenhos mecânicos técnicos completos, seguindo normas e padrões de engenharia, para garantir clareza no projeto, confiabilidade na fabricação e redução de falhas no processo produtivo." },
     { slug: "des_maq/estudo-de-materiais", title: "Estudo de Materiais", description: "Escolha os materiais certos para o seu projeto com base em desempenho, custo e aplicação. Analisamos propriedades técnicas, resistência e viabilidade para garantir eficiência, durabilidade e qualidade na sua solução." },
@@ -109,7 +109,7 @@ const desenvolvimentoMaquinas: Coordination = {
 const tecnologia: Coordination = {
   name: "Tecnologia",
   slug: "tecnologia",
-  image: "/media/servicos/tecnologia/app2-1(1).webp",
+  image: "/media/icones coordenacoes/tecnologia.webp",
   services: [
     { slug: "tecnologia/desenvolvimento-de-site", title: "Desenvolvimento de Site", description: "Construa sua presença digital com profissionalismo e performance. Criamos sites responsivos, rápidos e alinhados à identidade da sua marca, focando em usabilidade, conversão e otimização para mecanismos de busca (SEO)." },
     { slug: "tecnologia/desenvolvimento-de-aplicativos", title: "Desenvolvimento de Aplicativos", description: "Criamos aplicativos personalizados para Android e iOS, focados em usabilidade, performance e inovação. Nosso processo envolve análise de requisitos, design intuitivo e programação robusta, garantindo soluções digitais que aumentam a eficiência, melhoram a experiência do usuário e fortalecem a presença da sua marca no mercado." },

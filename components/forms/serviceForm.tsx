@@ -122,13 +122,13 @@ export function FormularioServico({
   return (
     <div
       className={cn(
-        "bg-white rounded-2xl p-8 shadow-[0_12px_50px_rgba(0,0,0,0.4)] transition-all duration-300",
+        "w-full max-w-full bg-white rounded-2xl p-6 sm:p-8 shadow-[0_12px_50px_rgba(0,0,0,0.4)] transition-all duration-300",
         className
       )}
     >
       <div className="mb-6 space-y-2">
-        <h2 className="text-2xl font-bold text-black">{titulo}</h2>
-        <p className="text-sm text-gray-600">{subtitulo}</p>
+        <h2 className="text-xl sm:text-2xl leading-tight font-bold text-black break-words">{titulo}</h2>
+        <p className="text-sm text-gray-600 break-words">{subtitulo}</p>
       </div>
 
       <form className="space-y-6">
@@ -181,7 +181,7 @@ export function FormularioServico({
             id={`${formId}-tipo-servico`}
             name="tipoServico"
             defaultValue={servicoInicial}
-            className="h-10 w-full rounded-md border border-gray-300 bg-white px-2.5 text-sm text-black focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#2AD8FF]/50 disabled:cursor-not-allowed disabled:opacity-50"
+            className="h-10 w-full min-w-0 rounded-md border border-gray-300 bg-white px-2.5 text-sm text-black focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#2AD8FF]/50 disabled:cursor-not-allowed disabled:opacity-50"
             required
           >
             <option value="">Selecione uma opção</option>
@@ -201,7 +201,7 @@ export function FormularioServico({
             <select
               id={`${formId}-usa-automacao`}
               name="usaAutomacao"
-              className="h-10 w-full rounded-md border border-gray-300 bg-white px-2.5 text-sm text-black focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#2AD8FF]/50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="h-10 w-full min-w-0 rounded-md border border-gray-300 bg-white px-2.5 text-sm text-black focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#2AD8FF]/50 disabled:cursor-not-allowed disabled:opacity-50"
               required
             >
               <option value="">Selecione uma opção</option>
@@ -219,7 +219,7 @@ export function FormularioServico({
           <select
             id={`${formId}-investimento`}
             name="investimento"
-            className="h-10 w-full rounded-md border border-gray-300 bg-white px-2.5 text-sm text-black focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#2AD8FF]/50 disabled:cursor-not-allowed disabled:opacity-50"
+            className="h-10 w-full min-w-0 rounded-md border border-gray-300 bg-white px-2.5 text-sm text-black focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-[#2AD8FF]/50 disabled:cursor-not-allowed disabled:opacity-50"
             required
           >
             <option value="">Selecione uma opção</option>
@@ -247,7 +247,7 @@ export function FormularioServico({
         <div className="pt-4">
           <Button
             type="button"
-            className="bg-[#007BFF] hover:bg-[#0066D1] text-white font-medium rounded-full px-8 py-2 transition-all"
+            className="w-full sm:w-auto bg-[#007BFF] hover:bg-[#0066D1] text-white font-medium rounded-full px-8 py-2 transition-all"
           >
             Enviar
           </Button>
