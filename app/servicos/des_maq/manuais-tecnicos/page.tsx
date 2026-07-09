@@ -63,22 +63,25 @@ export default function ManuaisTecnicosPage() {
             "Nosso objetivo é eliminar a falta de padronização, reduzir chamados de assistência e profissionalizar a entrega final de um produto, garantindo conformidade técnica e total autonomia para o usuário."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+        <div className="flex-1">
+          <DefinitionSection
+            title="O que é um Manual Técnico?"
+            paragraphs={[
+                "O Manual Técnico traduz a complexidade de sistemas em orientações práticas e seguras.",
+                "Ele reúne instruções de operação, montagem e manutenção, além de protocolos de segurança essenciais para mitigar riscos.",
+                "Esse documento garante a durabilidade do equipamento e a conformidade técnica com as normas vigentes do setor."
+              ]}
+          />
+        </div>        
+        <div className="flex-1">
           <FormularioServico
             coordenacao="des_maq"
             servicoInicial="Manuais Técnicos"
           />
         </div>
       </section>
-      <DefinitionSection
-        title="O que é um Manual Técnico?"
-        paragraphs={[
-            "O Manual Técnico traduz a complexidade de sistemas em orientações práticas e seguras.",
-            "Ele reúne instruções de operação, montagem e manutenção, além de protocolos de segurança essenciais para mitigar riscos.",
-            "Esse documento garante a durabilidade do equipamento e a conformidade técnica com as normas vigentes do setor."
-          ]}
-      />
+
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo é técnico, normativo e orientado a resultados, utilizando metodologia de engenharia e padrões de redação técnica e segurança:"

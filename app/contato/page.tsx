@@ -1,4 +1,4 @@
-import { Mail, Clock } from "lucide-react";
+import { Mail } from "lucide-react";
 import { FaInstagram, FaLinkedin, FaYoutube, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { ContactForm } from "@/components/forms/ContactForm";

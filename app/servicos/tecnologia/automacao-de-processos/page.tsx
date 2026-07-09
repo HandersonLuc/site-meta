@@ -64,16 +64,31 @@ export default function AutomacaoDeProcessosPage() {
           "Mais do que tecnologia, entregamos inteligência aplicada à rotina do seu negócio."
         ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="tecnologia"
-            servicoInicial="Automação"
-            titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
-            subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
-          />
+      <section>
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              title="O que é Automação de Processos?"
+              paragraphs={[
+                "A automação de processos consiste em substituir atividades manuais e repetitivas por sistemas automáticos e integrados, controlados por softwares ou dispositivos físicos.",
+                "Essas soluções conectam diferentes áreas e equipamentos, proporcionando eficiência, padronização e precisão nas operações.",
+                "Na Meta, aplicamos automação em ambientes administrativos, digitais, físicos e industriais, utilizando tecnologias sob medida para cada necessidade."
+              ]}
+            />
+          </div>
+          <div className="flex-1">
+            <FormularioServico
+              coordenacao="tecnologia"
+              servicoInicial="Automação"
+              titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
+              subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
+            />
+          </div>
         </div>
       </section>
+
+
+      
       <DefinitionSection
         title="O que é Automação de Processos?"
         paragraphs={[
@@ -126,7 +141,7 @@ export default function AutomacaoDeProcessosPage() {
             href: "/servicos/tecnologia/desenvolvimento-de-site",
           },
           {
-            title: "Otimização de Sites (SEO)",
+            title: "Direcionamento de Sites (SEO)",
             description: "Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados.",
             href: "/servicos/tecnologia/direcionamento_estrategico",
           }

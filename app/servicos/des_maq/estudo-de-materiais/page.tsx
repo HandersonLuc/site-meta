@@ -64,22 +64,25 @@ export default function EstudoDeMateriaisPage() {
             "Nosso objetivo é ajudar empresas e empreendedores a tomar decisões seguras e econômicas, considerando aspectos técnicos, ambientais e produtivos."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+        <div className="flex-1">
+          <DefinitionSection
+            title="O que é o Estudo de Materiais?"
+            paragraphs={[
+                "O Estudo de Materiais consiste na análise técnica e econômica dos materiais que podem ser utilizados em um produto, estrutura ou componente.",
+                "Através de critérios como resistência, peso, custo, disponibilidade, impacto ambiental e facilidade de fabricação, é possível definir a melhor opção para o seu projeto.",
+                "Na Meta Consultoria, unimos engenharia de materiais e análise produtiva para entregar recomendações assertivas, comparativas e sustentáveis."
+              ]}
+          />
+        </div>        
+        <div className="flex-1">
           <FormularioServico
             coordenacao="des_maq"
             servicoInicial="Estudo de Materiais"
           />
         </div>
       </section>
-      <DefinitionSection
-        title="O que é o Estudo de Materiais?"
-        paragraphs={[
-            "O Estudo de Materiais consiste na análise técnica e econômica dos materiais que podem ser utilizados em um produto, estrutura ou componente.",
-            "Através de critérios como resistência, peso, custo, disponibilidade, impacto ambiental e facilidade de fabricação, é possível definir a melhor opção para o seu projeto.",
-            "Na Meta Consultoria, unimos engenharia de materiais e análise produtiva para entregar recomendações assertivas, comparativas e sustentáveis."
-          ]}
-      />
+
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo é técnico, comparativo e orientado a resultados, utilizando metodologia de engenharia e ferramentas de análise de desempenho:"

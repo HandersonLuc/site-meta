@@ -63,22 +63,26 @@ export default function PrecificacaoDeProdutosPage() {
             "Com base em dados e indicadores, ajudamos empresas a equilibrar custo, valor percebido e lucratividade, eliminando decisões baseadas em achismos e fortalecendo a sustentabilidade financeira do negócio."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8-[#090E28] py-16">
+        <div className="flex-1">
+          <DefinitionSection
+            title="O que é Precificação Estratégica?"
+            paragraphs={[
+                "A precificação estratégica é o processo de definir o preço ideal de produtos ou serviços considerando não apenas os custos, mas também o valor percebido pelo cliente e o posicionamento da marca.",
+                "Uma boa política de preços impacta diretamente na rentabilidade, na competitividade e na imagem da empresa no mercado.",
+                "A Meta Consultoria aplica métodos técnicos e analíticos de precificação para determinar valores equilibrados e estratégicos, garantindo lucro sustentável e atração de clientes."
+              ]}
+          />
+        </div>
+        
+        <div className="flex-1">
           <FormularioServico
             coordenacao="plan_fin"
             servicoInicial="Precificação de Produtos"
           />
         </div>
       </section>
-      <DefinitionSection
-        title="O que é Precificação Estratégica?"
-        paragraphs={[
-            "A precificação estratégica é o processo de definir o preço ideal de produtos ou serviços considerando não apenas os custos, mas também o valor percebido pelo cliente e o posicionamento da marca.",
-            "Uma boa política de preços impacta diretamente na rentabilidade, na competitividade e na imagem da empresa no mercado.",
-            "A Meta Consultoria aplica métodos técnicos e analíticos de precificação para determinar valores equilibrados e estratégicos, garantindo lucro sustentável e atração de clientes."
-          ]}
-      />
+      
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo de Precificação de Produtos e Serviços é totalmente personalizado e combina análise financeira, estratégica e mercadológica:"

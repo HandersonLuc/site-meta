@@ -68,7 +68,7 @@ export default function CoordTec(){
                 href="/servicos/tecnologia/automacao-de-processos"
             />
             <Session
-                title="Otimização de Sites (SEO)"
+                title="Direcionamento de Sites (SEO)"
                 description="Transforme seu site em uma poderosa ferramenta de atração e vendas. Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da marca e a geração constante de leads qualificados."
                 href="/servicos/tecnologia/direcionamento_estrategico"
             />
