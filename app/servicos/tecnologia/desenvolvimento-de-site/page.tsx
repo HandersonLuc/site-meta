@@ -64,29 +64,31 @@ export default function DesenvolvimentoDeSitePage() {
           "O resultado é um site rápido, estratégico e adaptado ao seu público, pronto para atrair visitantes e gerar conversões reais."
         ]}
       />
-      <section>
+      <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
           <div className="flex-1">
             <DefinitionSection
+              inline
               title="O que é um Site com SEO?"
               paragraphs={[
-                "Um site com SEO é aquele estruturado para ser encontrado e bem ranqueado nos buscadores, especialmente no Google.",
-                "Além de bonito, o site é planejado tecnicamente, desde o código até os textos, para aumentar o tráfego orgânico e atrair clientes de forma contínua.",
-                "O serviço da Meta vai além do design: aplicamos estratégias de SEO on-page e técnico, garantindo velocidade, responsividade e conteúdo otimizado."
-              ]}
+              "Um site com SEO é aquele estruturado para ser encontrado e bem ranqueado nos buscadores, especialmente no Google.",
+              "Além de bonito, o site é planejado tecnicamente, desde o código até os textos, para aumentar o tráfego orgânico e atrair clientes de forma contínua.",
+              "O serviço da Meta vai além do design: aplicamos estratégias de SEO on-page e técnico, garantindo velocidade, responsividade e conteúdo otimizado."
+            ]}
             />
           </div>
+
           <div className="flex-1">
             <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
               coordenacao="tecnologia"
-              servicoInicial="Site"
-              titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
-              subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
+            servicoInicial="Site"
+            titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
+            subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
             />
           </div>
         </div>
       </section>
-      
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo de Desenvolvimento de Sites com foco em SEO é completo, estratégico e personalizado:"

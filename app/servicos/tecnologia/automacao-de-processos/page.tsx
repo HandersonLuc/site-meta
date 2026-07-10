@@ -64,39 +64,31 @@ export default function AutomacaoDeProcessosPage() {
           "Mais do que tecnologia, entregamos inteligência aplicada à rotina do seu negócio."
         ]}
       />
-      <section>
+      <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
           <div className="flex-1">
             <DefinitionSection
+              inline
               title="O que é Automação de Processos?"
               paragraphs={[
-                "A automação de processos consiste em substituir atividades manuais e repetitivas por sistemas automáticos e integrados, controlados por softwares ou dispositivos físicos.",
-                "Essas soluções conectam diferentes áreas e equipamentos, proporcionando eficiência, padronização e precisão nas operações.",
-                "Na Meta, aplicamos automação em ambientes administrativos, digitais, físicos e industriais, utilizando tecnologias sob medida para cada necessidade."
-              ]}
+              "A automação de processos consiste em substituir atividades manuais e repetitivas por sistemas automáticos e integrados, controlados por softwares ou dispositivos físicos.",
+              "Essas soluções conectam diferentes áreas e equipamentos, proporcionando eficiência, padronização e precisão nas operações.",
+              "Na Meta, aplicamos automação em ambientes administrativos, digitais, físicos e industriais, utilizando tecnologias sob medida para cada necessidade."
+            ]}
             />
           </div>
+
           <div className="flex-1">
             <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
               coordenacao="tecnologia"
-              servicoInicial="Automação"
-              titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
-              subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
+            servicoInicial="Automação"
+            titulo="Digitalize sua operação e economize tempo com soluções tecnológicas sob medida!"
+            subtitulo="Criamos sites, aplicativos e automações inteligentes que otimizam fluxos e aumentam produtividade. Garanta uma consultoria gratuita de tecnologia aplicada ao seu negócio."
             />
           </div>
         </div>
       </section>
-
-
-      
-      <DefinitionSection
-        title="O que é Automação de Processos?"
-        paragraphs={[
-          "A automação de processos consiste em substituir atividades manuais e repetitivas por sistemas automáticos e integrados, controlados por softwares ou dispositivos físicos.",
-          "Essas soluções conectam diferentes áreas e equipamentos, proporcionando eficiência, padronização e precisão nas operações.",
-          "Na Meta, aplicamos automação em ambientes administrativos, digitais, físicos e industriais, utilizando tecnologias sob medida para cada necessidade."
-        ]}
-      />
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo de automação é estruturado, técnico e orientado a resultados, unindo análise de processos, programação e engenharia aplicada:"

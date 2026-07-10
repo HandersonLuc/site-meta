@@ -62,25 +62,30 @@ export default function PlanejamentoEstrategico() {
           "Com base em metodologias consolidadas e adaptadas à realidade de cada cliente, a Meta ajuda empresas a definir metas claras, alinhar recursos e direcionar esforços para o crescimento sustentável. Nosso objetivo é transformar objetivos em resultados, com uma abordagem prática, analítica e orientada a dados.",
         ]}
       />
-      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
-        <div className="flex-1">
-          <DefinitionSection
-            title="O que é Planejamento Estratégico?"
-            paragraphs={[
-              "O planejamento estratégico empresarial é o processo que direciona o futuro da organização, transformando sonhos e propósitos em ações concretas.", 
-              "Ele orienta a tomada de decisão, ajuda a priorizar investimentos e garante que todos os setores da empresa estejam alinhados à missão, visão e valores corporativos.", 
-              "Mais do que um documento, o planejamento estratégico é um mapa para o sucesso, essencial para quem busca crescimento estruturado e duradouro no mercado."]
-            }
-          />
-        </div>
-        <div className="flex-1">
-          <FormularioServico
-            coordenacao="gnc"
-            servicoInicial="Planejamento Estratégico"
-          />
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              inline
+              title="O que é Planejamento Estratégico?"
+              paragraphs={[
+                "O planejamento estratégico empresarial é o processo que direciona o futuro da organização, transformando sonhos e propósitos em ações concretas.", 
+                "Ele orienta a tomada de decisão, ajuda a priorizar investimentos e garante que todos os setores da empresa estejam alinhados à missão, visão e valores corporativos.", 
+                "Mais do que um documento, o planejamento estratégico é um mapa para o sucesso, essencial para quem busca crescimento estruturado e duradouro no mercado."]
+              }
+            />
+          </div>
+
+          <div className="flex-1">
+            <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              subtitulo=""
+              coordenacao="gnc"
+              servicoInicial="Planejamento Estratégico"
+            />
+          </div>
         </div>
       </section>
-
       <ServiceSteps
         title="Como funciona nosso serviço?"
         intro="A Meta desenvolve projetos de Planejamento Estratégico personalizados, em parceria direta com o cliente, seguindo uma metodologia completa e colaborativa:"
@@ -92,6 +97,15 @@ export default function PlanejamentoEstrategico() {
           { number: 5, description: "Ajustes estratégicos para manter a empresa no rumo certo." },
         ]}
       />
+
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            coordenacao="gnc"
+            servicoInicial="Planejamento Estratégico"
+          />
+        </div>
+      </section>
 
       <RelatedServices
         services={[

@@ -62,26 +62,30 @@ export default function AnaliseDeMercadoPage() {
           "A Meta Consultoria estrutura pesquisas e interpreta dados para reduzir incertezas e apoiar estratégias comerciais, de marketing e de expansão."
         ]}
       />
-      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
-        <div className="flex-1">
-          <DefinitionSection
-            title="A Meta oferece uma Análise de Mercado estratégica que:"
-            paragraphs={[
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              inline
+              title="A Meta oferece uma Análise de Mercado estratégica que:"
+              paragraphs={[
               "Reduz incertezas ao orientar decisões com base em dados reais.",
               "Mapeia com precisão seu público, concorrentes e fornecedores.",
               "Fornece uma base sólida para ações de marketing e estudos de viabilidade."
             ]}
-          />
-        </div>        
-        
-        <div className="flex-1">
-          <FormularioServico
-            coordenacao="gnc"
-            servicoInicial="Análise de Mercado"
-          />
+            />
+          </div>
+
+          <div className="flex-1">
+            <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              subtitulo=""
+              coordenacao="gnc"
+              servicoInicial="Análise de Mercado"
+            />
+          </div>
         </div>
       </section>
-
       <ServiceSteps
         title="Como funciona?"
         intro="Na Meta Consultoria, seguimos uma metodologia estruturada e baseada em dados para garantir que sua empresa tome decisões estratégicas com segurança:"
