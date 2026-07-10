@@ -1,0 +1,209 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+import { useState, useRef } from "react";
+import { MobileMenu } from "@/components/layout/MobileMenu";
+import { ChevronDown } from "lucide-react";
+
+export const navLinks = [
+  { name: "Home page", href: "/" },
+  { name: "Quem somos", href: "/quem-somos/sobre-nos" },
+  { name: "Serviços", href: "/servicos" },
+  { name: "Parcerias", href: "" },
+  { name: "Insights", href: "" },
+  { name: "Contato", href: "/contato" },
+];
+
+function HeaderNavItem({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  if (!href) {
+    return <span className={className}>{children}</span>;
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
+
+export function Header() {
+  const pathname = usePathname();
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (menu: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setOpenMenu(menu);
+  };
+
+  const handleMouseLeave = () => {
+    // espera 300ms antes de fechar
+    timeoutRef.current = setTimeout(() => {
+      setOpenMenu(null);
+    }, 300);
+  };
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-[#090E28] border-b border-border/40 backdrop-blur-md">
+      <div className="container mx-auto flex h-20 items-center justify-between px-6">
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/media/meta/Logo-Meta-Consultoria.webp"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="object-contain"
+          />
+        </Link>
+        <nav className="hidden md:flex flex-1 justify-center items-center gap-10 text-12px font-medium relative">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href;
+            const isDropdown =
+              link.name === "Quem somos" || link.name === "Serviços";
+
+            return (
+              <div
+                key={link.name}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(link.name)}
+                onMouseLeave={handleMouseLeave}
+              >
+                <HeaderNavItem
+                  href={link.href}
+                  className={`relative py-1 flex items-center gap-1 transition-colors duration-300 ${
+                    isActive
+                      ? "text-[#2AD8FF]"
+                      : "text-white hover:text-[#2AD8FF]"
+                  }`}
+                >
+                  {/* 🔹 Texto do link */}
+                  <span>{link.name}</span>
+
+                  {/* 🔹 Setinha ao lado do texto */}
+                  {isDropdown && (
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-300 ${
+                        openMenu === link.name ? "rotate-180 text-[#2AD8FF]" : "text-white"
+                      }`}
+                    />
+                  )}
+
+                  {/* 🔹 Linha azul sob o link ativo */}
+                  {isActive && (
+                    <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#2AD8FF] rounded-full" />
+                  )}
+                  </HeaderNavItem>
+
+                {isDropdown && openMenu === link.name && (
+                  <div
+                    className="absolute left-0 mt-2 w-56 bg-[#F5F7FA] shadow-lg rounded-md"
+                    onMouseEnter={() => handleMouseEnter(link.name)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {link.name === "Quem somos" && (
+                      <>
+                        <Link
+                          href="/quem-somos/sobre-nos"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Sobre nós
+                        </Link>
+
+                        <Link
+                          href="/quem-somos/SETTA"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          SETTA
+                        </Link>
+
+                        <Link
+                          href="/contato"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Contato
+                        </Link>
+
+                        <Link
+                          href="/quem-somos/politica-de-privacidade"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Política de Privacidade
+                        </Link>
+                      </>
+                    )}
+
+                    {link.name === "Serviços" && (
+                      <>
+                        <Link
+                          href="/servicos/gnc"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Gestão e Criação de Negócios
+                        </Link>
+
+                        <Link
+                          href="/servicos/ot_pr"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Otimização de Processos
+                        </Link>
+
+                        <Link
+                          href="/servicos/plan_fin"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Planejamento Financeiro
+                        </Link>
+
+                        <Link
+                          href="/servicos/des_maq"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Desenvolvimento de Máquinas
+                        </Link>
+
+                        <Link
+                          href="/servicos/constr_energ"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Construção e Energia
+                        </Link>
+
+                        <Link
+                          href="/servicos/tecnologia"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Tecnologia
+                        </Link>
+
+                        <Link
+                          href="/servicos"
+                          className="block px-4 py-2 text-[#007BFF] hover:bg-gray-200"
+                        >
+                          Todos os serviços
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+
+        <MobileMenu navLinks={navLinks} />
+      </div>
+    </header>
+  );
+}

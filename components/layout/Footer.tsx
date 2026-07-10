@@ -1,0 +1,138 @@
+"use client";
+
+import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { ChevronUp } from "lucide-react";
+import Image from "next/image";
+
+export function Footer() {
+  const exploreLinks = [
+  { name: "Home page", href: "/" },
+  { name: "Quem somos", href: "/quem-somos/sobre-nos" },
+  { name: "Serviços", href: "/servicos" },
+  { name: "Parcerias", href: "" },
+  { name: "Insights", href: "" },
+  { name: "Contato", href: "/contato" },
+  ]
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
+  return (
+    <footer className="bg-[#090E28] text-white pt-16 pb-8 border-t border-white/10">
+      <div className="container mx-auto px-4 md:px-8">
+        {/* Top Section */}
+        <div className="flex flex-row items-baseline text-center mb-16 justify-between">
+          <div>
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/media/meta/Logo-Meta-Consultoria.webp"
+              alt="Logo"
+              width={125}
+              height={125}
+              className="object-contain"
+          />
+        </Link>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-4">Mídias Sociais</h4>
+            <div className="flex gap-4 mb-6">
+            {[
+              { label: "Facebook", href: "https://www.facebook.com/metaconsultoria", icon: FaFacebookF },
+              { label: "Instagram", href: "https://www.instagram.com/metaconsultoria", icon: FaInstagram },
+              { label: "LinkedIn", href: "https://www.linkedin.com/company/metaconsultoria", icon: FaLinkedinIn },
+            ].map(({ label, href, icon: Icon }) => (
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="p-2 bg-white text-black rounded-full hover:bg-[#2AD8FF] hover:text-white transition-all"
+              >
+                <Icon className="w-4 h-4" />
+              </Link>
+            ))}
+          </div>
+        </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-16">
+          {/* Logo + Produtos */}
+          <div className="lg:col-span-4">
+            
+            <h4 className="font-semibold mb-4">Produtos</h4>
+            <ul className="space-y-2 text-sm">
+              {[
+                { name: "Gestão e Criação de Negócios", href: "/servicos/gnc" },
+                { name: "Otimização de Processos", href: "/servicos/ot_pr" },
+                { name: "Planejamento Financeiro", href: "/servicos/plan_fin" },
+                { name: "Construção e Energia", href: "/servicos/constr_energ" },
+                { name: "Desenvolvimento de Máquinas", href: "/servicos/des_maq" },
+                { name: "Tecnologia", href: "/servicos/tecnologia" },
+                { name: "Todos os serviços", href: "/servicos" },
+              ].map((item) => (
+                <li key={item.name} className="hover:text-[#2AD8FF] transition-colors">
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Explore */}
+          <div className="lg:col-span-2">
+            <h4 className="font-semibold mb-4">Explore</h4>
+              <ul className="space-y-2 text-sm">
+              {exploreLinks.map((link) => (
+                <li key={link.name} className="hover:text-[#2AD8FF] transition-colors">
+                  {link.href ? (
+                    <Link href={link.href}>{link.name}</Link>
+                  ) : (
+                    <span>{link.name}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Endereço */}
+          <div className="lg:col-span-3">
+            <h4 className="font-semibold mb-4">Endereço</h4>
+            <p className="text-sm leading-relaxed">
+              R. Passo da Pátria, 156<br />
+              Sala 217, Bloco E<br />
+              São Domingos, Niterói – RJ<br />
+              <span className="block mt-2">CNPJ: 00.498.057/0001-62</span>
+            </p>
+          </div>
+
+          {/* Conteúdo */}
+          <div className="lg:col-span-3">
+            <h4 className="font-semibold mb-2">Conteúdo</h4>
+            <p className="text-sm mb-3">
+              Cadastre-se e receba nossos conteúdos
+            </p>
+            <input
+              type="email"
+              placeholder="Digite o seu e-mail"
+              className="w-full rounded-md px-3 py-2 text-sm focus:outline-none bg-black/80"
+            />
+          </div>
+        </div>
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between border-t border-white/10 pt-6 text-sm text-gray-300">
+          <p>
+            Copyright {new Date().getFullYear()} Meta Consultoria | Todos os
+            Direitos Reservados
+          </p>
+          <button
+            onClick={scrollToTop}
+            className="mt-4 md:mt-0 p-2 bg-white text-black rounded-full hover:bg-[#2AD8FF] hover:text-white transition-all"
+            aria-label="Voltar ao topo"
+          >
+            <ChevronUp className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
+}

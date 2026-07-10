@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@config "../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --primary: #004AAD; /* Azul corporativo da Meta Consultoria */
+    --primary-foreground: #ffffff;
+    --secondary: #2AD8FF;
+    --secondary-foreground: #ffffff;
+    --border: 240 5.9% 90%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 10% 40%;
+    --accent: 164 29% 90%;
+    --accent-foreground: 164 29% 20%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --primary: #2AD8FF;
+  --primary-foreground: #000000;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

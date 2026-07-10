@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria de conferência de imagens - Meta Consultoria</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --panel: #ffffff;
+      --text: #111827;
+      --muted: #526070;
+      --line: #d8dee8;
+      --green: #16794c;
+      --amber: #986a09;
+      --red: #b42318;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 18px 24px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 38px);
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .summary span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      padding: 7px 10px;
+    }
+
+    .reference-note {
+      max-width: 960px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    }
+
+    .thumb-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 210px;
+      padding: 14px;
+      background:
+        linear-gradient(45deg, #edf1f6 25%, transparent 25%),
+        linear-gradient(-45deg, #edf1f6 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #edf1f6 75%),
+        linear-gradient(-45deg, transparent 75%, #edf1f6 75%);
+      background-color: #f8fafc;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+      background-size: 20px 20px;
+    }
+
+    .thumb-wrap img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+    }
+
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .badge {
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge.alto {
+      background: #e8f5ee;
+      color: var(--green);
+    }
+
+    .badge.médio {
+      background: #fff4d8;
+      color: var(--amber);
+    }
+
+    .badge.baixo {
+      background: #fde8e6;
+      color: var(--red);
+    }
+
+    h2 {
+      margin: 0;
+      overflow-wrap: anywhere;
+      font-size: 17px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    dl {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      font-size: 13px;
+    }
+
+    dt {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    dd {
+      margin: -5px 0 0;
+      overflow-wrap: anywhere;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 640px) {
+      .header-inner,
+      main {
+        padding: 16px;
+      }
+
+      .thumb-wrap {
+        height: 190px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Galeria de conferência de imagens</h1>
+      <div class="summary">
+        <span>80 imagens analisadas</span>
+        <span>58 alta confiança</span>
+        <span>20 média confiança</span>
+        <span>2 baixa confiança</span>
+      </div>
+      <p class="reference-note">
+        Conferência atualizada usando o site publicado como referência:
+        Home confirma logos de clientes, Quem Somos/Parcerias confirma parceiros e eventos,
+        Serviços confirma os nomes de serviços, e SETTA reforça o uso da identidade Meta.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <section id="gallery" class="grid" aria-label="Imagens analisadas"></section>
+  </main>
+
+  <script>
+    const images = [
+      ["imagem-servico-1.webp", "public/media/imagem-servico-1.webp", "public/media/servicos", "Serviços: Desenvolvimento de Máquinas ou placeholder atual de serviço em constants/services.ts", "médio"],
+      ["ambev-logo-scaled(1).webp", "public/media/midias site/ambev-logo-scaled(1).webp", "public/media/parceiros", "Quem Somos > Empresas parceiras / Home > clientes", "alto"],
+      ["americanas_logo(1).webp", "public/media/midias site/americanas_logo(1).webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["analisecpfoto-1(1).webp", "public/media/midias site/analisecpfoto-1(1).webp", "public/media/servicos", "Serviços > Gestão de Negócios > Análise de Mercado", "alto"],
+      ["app2-1(1).webp", "public/media/midias site/app2-1(1).webp", "public/media/servicos", "Serviços > Tecnologia > Desenvolvimento de Aplicativos", "alto"],
+      ["automacao-1(1).webp", "public/media/midias site/automacao-1(1).webp", "public/media/servicos", "Serviços > Tecnologia > Automação de Processos", "alto"],
+      ["banner-cabamento-1(1).webp", "public/media/midias site/banner-cabamento-1(1).webp", "public/media/banners", "Banner de serviço em Construção e Energia, possivelmente acabamento/obras", "médio"],
+      ["banner-novo-1-1(1).webp", "public/media/midias site/banner-novo-1-1(1).webp", "public/media/banners", "Home ou Quem Somos > hero institucional", "médio"],
+      ["banner-uff-1(1).webp", "public/media/midias site/banner-uff-1(1).webp", "public/media/quem-somos", "Quem Somos > história / vínculo com UFF", "alto"],
+      ["Bg-Meta-Consultoria(1).webp", "public/media/midias site/Bg-Meta-Consultoria(1).webp", "public/media/banners", "Banners/hero com identidade Meta", "alto"],
+      ["biura-logo-1(1).webp", "public/media/midias site/biura-logo-1(1).webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou Home > clientes", "alto"],
+      ["bobs-logo-1(1).webp", "public/media/midias site/bobs-logo-1(1).webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou Home > clientes", "alto"],
+      ["brasil junior(1).webp", "public/media/midias site/brasil junior(1).webp", "public/media/parceiros", "Quem Somos > parcerias/ecossistema EJ", "médio"],
+      ["buzios-1(1).webp", "public/media/midias site/buzios-1(1).webp", "public/media/outros", "Uso não claro; possível case, cliente ou banner de conteúdo antigo", "baixo"],
+      ["calc-estrut-1(1).webp", "public/media/midias site/calc-estrut-1(1).webp", "public/media/servicos", "Serviços > Desenvolvimento de Máquinas > Análise Estrutural", "alto"],
+      ["camara-italiana-logo-1(1).webp", "public/media/midias site/camara-italiana-logo-1(1).webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["climaorg-1(1).webp", "public/media/midias site/climaorg-1(1).webp", "public/media/servicos", "Serviços > Otimização de Processos > Pesquisa de Clima", "alto"],
+      ["coca_cola-removebg-preview-1(1).webp", "public/media/midias site/coca_cola-removebg-preview-1(1).webp", "public/media/parceiros", "Home > clientes ou Quem Somos > Empresas parceiras", "alto"],
+      ["cropped-favimeta-1-scaled-1(1).webp", "public/media/midias site/cropped-favimeta-1-scaled-1(1).webp", "public/media/logos", "Favicon, marca ou elemento visual principal", "alto"],
+      ["desenho-mec-1(1).webp", "public/media/midias site/desenho-mec-1(1).webp", "public/media/servicos", "Serviços > Desenvolvimento de Máquinas > Desenho Mecânico", "alto"],
+      ["desenvproduto-1-1.webp", "public/media/midias site/desenvproduto-1-1.webp", "public/media/servicos", "Serviços > Desenvolvimento de Máquinas > Desenvolvimento de Produto", "alto"],
+      ["Design-sem-nome-2.webp", "public/media/midias site/Design-sem-nome-2.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras: EloGroup", "médio"],
+      ["Ecco-logo-scaled.webp", "public/media/midias site/Ecco-logo-scaled.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["elogroup-logo-scaled.webp", "public/media/midias site/elogroup-logo-scaled.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["engrena-last.webp", "public/media/midias site/engrena-last.webp", "public/media/servicos", "Serviços > Desenvolvimento de Máquinas ou Automação", "médio"],
+      ["estrut-interna-1.webp", "public/media/midias site/estrut-interna-1.webp", "public/media/servicos", "Serviços > Otimização de Processos > Estruturação Interna", "alto"],
+      ["esttempoo1.webp", "public/media/midias site/esttempoo1.webp", "public/media/servicos", "Serviços > Otimização de Processos > Estudo de Tempo", "alto"],
+      ["estudo-da-luminotecnica-1.webp", "public/media/midias site/estudo-da-luminotecnica-1.webp", "public/media/servicos", "Serviços > Construção e Energia > Estudo de Luminotécnica", "alto"],
+      ["estudomat-1.webp", "public/media/midias site/estudomat-1.webp", "public/media/servicos", "Serviços > Desenvolvimento de Máquinas > Estudo de Materiais", "alto"],
+      ["fundo-hvac.webp", "public/media/midias site/fundo-hvac.webp", "public/media/servicos", "Serviços > Construção e Energia > HVAC", "alto"],
+      ["fundo-legaliza.webp", "public/media/midias site/fundo-legaliza.webp", "public/media/servicos", "Serviços > Construção e Energia > Regularização/Legalização de Obras", "alto"],
+      ["fundo-plan-financ.webp", "public/media/midias site/fundo-plan-financ.webp", "public/media/servicos", "Serviços > Planejamento Financeiro", "alto"],
+      ["fundo-plann.webp", "public/media/midias site/fundo-plann.webp", "public/media/servicos", "Serviços > Planejamento Financeiro ou Planejamento Estratégico", "médio"],
+      ["gestao-de-estoque-1.webp", "public/media/midias site/gestao-de-estoque-1.webp", "public/media/servicos", "Serviços > Otimização de Processos > Gestão de Estoque", "alto"],
+      ["gestaodenegocios-1.webp", "public/media/midias site/gestaodenegocios-1.webp", "public/media/servicos", "Serviços > Gestão de Negócios ou Quem Somos > áreas de atuação", "alto"],
+      ["Globo.webp", "public/media/midias site/Globo.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["grumec-1-scaled.webp", "public/media/midias site/grumec-1-scaled.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou clientes", "médio"],
+      ["Grupo-SBF-Logo-1.webp", "public/media/midias site/Grupo-SBF-Logo-1.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou Home > clientes", "alto"],
+      ["grupo-trigo-1.webp", "public/media/midias site/grupo-trigo-1.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou Home > clientes", "alto"],
+      ["hashtag-logo.webp", "public/media/midias site/hashtag-logo.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou Home > clientes", "alto"],
+      ["homepagg.webp", "public/media/midias site/homepagg.webp", "public/media/banners", "Home > hero ou seção principal", "alto"],
+      ["icon-placa-sol-1-scaled.webp", "public/media/midias site/icon-placa-sol-1-scaled.webp", "public/media/servicos", "Serviços > Construção e Energia > Projeto Fotovoltaico", "alto"],
+      ["icon-qcx-1.webp", "public/media/midias site/icon-qcx-1.webp", "public/media/outros", "Uso não claro; revisar manualmente", "baixo"],
+      ["instalaeletrica.webp", "public/media/midias site/instalaeletrica.webp", "public/media/servicos", "Serviços > Construção e Energia > Instalações Elétricas", "alto"],
+      ["instalahidro-1.webp", "public/media/midias site/instalahidro-1.webp", "public/media/servicos", "Serviços > Construção e Energia > Instalações Hidrossanitárias", "alto"],
+      ["legalizaobras-1.webp", "public/media/midias site/legalizaobras-1.webp", "public/media/servicos", "Serviços > Construção e Energia > Regularização/Legalização de Obras", "alto"],
+      ["live_mode_logo-.webp", "public/media/midias site/live_mode_logo-.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["logo_trigo-removebg-preview-1.webp", "public/media/midias site/logo_trigo-removebg-preview-1.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou Home > clientes", "médio"],
+      ["logo-green-rabit.webp", "public/media/midias site/logo-green-rabit.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou Home > clientes", "alto"],
+      ["logo-interacao-1.webp", "public/media/midias site/logo-interacao-1.webp", "public/media/eventos", "Quem Somos > Eventos > Interação", "alto"],
+      ["Logo-Meta-Consultoria.webp", "public/media/midias site/Logo-Meta-Consultoria.webp", "public/media/logos", "Header/Footer ou páginas institucionais", "alto"],
+      ["mapprocessos-1.webp", "public/media/midias site/mapprocessos-1.webp", "public/media/servicos", "Serviços > Otimização de Processos > Mapeamento de Processos", "alto"],
+      ["mercedes-logo-2-2.webp", "public/media/midias site/mercedes-logo-2-2.webp", "public/media/parceiros", "Home > clientes ou Quem Somos > Empresas parceiras", "alto"],
+      ["Meta_Consultoria_Logo-removebg-preview-1.webp", "public/media/midias site/Meta_Consultoria_Logo-removebg-preview-1.webp", "public/media/logos", "Header/Footer, contato ou páginas institucionais", "alto"],
+      ["Modelo_parcerias_11.webp", "public/media/midias site/Modelo_parcerias_11.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras: EloGroup", "médio"],
+      ["Modelo_parcerias_31.webp", "public/media/midias site/Modelo_parcerias_31.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras: Visagio", "alto"],
+      ["Modelo_parcerias_51.webp", "public/media/midias site/Modelo_parcerias_51.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras: Ambev", "médio"],
+      ["Modelo_parcerias_61.webp", "public/media/midias site/Modelo_parcerias_61.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras: Sebrae", "médio"],
+      ["Modelo-parcerias-11.webp", "public/media/midias site/Modelo-parcerias-11.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras: Live Mode", "médio"],
+      ["Modelo-PostBanner-Meta-1-1.webp", "public/media/midias site/Modelo-PostBanner-Meta-1-1.webp", "public/media/banners", "Serviços > Tecnologia ou post/banner institucional", "médio"],
+      ["Modelo-PostBanner-Meta-2.webp", "public/media/midias site/Modelo-PostBanner-Meta-2.webp", "public/media/banners", "Serviços > Gestão de Negócios ou Planejamento", "médio"],
+      ["nupote-icon-1.webp", "public/media/midias site/nupote-icon-1.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou clientes", "médio"],
+      ["op11-1.webp", "public/media/midias site/op11-1.webp", "public/media/servicos", "Serviços > Otimização de Processos", "médio"],
+      ["orcobras-1.webp", "public/media/midias site/orcobras-1.webp", "public/media/servicos", "Serviços > Construção e Energia > Orçamento de Obras", "alto"],
+      ["pesquisa-e-analise.webp", "public/media/midias site/pesquisa-e-analise.webp", "public/media/servicos", "Serviços > Gestão de Negócios > Análise de Mercado", "alto"],
+      ["planmkt.webp", "public/media/midias site/planmkt.webp", "public/media/servicos", "Serviços > Gestão de Negócios > Posicionamento de Marca/Plano de Marketing", "alto"],
+      ["popup-saida.webp", "public/media/midias site/popup-saida.webp", "public/media/banners", "Pop-up de saída ou peça de captura", "alto"],
+      ["precificacao-1.webp", "public/media/midias site/precificacao-1.webp", "public/media/servicos", "Serviços > Planejamento Financeiro > Precificação de Produtos", "alto"],
+      ["proj-fotovoltaico-1.webp", "public/media/midias site/proj-fotovoltaico-1.webp", "public/media/servicos", "Serviços > Construção e Energia > Projeto Fotovoltaico", "alto"],
+      ["projarquitetonicoo.webp", "public/media/midias site/projarquitetonicoo.webp", "public/media/servicos", "Serviços > Construção e Energia > Projeto Arquitetônico", "alto"],
+      ["radix_logo.webp", "public/media/midias site/radix_logo.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["red_bull_logo.webp", "public/media/midias site/red_bull_logo.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["se-liga-meta.webp", "public/media/midias site/se-liga-meta.webp", "public/media/eventos", "Quem Somos > Eventos > SE LIGA!", "alto"],
+      ["Sebrae-logo.webp", "public/media/midias site/Sebrae-logo.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou clientes", "alto"],
+      ["serv1-1.webp", "public/media/midias site/serv1-1.webp", "public/media/servicos", "Serviços > listagem geral ou Gestão de Negócios", "médio"],
+      ["shell-logo-1.webp", "public/media/midias site/shell-logo-1.webp", "public/media/parceiros", "Home > clientes ou Quem Somos > Empresas parceiras", "alto"],
+      ["socerj-icon-1.webp", "public/media/midias site/socerj-icon-1.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras ou clientes", "médio"],
+      ["start-carreiras.webp", "public/media/midias site/start-carreiras.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["stone-logo.webp", "public/media/midias site/stone-logo.webp", "public/media/parceiros", "Quem Somos > Empresas parceiras", "alto"],
+      ["terreno-1.webp", "public/media/midias site/terreno-1.webp", "public/media/servicos", "Serviços > Construção e Energia > Regularização de Imóveis ou Projeto Arquitetônico", "médio"]
+    ].map(([name, path, folder, use, confidence]) => ({ name, path, folder, use, confidence }));
+
+    const gallery = document.getElementById("gallery");
+
+    function encodedRelativeSrc(filePath) {
+      return "../" + filePath.split("/").map(encodeURIComponent).join("/");
+    }
+
+    function createText(tag, text, className) {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      element.textContent = text;
+      return element;
+    }
+
+    for (const item of images) {
+      const card = document.createElement("article");
+      card.className = "card";
+
+      const thumbWrap = document.createElement("div");
+      thumbWrap.className = "thumb-wrap";
+      const img = document.createElement("img");
+      img.src = encodedRelativeSrc(item.path);
+      img.alt = item.name;
+      img.loading = "lazy";
+      thumbWrap.appendChild(img);
+
+      const body = document.createElement("div");
+      body.className = "card-body";
+
+      const topLine = document.createElement("div");
+      topLine.className = "topline";
+      topLine.appendChild(createText("span", item.confidence, `badge ${item.confidence}`));
+
+      const title = createText("h2", item.name);
+
+      const dl = document.createElement("dl");
+      const fields = [
+        ["Caminho atual", item.path],
+        ["Pasta sugerida", item.folder],
+        ["Uso sugerido", item.use],
+        ["Nível de confiança", item.confidence]
+      ];
+
+      for (const [label, value] of fields) {
+        dl.appendChild(createText("dt", label));
+        dl.appendChild(createText("dd", value));
+      }
+
+      body.appendChild(topLine);
+      body.appendChild(title);
+      body.appendChild(dl);
+
+      card.appendChild(thumbWrap);
+      card.appendChild(body);
+      gallery.appendChild(card);
+    }
+  </script>
+</body>
+</html>

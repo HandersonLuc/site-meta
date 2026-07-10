@@ -1,0 +1,130 @@
+﻿import { FormularioServico } from "@/components/forms/serviceForm";
+import { DefinitionSection } from "@/components/sections/services/DefinitionSection";
+import { ServiceHeader } from "@/components/sections/services/HeroSection";
+import { ServiceIntro } from "@/components/sections/services/IntroSection";
+import { ServiceSteps } from "@/components/sections/services/ProcessSteps";
+import { RelatedServices } from "@/components/sections/services/RelatedServices";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pesquisa e Análise de Mercado | Meta Consultoria",
+  description:
+    "Serviço de Pesquisa e Análise de Mercado da Meta Consultoria: identifique oportunidades, mapeie concorrentes e compreenda seu público para decisões estratégicas mais seguras.",
+  keywords: [
+    "Meta Consultoria",
+    "Análise de Mercado",
+    "Pesquisa de Mercado",
+    "Gestão de Negócios",
+    "Mapeamento de Concorrentes",
+    "Estudo de Viabilidade",
+    "Consultoria Empresarial",
+    "UFF",
+    "Estratégia Comercial",
+  ],
+  openGraph: {
+    title: "Pesquisa e Análise de Mercado | Meta Consultoria",
+    description:
+      "Conheça o serviço de Análise de Mercado da Meta Consultoria: dados estratégicos para apoiar decisões de marketing, expansão e posicionamento.",
+    url: "https://metaconsultoria.com/servicos/gnc/analise-de-mercado",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/gnc/analise-de-mercado.webp", // 🔹 imagem representativa do serviço
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Análise de Mercado",
+      },
+    ],
+    locale: "pt_BR",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pesquisa e Análise de Mercado | Meta Consultoria",
+    description:
+      "Reduza incertezas e tome decisões estratégicas com o serviço de Análise de Mercado da Meta Consultoria.",
+    images: ["/media/servicos/gnc/analise-de-mercado.webp"],
+  },
+};
+
+
+export default function AnaliseDeMercadoPage() {
+  return (
+    <>
+      <ServiceHeader
+        title="Pesquisa e Análise de Mercado"
+        description="Análise e mapeamento de tendências e comportamentos de mercado."
+      />
+      <ServiceIntro
+        title="Sua empresa conhece de verdade o seu mercado?"
+        paragraphs={[
+          "Com a Análise de Mercado, você identifica oportunidades, entende seu público e toma decisões mais assertivas.",
+          "A Meta Consultoria estrutura pesquisas e interpreta dados para reduzir incertezas e apoiar estratégias comerciais, de marketing e de expansão."
+        ]}
+      />
+      <section className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8 bg-[#EFFAFF] py-16 [box-shadow:0_0_0_100vmax_#EFFAFF] [clip-path:inset(0_-100vmax)]">
+        <div className="flex-1">
+          <DefinitionSection
+            title="A Meta oferece uma Análise de Mercado estratégica que:"
+            paragraphs={[
+              "Reduz incertezas ao orientar decisões com base em dados reais.",
+              "Mapeia com precisão seu público, concorrentes e fornecedores.",
+              "Fornece uma base sólida para ações de marketing e estudos de viabilidade."
+            ]}
+          />
+        </div>        
+        
+        <div className="flex-1">
+          <FormularioServico
+            variant="highlight"
+            coordenacao="gnc"
+            servicoInicial="Análise de Mercado"
+          />
+        </div>
+      </section>
+
+      <ServiceSteps
+        title="Como funciona?"
+        intro="Na Meta Consultoria, seguimos uma metodologia estruturada e baseada em dados para garantir que sua empresa tome decisões estratégicas com segurança:"
+        steps={[
+          {
+            number: 1,
+            description: "Realizamos um diagnóstico completo do negócio para entender contexto, desafios e definir o espaço amostral da pesquisa.",
+          },
+          {
+            number: 2,
+            description: "Desenvolvemos uma metodologia sob medida e conduzimos o levantamento de informações qualitativas e quantitativas.",
+          },
+          {
+            number: 3,
+            description: "Cruzamos os dados levantados para identificar padrões, comportamentos e insights estratégicos para a tomada de decisão.",
+          }
+        ]}
+      />
+      <section className="bg-[#090E28] py-16">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <FormularioServico
+            variant="compact"
+            coordenacao="gnc"
+            servicoInicial="Análise de Mercado"
+          />
+        </div>
+      </section>
+      <RelatedServices
+        services={[
+          {
+            title: "Posicionamento de Marca",
+            description: "Fortaleça sua presença online e conquiste relevância no ambiente digital. Definimos estratégias personalizadas para destacar sua marca, atrair o público certo e gerar autoridade no seu mercado.",
+            href: "/servicos/gnc/posicionamento-de-marca",
+          },
+          {
+            title: "Planejamento Estratégico",
+            description: "Defina o rumo do seu negócio com clareza e foco. Analisamos o ambiente interno e externo da sua organização para identificar forças, fraquezas e oportunidades, traçando metas e ações alinhadas à sua visão de futuro.",
+            href: "/servicos/gnc/planejamento-estrategico",
+          }
+        ]}
+      />
+    </>
+  );
+}
+

@@ -1,0 +1,239 @@
+import Link from "next/link";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { Session } from "@/components/ui/section"; // novo componente reutilizável
+import { Metadata } from "next";
+import { PartnersCarousel } from "@/components/sections/PartnersCarousel";
+
+export const metadata: Metadata = {
+  title: "Serviços | Meta Consultoria",
+  description:
+    "Conheça todas as soluções da Meta Consultoria em gestão, processos, tecnologia, finanças, construção e desenvolvimento de produtos.",
+  keywords: [
+    "Meta Consultoria",
+    "Serviços",
+    "Gestão de Negócios",
+    "Otimização de Processos",
+    "Planejamento Financeiro",
+    "Construção e Energia",
+    "Tecnologia",
+    "Desenvolvimento de Máquinas",
+  ],
+  openGraph: {
+    title: "Serviços | Meta Consultoria",
+    description:
+      "Explore as áreas de atuação da Meta Consultoria e descubra como podemos impulsionar o seu negócio.",
+    url: "https://metaconsultoria.com/servicos",
+    siteName: "Meta Consultoria",
+    images: [
+      {
+        url: "/media/servicos/gnc/gestaodenegocios-1.webp", // pode ser qualquer imagem representativa
+        width: 1200,
+        height: 630,
+        alt: "Meta Consultoria - Serviços",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Serviços | Meta Consultoria",
+    description:
+      "Conheça todas as soluções da Meta Consultoria em gestão, processos, tecnologia e muito mais.",
+    images: ["/media/servicos/gnc/gestaodenegocios-1.webp"],
+  },
+};
+
+
+export default function Home() {
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* 1. HERO SECTION */}
+      <HeroSection
+        title="A Meta Consultoria oferece soluções em consultoria empresarial"
+        subtitle="Com foco em Engenharia e Gestão de Negócios, impulsionando o crescimento e a eficiência de empresas com estratégia, inteligência e propósito."
+        showArrow
+      />
+
+      {/* 2. DESTAQUES */}
+    <section className="py-24 bg-[#F5F7FA] text-black">
+      <div className="container mx-auto px-4 md:px-8 max-w-6xl text-center">
+        {/* Botão "Quem somos" */}
+        <div className="mb-8">
+          <a
+            href="/quem-somos/sobre-nos"
+            className="inline-block bg-[#2AD8FF] text-white text-sm font-medium px-6 py-2 rounded-full hover:bg-[#1CBFE0] transition-colors"
+          >
+            Quem somos
+          </a>
+        </div>
+
+        {/* Texto institucional */}
+        <p className="text-lg leading-relaxed font-medium mb-16 text-left md:text-center">
+          A Meta Consultoria oferece soluções em consultoria empresarial{" "}
+          <span className="text-[#007BFF] font-semibold">
+            com foco em Engenharia e Gestão de Negócios,
+          </span>{" "}
+          impulsionando o crescimento e a eficiência de empresas{" "}
+          <span className="text-[#007BFF] font-semibold">com estratégia</span>,
+          inteligência e propósito para quem quer liderar o próprio futuro.
+        </p>
+
+        {/* Blocos de destaque */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Bloco 1 */}
+          <div className="bg-black text-white rounded-3xl p-8 flex flex-col justify-center text-left">
+            <h3 className="text-3xl font-light mb-2">
+              Mais de <span className="font-bold">600</span>
+            </h3>
+            <p className="text-3xl font-light mb-2">
+              projetos realizados em todo o{" "}
+              <span className="text-[#2AD8FF] font-bold">Brasil</span>
+            </p>
+          </div>
+
+          {/* Bloco 2 */}
+          <div className="flex flex-col gap-8">
+            <div className="bg-black text-white rounded-3xl p-8 text-left">
+              <h3 className="text-5xl font-bold mb-2">
+                30<span className="text-[#2AD8FF]">+</span>
+              </h3>
+              <p className="text-xl font-light">Anos de experiência</p>
+            </div>
+
+            <div className="bg-black text-white rounded-3xl p-8 text-left">
+              <h3 className="text-5xl font-bold mb-2">
+                95<span className="text-[#2AD8FF]">%</span>
+              </h3>
+              <p className="text-xl font-light">Satisfação</p>
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+
+
+      {/* 3. SERVIÇOS */}
+      <section className="py-24 container mx-auto px-4 max-w-5xl">
+        <Session
+          title="Gestão de negócios"
+          description="Se você está começando a empreender ou busca enxergar com mais clareza a sua ideia de negócio, essas soluções foram pensadas para ajudar você a dar os primeiros passos com foco, estratégia e segurança."
+          href="/servicos/gnc"
+        />
+        <Session
+          title="Otimização de processos"
+          description="Os serviços de Otimização de Processos da Meta Consultoria atendem desde pequenas até grandes empresas que desejam organizar suas operações e maximizar o uso dos recursos disponíveis. Em cada projeto, nossos consultores atuam de forma personalizada para identificar oportunidades e implementar soluções que aumentem a eficiência do seu negócio."
+          href="/servicos/ot_pr"
+        />
+        <Session
+          title="Planejamento financeiro"
+          description="Se você pensa em investir em um novo negócio ou explorar um novo mercado, mas ainda tem dúvidas sobre o retorno do investimento, o planejamento e a análise financeira são etapas fundamentais para tomar decisões mais seguras e estratégicas."
+          href="/servicos/plan_fin"
+        />
+        <Session
+          title="Construção e energia"
+          description="Os serviços da área de Construção e Energia são ideais para quem precisa reformar, construir do zero ou regularizar um imóvel de acordo com as exigências da prefeitura."
+          href="/servicos/constr_energ"
+        />
+        <Session
+          title="Desenvolvimento de máquinas"
+          description="Desenvolvimento de Máquinas é focado em apoiar o desenvolvimento de novos produtos, peças ou máquinas. Por meio de um projeto mecânico, é possível definir todos os insumos necessários para a fabricação, incluindo a escolha adequada de materiais."
+          href="/servicos/des_maq"
+        />
+        <Session
+          title="Tecnologia"
+          description="Os serviços da área de Tecnologia são voltados para marcas que desejam crescer, fortalecer sua imagem e se destacar no ambiente online."
+          href="/servicos/tecnologia"
+        />
+      </section>
+
+      {/* 4. NOSSOS CLIENTES */}
+      <section className="text-white text-center">
+        <PartnersCarousel partners={[
+          { name: "Shell", image: "/media/parceiros/shell-logo-1.webp" },
+          { name: "Mercedes", image: "/media/parceiros/mercedes-logo-2-2.webp" },
+          { name: "Coca-Cola", image: "/media/parceiros/coca_cola-logo.webp" },
+          { name: "Radix", image: "/media/parceiros/radix_logo.webp" },
+          { name: "Grupo SBF", image: "/media/parceiros/GRUPO-SBF-Logo.webp" },
+          { name: "Trigo", image: "/media/parceiros/logo_trigo.webp" }
+        ]}
+        />
+      </section>
+
+      {/* 5. NOVO SERVIÇO */}
+  <section className="py-20 bg-white">
+    <div className="container mx-auto px-4 max-w-6xl">
+      <div className="grid md:grid-cols-2 gap-12 items-start">
+        {/* Coluna esquerda */}
+        <div>
+          <h2 className="text-3xl font-bold mb-2 border-b-2 border-[#007BFF] inline-block pb-1">
+            Novo serviço
+          </h2>
+          <h3 className="text-2xl font-extrabold mt-4 mb-6">
+            Direcionamento Estratégico Digital(SEO)
+          </h3>
+        </div>
+
+        {/* Coluna direita */}
+        <div>
+          <p className="text-gray-700 leading-relaxed mb-6 font-medium">
+            Transforme seu site em uma poderosa ferramenta de atração e vendas.
+            Aplicamos estratégias avançadas de SEO para colocar sua empresa no topo
+            dos mecanismos de busca, aumentando o tráfego orgânico, a autoridade da
+            marca e a geração constante de leads qualificados.
+          </p>
+          <Link
+            href="/servicos/tecnologia/direcionamento_estrategico"
+            className="inline-block bg-gradient-to-r from-[#2AD8FF] to-[#007BFF] text-white font-medium px-6 py-2 rounded-full hover:opacity-90 transition-all"
+          >
+            Saiba mais
+          </Link>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* DEPOIMENTOS */}
+  <section className="py-20 bg-[#F5F7FA]">
+    <div className="container mx-auto px-4 max-w-6xl">
+      <div className="flex justify-between items-center mb-12">
+        <h2 className="text-3xl font-bold">O que nossos clientes dizem</h2>
+        <a
+          href="/contato"
+          className="inline-block bg-gradient-to-r from-[#2AD8FF] to-[#007BFF] text-white font-medium px-6 py-2 rounded-full hover:opacity-90 transition-all"
+        >
+          Diagnóstico Gratuito
+        </a>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Depoimento 1 */}
+        <div className="border border-gray-300 rounded-2xl p-6 bg-white shadow-sm">
+          <p className="text-gray-700 mb-4 leading-relaxed">
+            “A Meta é há anos a maior EJ parceira da Hashtag Treinamentos. Nos unimos
+            com o intuito de auxiliar na capacitação dos membros da EJ, bem como dos
+            alunos da universidade. A Meta tem exercido um papel fundamental nesse
+            sentido, promovendo diversas capacitações de Excel, VBA e Power BI aos
+            membros da EJ e alunos da UFF, contribuindo em conjunto com a Hashtag para
+            a formação dos estudantes.”
+          </p>
+          <p className="font-semibold text-sm">– Alon Pinheiro, Gerente de cursos</p>
+        </div>
+
+        {/* Depoimento 2 */}
+        <div className="border border-gray-300 rounded-2xl p-6 bg-white shadow-sm">
+          <p className="text-gray-700 mb-4 leading-relaxed">
+            “Nossa parceria com a Meta Consultoria tem sido um sucesso durante todos
+            estes anos. A equipe está sempre motivada a vencer novos desafios e crescer
+            profissionalmente. Todos os projetos realizados contam com a garantia de
+            qualidade e satisfação de seus clientes e parceiros.”
+          </p>
+          <p className="font-semibold text-sm">– Luciano Gallucci, Diretor Executivo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    </div>
+  );
+}
