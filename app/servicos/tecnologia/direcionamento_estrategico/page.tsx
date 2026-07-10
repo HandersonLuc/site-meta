@@ -63,25 +63,32 @@ export default function OtimizacaoDeSitesSeoPage() {
           "O SEO para Websites integra técnica, conteúdo, intenção de busca e conversão para transformar sua presença digital em um canal de crescimento orgânico."
         ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="tecnologia"
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              inline
+              title="Se você enfrenta problemas como:"
+              paragraphs={[
+              "Seu site tem poucas visitas vindas do Google ou depende de tráfego pago para gerar leads.",
+              "Suas páginas não ranqueiam para palavras-chave importantes do seu mercado.",
+              "O site é lento, tem erros de indexação ou perde performance no mobile.",
+              "Você produz conteúdo, mas ele não traz resultados consistentes."
+            ]}
+            />
+          </div>
+
+          <div className="flex-1">
+            <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              coordenacao="tecnologia"
             servicoInicial="SEO"
             titulo="Aumente seu tráfego orgânico e gere mais leads com SEO para Websites!"
             subtitulo="Auditoria, otimização técnica, conteúdo e conversão para crescer no orgânico. Garanta um diagnóstico SEO gratuito do seu site."
-          />
+            />
+          </div>
         </div>
       </section>
-      <DefinitionSection
-        title="Se você enfrenta problemas como:"
-        paragraphs={[
-          "Seu site tem poucas visitas vindas do Google ou depende de tráfego pago para gerar leads.",
-          "Suas páginas não ranqueiam para palavras-chave importantes do seu mercado.",
-          "O site é lento, tem erros de indexação ou perde performance no mobile.",
-          "Você produz conteúdo, mas ele não traz resultados consistentes."
-        ]}
-      />
       <ServiceSteps
         title="A Meta apresenta o serviço de SEO para Websites, que:"
         intro="Unimos visão estratégica de negócio e conversão com execução técnica de SEO e performance para criar um plano completo de crescimento orgânico."

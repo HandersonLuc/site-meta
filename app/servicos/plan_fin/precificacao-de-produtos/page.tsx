@@ -63,22 +63,30 @@ export default function PrecificacaoDeProdutosPage() {
             "Com base em dados e indicadores, ajudamos empresas a equilibrar custo, valor percebido e lucratividade, eliminando decisões baseadas em achismos e fortalecendo a sustentabilidade financeira do negócio."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="plan_fin"
-            servicoInicial="Precificação de Produtos"
-          />
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              inline
+              title="O que é Precificação Estratégica?"
+              paragraphs={[
+                "A precificação estratégica é o processo de definir o preço ideal de produtos ou serviços considerando não apenas os custos, mas também o valor percebido pelo cliente e o posicionamento da marca.",
+                "Uma boa política de preços impacta diretamente na rentabilidade, na competitividade e na imagem da empresa no mercado.",
+                "A Meta Consultoria aplica métodos técnicos e analíticos de precificação para determinar valores equilibrados e estratégicos, garantindo lucro sustentável e atração de clientes."
+              ]}
+            />
+          </div>
+
+          <div className="flex-1">
+            <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              subtitulo=""
+              coordenacao="plan_fin"
+              servicoInicial="Precificação de Produtos"
+            />
+          </div>
         </div>
       </section>
-      <DefinitionSection
-        title="O que é Precificação Estratégica?"
-        paragraphs={[
-            "A precificação estratégica é o processo de definir o preço ideal de produtos ou serviços considerando não apenas os custos, mas também o valor percebido pelo cliente e o posicionamento da marca.",
-            "Uma boa política de preços impacta diretamente na rentabilidade, na competitividade e na imagem da empresa no mercado.",
-            "A Meta Consultoria aplica métodos técnicos e analíticos de precificação para determinar valores equilibrados e estratégicos, garantindo lucro sustentável e atração de clientes."
-          ]}
-      />
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="Nosso processo de Precificação de Produtos e Serviços é totalmente personalizado e combina análise financeira, estratégica e mercadológica:"

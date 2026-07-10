@@ -65,22 +65,30 @@ export default function EstudoDeViabilidadePage() {
             "Nosso objetivo é traduzir ideias em números reais, analisando custos, receitas, riscos e rentabilidade, para garantir que cada investimento tenha sustentabilidade e retorno comprovado."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="plan_fin"
-            servicoInicial="Estudo de Viabilidade"
-          />
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              inline
+              title="O que é um Plano de Viabilidade Econômica?"
+              paragraphs={[
+                "O Plano de Viabilidade Econômica é uma análise detalhada que avalia se uma ideia de negócio, projeto ou investimento é financeiramente viável.",
+                "Ele considera todas as variáveis econômicas, desde o investimento inicial até as despesas operacionais e projeções de receita, para determinar se o retorno compensa o risco.",
+                "Mais do que um estudo financeiro, o PVE é uma ferramenta estratégica para empreendedores, gestores e investidores que buscam clareza, previsibilidade e segurança antes de executar um projeto."
+              ]}
+            />
+          </div>
+
+          <div className="flex-1">
+            <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              subtitulo=""
+              coordenacao="plan_fin"
+              servicoInicial="Estudo de Viabilidade"
+            />
+          </div>
         </div>
       </section>
-      <DefinitionSection
-        title="O que é um Plano de Viabilidade Econômica?"
-        paragraphs={[
-            "O Plano de Viabilidade Econômica é uma análise detalhada que avalia se uma ideia de negócio, projeto ou investimento é financeiramente viável.",
-            "Ele considera todas as variáveis econômicas, desde o investimento inicial até as despesas operacionais e projeções de receita, para determinar se o retorno compensa o risco.",
-            "Mais do que um estudo financeiro, o PVE é uma ferramenta estratégica para empreendedores, gestores e investidores que buscam clareza, previsibilidade e segurança antes de executar um projeto."
-          ]}
-      />
       <ServiceSteps
         title="Como a Meta Consultoria atua ?"
         intro="A Meta estrutura o Plano de Viabilidade Econômica em etapas estratégicas que combinam análise técnica, engenharia de custos e gestão financeira:"

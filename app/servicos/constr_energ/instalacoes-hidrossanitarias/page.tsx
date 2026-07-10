@@ -64,22 +64,30 @@ export default function InstalacoesHidrossanitariasPage() {
             "Com planejamento técnico e softwares de engenharia, a Meta cria sistemas otimizados de água, esgoto e drenagem, reduzindo custos e evitando retrabalhos futuros."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="constr_energ"
-            servicoInicial="Instalações Hidrossanitárias"
-          />
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              inline
+              title="O que são Instalações Hidrossanitárias?"
+              paragraphs={[
+                "As instalações hidrossanitárias envolvem o planejamento, dimensionamento e execução das redes de água fria, quente, esgoto e drenagem pluvial.",
+                "Elas asseguram o funcionamento correto do sistema hidráulico, evitando vazamentos, entupimentos e infiltrações que podem causar danos estruturais e desperdício de recursos.",
+                "Na Meta Consultoria, desenvolvemos projetos hidrossanitários completos, conforme as normas da ABNT, garantindo segurança, eficiência e durabilidade."
+              ]}
+            />
+          </div>
+
+          <div className="flex-1">
+            <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              subtitulo=""
+              coordenacao="constr_energ"
+              servicoInicial="Instalações Hidrossanitárias"
+            />
+          </div>
         </div>
       </section>
-      <DefinitionSection
-        title="O que são Instalações Hidrossanitárias?"
-        paragraphs={[
-            "As instalações hidrossanitárias envolvem o planejamento, dimensionamento e execução das redes de água fria, quente, esgoto e drenagem pluvial.",
-            "Elas asseguram o funcionamento correto do sistema hidráulico, evitando vazamentos, entupimentos e infiltrações que podem causar danos estruturais e desperdício de recursos.",
-            "Na Meta Consultoria, desenvolvemos projetos hidrossanitários completos, conforme as normas da ABNT, garantindo segurança, eficiência e durabilidade."
-          ]}
-      />
       <ServiceSteps
         title="Como a Meta Consultoria atua"
         intro="Nosso processo é técnico, detalhado e 100% personalizado para cada tipo de obra:"

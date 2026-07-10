@@ -64,22 +64,30 @@ export default function FpAPage() {
             "Mais do que controlar números, o FP&A da Meta é sobre transformar dados em estratégia e estratégia em resultado."
           ]}
       />
-      <section className="bg-[#090E28] py-16">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <FormularioServico
-            coordenacao="plan_fin"
-            servicoInicial="FP&A"
-          />
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="flex-1">
+            <DefinitionSection
+              inline
+              title="O que é FP&A (Planejamento e Análise Financeira)?"
+              paragraphs={[
+                "O FP&A é uma metodologia voltada para planejar, monitorar e analisar o desempenho financeiro das empresas.",
+                "Através de indicadores, relatórios e projeções, é possível avaliar a rentabilidade, controlar o orçamento e antecipar riscos, garantindo decisões assertivas.",
+                "Na prática, o FP&A se torna o coração da gestão estratégica, conectando o planejamento financeiro ao operacional e oferecendo previsibilidade e estabilidade para o futuro do negócio."
+              ]}
+            />
+          </div>
+
+          <div className="flex-1">
+            <FormularioServico
+              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              subtitulo=""
+              coordenacao="plan_fin"
+              servicoInicial="FP&A"
+            />
+          </div>
         </div>
       </section>
-      <DefinitionSection
-        title="O que é FP&A (Planejamento e Análise Financeira)?"
-        paragraphs={[
-            "O FP&A é uma metodologia voltada para planejar, monitorar e analisar o desempenho financeiro das empresas.",
-            "Através de indicadores, relatórios e projeções, é possível avaliar a rentabilidade, controlar o orçamento e antecipar riscos, garantindo decisões assertivas.",
-            "Na prática, o FP&A se torna o coração da gestão estratégica, conectando o planejamento financeiro ao operacional e oferecendo previsibilidade e estabilidade para o futuro do negócio."
-          ]}
-      />
       <ServiceSteps
         title="Como funciona nosso serviço ?"
         intro="A Meta aplica um processo estruturado e adaptado à realidade de cada empresa:"
