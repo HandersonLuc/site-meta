@@ -55,7 +55,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-black border-b border-border/40 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full bg-[#090E28] border-b border-border/40 backdrop-blur-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         <Link href="/" className="flex-shrink-0">
           <Image

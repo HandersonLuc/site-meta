@@ -7,13 +7,13 @@ import { RelatedServices } from "@/components/sections/services/RelatedServices"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Otimização de Sites (SEO) | Meta Consultoria",
+  title: "Direcionamento Estratégico (SEO) | Meta Consultoria",
   description:
     "Serviço de SEO da Meta Consultoria: aumente tráfego orgânico, posições no Google e conversões com otimização técnica, conteúdo estratégico e performance digital.",
   keywords: [
     "Meta Consultoria",
     "SEO",
-    "Otimização de Sites",
+    "Direcionamento de Sites",
     "Tecnologia",
     "Tráfego Orgânico",
     "Google",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     "Marketing Digital",
   ],
   openGraph: {
-    title: "Otimização de Sites (SEO) | Meta Consultoria",
+    title: "Direcionamento Estratégico (SEO) | Meta Consultoria",
     description:
       "Conheça o serviço de SEO da Meta Consultoria: estratégias técnicas e de conteúdo para colocar seu site no topo do Google e gerar mais leads.",
     url: "https://metaconsultoria.com/servicos/tecnologia/direcionamento_estrategico",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Otimização de Sites (SEO) | Meta Consultoria",
+    title: "Direcionamento Estratégico (SEO) | Meta Consultoria",
     description:
       "Transforme seu site em uma máquina de tráfego orgânico e conversão com o serviço de SEO da Meta Consultoria.",
     images: ["/media/servicos/tecnologia/seo.webp"],
@@ -53,7 +53,7 @@ export default function OtimizacaoDeSitesSeoPage() {
   return (
     <>
       <ServiceHeader
-        title="Otimização de Sites (SEO)"
+        title="Direcionamento Estratégico (SEO)"
         description="Aumente tráfego orgânico, posições no Google e conversões com SEO técnico, on-page e conteúdo."
       />
       <ServiceIntro
@@ -115,7 +115,7 @@ export default function OtimizacaoDeSitesSeoPage() {
           }
         ]}
       />
-      <section className="bg-[#090E28] py-16">
+      <section className="">
         <div className="container mx-auto px-4 max-w-3xl">
           <FormularioServico
             coordenacao="tecnologia"

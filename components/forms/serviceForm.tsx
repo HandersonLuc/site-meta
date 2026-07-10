@@ -103,7 +103,6 @@ function getServicos(coordenacao?: string, servicos?: string[]) {
 export function FormularioServico({
   className,
   titulo = "Solicite seu projeto",
-  subtitulo = "Entre em contato com nossos consultores comerciais.",
   coordenacao,
   servicos,
   servicoInicial = "",
@@ -239,7 +238,7 @@ export function FormularioServico({
             id={`${formId}-mensagem`}
             name="mensagem"
             placeholder="Digite sua mensagem"
-            className="min-h-[90px] rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
+            className="min-h-[80px] rounded-md border border-gray-300 focus-visible:ring-[#2AD8FF]"
             required
           />
         </div>
