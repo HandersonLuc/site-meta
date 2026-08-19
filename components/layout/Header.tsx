@@ -59,7 +59,7 @@ export function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/media/midias site/Logo-Meta-Consultoria.webp"
+            src="/media/meta/Logo-Meta-Consultoria.webp"
             alt="Logo"
             width={100}
             height={100}
