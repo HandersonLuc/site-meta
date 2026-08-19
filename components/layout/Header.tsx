@@ -59,7 +59,7 @@ export function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-6">
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/media/midias site/Logo-Meta-Consultoria.webp"
+            src="/media/meta/Logo-Meta-Consultoria.webp"
             alt="Logo"
             width={100}
             height={100}
@@ -94,7 +94,9 @@ export function Header() {
                   {isDropdown && (
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-300 ${
-                        openMenu === link.name ? "rotate-180 text-[#2AD8FF]" : "text-white"
+                        openMenu === link.name
+                          ? "rotate-180 text-[#2AD8FF]"
+                          : "text-white"
                       }`}
                     />
                   )}
@@ -103,7 +105,7 @@ export function Header() {
                   {isActive && (
                     <span className="absolute left-0 bottom-0 h-0.5 w-full bg-[#2AD8FF] rounded-full" />
                   )}
-                  </HeaderNavItem>
+                </HeaderNavItem>
 
                 {isDropdown && openMenu === link.name && (
                   <div

@@ -83,7 +83,9 @@ const coordenacaoAliases: Record<string, CoordenacaoKey> = {
 };
 
 function getCoordenacaoKey(coordenacao?: string) {
-  return coordenacao ? coordenacaoAliases[coordenacao.toLowerCase()] : undefined;
+  return coordenacao
+    ? coordenacaoAliases[coordenacao.toLowerCase()]
+    : undefined;
 }
 
 function getServicos(coordenacao?: string, servicos?: string[]) {
@@ -122,17 +124,20 @@ export function FormularioServico({
     <div
       className={cn(
         "bg-white rounded-2xl p-7 shadow-[0_12px_50px_rgba(0,0,0,0.4)] transition-all duration-300",
-        className
+        className,
       )}
     >
       <div className="mb-5 space-y-2">
         <h2 className="text-2xl font-bold text-black">{titulo}</h2>
-        {subtitulo && <p className="text-sm text-gray-600">{subtitulo}</p>}
+        {titulo && <p className="text-sm text-gray-600">{titulo}</p>}
       </div>
 
       <form className="space-y-5">
         <div className="space-y-2">
-          <Label htmlFor={`${formId}-nome`} className="font-semibold text-sm text-black">
+          <Label
+            htmlFor={`${formId}-nome`}
+            className="font-semibold text-sm text-black"
+          >
             Nome <span className="text-red-500">*</span>
           </Label>
           <Input
@@ -145,7 +150,10 @@ export function FormularioServico({
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor={`${formId}-email`} className="font-semibold text-sm text-black">
+          <Label
+            htmlFor={`${formId}-email`}
+            className="font-semibold text-sm text-black"
+          >
             Email <span className="text-red-500">*</span>
           </Label>
           <Input
@@ -159,7 +167,10 @@ export function FormularioServico({
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor={`${formId}-telefone`} className="font-semibold text-sm text-black">
+          <Label
+            htmlFor={`${formId}-telefone`}
+            className="font-semibold text-sm text-black"
+          >
             Telefone <span className="text-red-500">*</span>
           </Label>
           <Input
@@ -173,7 +184,10 @@ export function FormularioServico({
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor={`${formId}-tipo-servico`} className="font-semibold text-sm text-black">
+          <Label
+            htmlFor={`${formId}-tipo-servico`}
+            className="font-semibold text-sm text-black"
+          >
             {serviceLabel} <span className="text-red-500">*</span>
           </Label>
           <select
@@ -194,8 +208,12 @@ export function FormularioServico({
 
         {showTecnologiaQuestion && (
           <div className="space-y-2">
-            <Label htmlFor={`${formId}-usa-automacao`} className="font-semibold text-sm text-black">
-              Você já utiliza alguma ferramenta de automação hoje? <span className="text-red-500">*</span>
+            <Label
+              htmlFor={`${formId}-usa-automacao`}
+              className="font-semibold text-sm text-black"
+            >
+              Você já utiliza alguma ferramenta de automação hoje?{" "}
+              <span className="text-red-500">*</span>
             </Label>
             <select
               id={`${formId}-usa-automacao`}
@@ -212,7 +230,10 @@ export function FormularioServico({
         )}
 
         <div className="space-y-2">
-          <Label htmlFor={`${formId}-investimento`} className="font-semibold text-sm text-black">
+          <Label
+            htmlFor={`${formId}-investimento`}
+            className="font-semibold text-sm text-black"
+          >
             Quanto deseja investir? <span className="text-red-500">*</span>
           </Label>
           <select
@@ -231,8 +252,12 @@ export function FormularioServico({
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor={`${formId}-mensagem`} className="font-semibold text-sm text-black">
-            Conte mais sobre como podemos te ajudar <span className="text-red-500">*</span>
+          <Label
+            htmlFor={`${formId}-mensagem`}
+            className="font-semibold text-sm text-black"
+          >
+            Conte mais sobre como podemos te ajudar{" "}
+            <span className="text-red-500">*</span>
           </Label>
           <Textarea
             id={`${formId}-mensagem`}
