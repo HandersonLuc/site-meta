@@ -7,20 +7,31 @@ import { RelatedServices } from "@/components/sections/services/RelatedServices"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Estudo de Tempo | Meta Consultoria",
-  description: "",
-  keywords: [],
+  title: "Estudo de Tempos | Meta Consultoria",
+  description:
+    "Aumente a produtividade da sua equipe. Identificação de gargalos operacionais, padronização de rotinas e redução de tempo ocioso.",
+  keywords: [
+    "Meta Consultoria",
+    "Estudo de Tempos",
+    "Cronanálise",
+    "Otimização de Processos",
+    "Engenharia de Produção",
+    "Redução de Desperdícios",
+    "UFF",
+    "Eficiência Operacional",
+  ],
   openGraph: {
-    title: "Estudo de Tempo | Meta Consultoria",
-    description: "",
+    title: "Estudo de Tempos | Meta Consultoria",
+    description:
+      "Elimine gargalos operacionais e eleve a produtividade com o Estudo de Tempos da Meta Consultoria.",
     url: "https://metaconsultoria.com/servicos/ot_pr/estudo-de-tempo",
     siteName: "Meta Consultoria",
     images: [
       {
-        url: "/media/servicos/ot_pr/estudo-de-tempo.webp", // 🔹 imagem representativa do serviço
+        url: "/media/servicos/ot_pr/estudo-de-tempo.webp",
         width: 1200,
         height: 630,
-        alt: "Meta Consultoria - Estudo de Tempo",
+        alt: "Meta Consultoria - Estudo de Tempos",
       },
     ],
     locale: "pt_BR",
@@ -28,12 +39,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Estudo de Tempo | Meta Consultoria",
-    description: "",
+    title: "Estudo de Tempos | Meta Consultoria",
+    description:
+      "Ganhe eficiência e reduza custos operacionais com cronanálise e métodos padronizados.",
     images: ["/media/servicos/ot_pr/estudo-de-tempo.webp"],
   },
 };
-
 export default function EstudoDeTempoPage() {
   return (
     <>
@@ -65,7 +76,7 @@ export default function EstudoDeTempoPage() {
 
           <div className="flex-1">
             <FormularioServico
-              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              className="bg-transparent! p-0! shadow-none! rounded-none! [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-22"
               subtitulo=""
               coordenacao="ot_pr"
               servicoInicial="Estruturação Interna"

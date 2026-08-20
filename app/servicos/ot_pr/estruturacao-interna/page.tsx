@@ -47,7 +47,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function EstruturacaoInternaPage() {
   return (
     <>
@@ -58,10 +57,10 @@ export default function EstruturacaoInternaPage() {
       <ServiceIntro
         title="Estruturação Interna: clareza, eficiência e crescimento sustentável"
         paragraphs={[
-            "Quando a empresa cresce sem estrutura, surgem sobrecargas, confusões e falhas de comunicação.",
-            "A Meta Consultoria, empresa júnior de Engenharia e Gestão de Negócios da UFF, oferece o serviço de Estruturação Interna, projetado para organizar equipes, definir responsabilidades e alinhar pessoas à estratégia empresarial.",
-            "Com metodologia baseada em gestão organizacional e análise de processos, a Meta constrói uma estrutura sólida, eficiente e preparada para o crescimento."
-          ]}
+          "Quando a empresa cresce sem estrutura, surgem sobrecargas, confusões e falhas de comunicação.",
+          "A Meta Consultoria, empresa júnior de Engenharia e Gestão de Negócios da UFF, oferece o serviço de Estruturação Interna, projetado para organizar equipes, definir responsabilidades e alinhar pessoas à estratégia empresarial.",
+          "Com metodologia baseada em gestão organizacional e análise de processos, a Meta constrói uma estrutura sólida, eficiente e preparada para o crescimento.",
+        ]}
       />
       <section className="py-16">
         <div className="container mx-auto px-4 max-w-6xl flex flex-col md:flex-row gap-8">
@@ -72,14 +71,14 @@ export default function EstruturacaoInternaPage() {
               paragraphs={[
                 "A estruturação interna é o processo de organizar a base operacional e hierárquica da empresa, definindo com clareza funções, cargos, responsabilidades e fluxos de comunicação.",
                 "Ela garante que todos saibam quem faz o quê, como e por quê, eliminando conflitos, sobreposições e desperdícios.",
-                "Na Meta, o serviço de Estruturação Interna combina análise organizacional, mapeamento de funções e modelagem de cargos, sempre alinhado à estratégia e à cultura da empresa."
+                "Na Meta, o serviço de Estruturação Interna combina análise organizacional, mapeamento de funções e modelagem de cargos, sempre alinhado à estratégia e à cultura da empresa.",
               ]}
             />
           </div>
 
           <div className="flex-1">
             <FormularioServico
-              className="!bg-transparent !p-0 !shadow-none !rounded-none [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-[88px]"
+              className="bg-transparent! p-0! shadow-none! rounded-none! [&_form]:space-y-5 [&_h2]:text-3xl [&_input]:h-11 [&_select]:h-11 [&_select]:text-base [&_textarea]:min-h-22"
               subtitulo=""
               coordenacao="ot_pr"
               servicoInicial="Estruturação Interna"
@@ -91,27 +90,32 @@ export default function EstruturacaoInternaPage() {
         title="Como a Meta Consultoria atua"
         intro="Nosso processo é colaborativo, estratégico e feito sob medida para cada negócio:"
         steps={[
-            {
-              "number": 1,
-              "description": "Identificação de sobrecargas, lacunas e pontos críticos na estrutura atual."
-            },
-            {
-              "number": 2,
-              "description": "Análise do fluxo de trabalho, cargos e interdependências."
-            },
-            {
-              "number": 3,
-              "description": "Estruturação hierárquica clara e alinhada aos objetivos estratégicos."
-            },
-            {
-              "number": 4,
-              "description": "Modelos sustentáveis, justos e motivadores para a equipe."
-            },
-            {
-              "number": 5,
-              "description": "Acompanhamento e suporte durante a transição para a nova estrutura."
-            }
-          ]}
+          {
+            number: 1,
+            description:
+              "Identificação de sobrecargas, lacunas e pontos críticos na estrutura atual.",
+          },
+          {
+            number: 2,
+            description:
+              "Análise do fluxo de trabalho, cargos e interdependências.",
+          },
+          {
+            number: 3,
+            description:
+              "Estruturação hierárquica clara e alinhada aos objetivos estratégicos.",
+          },
+          {
+            number: 4,
+            description:
+              "Modelos sustentáveis, justos e motivadores para a equipe.",
+          },
+          {
+            number: 5,
+            description:
+              "Acompanhamento e suporte durante a transição para a nova estrutura.",
+          },
+        ]}
       />
       <section className="bg-[#090E28] py-16">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -125,12 +129,14 @@ export default function EstruturacaoInternaPage() {
         services={[
           {
             title: "Mapeamento de Processos",
-            description: "Visualize e entenda como sua empresa funciona. Identificamos, organizamos e analisamos cada etapa dos seus processos para eliminar gargalos, padronizar operações e aumentar a eficiência do seu negócio.",
+            description:
+              "Visualize e entenda como sua empresa funciona. Identificamos, organizamos e analisamos cada etapa dos seus processos para eliminar gargalos, padronizar operações e aumentar a eficiência do seu negócio.",
             href: "/servicos/ot_pr/mapeamento-de-processos",
           },
           {
             title: "Pesquisa de Clima",
-            description: "Identifique pontos fortes e áreas de melhoria para promover um ambiente alinhado aos valores da empresa, transformando percepções dos colaboradores em ações estratégicas.",
+            description:
+              "Identifique pontos fortes e áreas de melhoria para promover um ambiente alinhado aos valores da empresa, transformando percepções dos colaboradores em ações estratégicas.",
             href: "/servicos/ot_pr/pesquisa-de-clima",
           },
         ]}
