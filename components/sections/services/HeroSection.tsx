@@ -16,3 +16,5 @@ export function ServiceHeader({ title, description }: ServiceHeaderProps) {
     </section>
   );
 }
+
+export const HeroSection = ServiceHeader;

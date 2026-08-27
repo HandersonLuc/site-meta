@@ -17,3 +17,5 @@ export function ServiceIntro({ title, paragraphs }: ServiceIntroProps) {
     </section>
   );
 }
+
+export const IntroSection = ServiceIntro;

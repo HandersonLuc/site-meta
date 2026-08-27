@@ -9,23 +9,23 @@ import { ContactForm } from "@/components/forms/ContactForm";
 import { Newsletter } from "@/components/sections/Newsletter";
 import type { Metadata } from "next";
 
-
 interface ServicePageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 // 🔹 Função auxiliar para encontrar serviço pelo slug
 function findService(slug: string) {
   for (const coord of coordinations) {
-    const service = coord.services.find((s) => s.slug === slug);
+    const service = coord.services.find((s) => s.slug === slug || s.slug.endsWith(`/${slug}`));
     if (service) return service; // 🔹 retorna só o serviço
   }
   return null;
 }
 
 // 🔹 Metadados dinâmicos para SEO
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const service = findService(params.slug);
+export async function generateMetadata({ params }: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const service = findService(slug);
   if (!service) {
     return {
       title: "Serviço não encontrado | Meta Consultoria",
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       siteName: "Meta Consultoria",
       images: [
         {
-          url: service.imageSrc ?? "/images/placeholder.jpg",
+          url: service.imageSrc ?? "/media/meta/meta-logo.webp",
           width: 1200,
           height: 630,
           alt: service.title,
@@ -56,7 +56,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       card: "summary_large_image",
       title: `${service.title} | Meta Consultoria`,
       description: service.description,
-      images: [service.imageSrc ?? "/images/placeholder.jpg"],
+      images: [service.imageSrc ?? "/media/meta/meta-logo.webp"],
     },
   };
 }
@@ -65,13 +65,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export async function generateStaticParams() {
   return coordinations.flatMap((coord) =>
     coord.services.map((service) => ({
-      slug: service.slug,
+      slug: service.slug.split("/").pop() ?? service.slug,
     }))
   );
 }
 
-export default function ServicoDetalhePage({ params }: ServicePageProps) {
-  const service = findService(params.slug);
+export default async function ServicoDetalhePage({ params }: ServicePageProps) {
+  const { slug } = await params;
+  const service = findService(slug);
   if (!service) notFound();
 
   return (
@@ -80,9 +81,9 @@ export default function ServicoDetalhePage({ params }: ServicePageProps) {
 
       <section className="py-24 container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-24 items-center max-w-6xl mx-auto">
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-border">
+          <div className="relative aspect-4/3 rounded-3xl overflow-hidden shadow-2xl border border-border">
             <Image
-              src={service.imageSrc ?? "/images/placeholder.jpg"}
+              src={service.imageSrc ?? "/media/meta/meta-logo.webp"}
               alt={`Imagem ilustrativa de ${service.title}`}
               fill
               className="object-cover"

@@ -43,3 +43,5 @@ export function ServiceSteps({ title, intro, steps }: ServiceStepsProps) {
     </section>
   );
 }
+
+export const ProcessSteps = ServiceSteps;

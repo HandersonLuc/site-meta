@@ -19,3 +19,5 @@ export function SuccessCasesSection({ title, paragraphs }: SuccessCasesSectionPr
     </section>
   );
 }
+
+export const SuccessCaseSection = SuccessCasesSection;

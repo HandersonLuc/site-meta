@@ -19,3 +19,5 @@ export function CallToActionSection({ title, paragraphs }: CallToActionSectionPr
     </section>
   );
 }
+
+export const CalltoActionSection = CallToActionSection;

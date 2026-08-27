@@ -90,13 +90,28 @@ export default function ContatoPage() {
             <div className="bg-[#0B0E2C] text-white rounded-2xl p-6 shadow-[0_12px_50px_rgba(0,0,0,0.4)] transition-all duration-300">
               <p className="font-semibold mb-4">Siga nossas Mídias Sociais</p>
               <div className="flex gap-6 text-2xl">
-                <a href="https://instagram.com/metaconsultoria" target="_blank">
+                <a
+                  href="https://instagram.com/metaconsultoria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
                   <FaInstagram />
                 </a>
-                <a href="https://linkedin.com/company/metaconsultoria" target="_blank">
+                <a
+                  href="https://www.linkedin.com/company/meta-consultoria"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
                   <FaLinkedin />
                 </a>
-                <a href="https://youtube.com/@metaconsultoria" target="_blank">
+                <a
+                  href="https://www.youtube.com/@metaconsultoriauff"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                >
                   <FaYoutube />
                 </a>
               </div>
